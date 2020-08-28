@@ -43,35 +43,35 @@ func Begin(ctx context.Context) (*Tx, error) {
 // Commit commits the given transaction.
 //
 // See (*database/sql.Tx).Commit() for additional documentation.
-func Commit(ctx context.Context, tx *Tx) error {
+func Commit(tx *Tx) error {
 	panic("not implemented")
 }
 
 // Rollback rolls back the given transaction.
 //
 // See (*database/sql.Tx).Rollback() for additional documentation.
-func Rollback(ctx context.Context, tx *Tx) error {
+func Rollback(tx *Tx) error {
 	panic("not implemented")
 }
 
 // ExecTx is like Exec but executes the query in the given transaction.
 //
 // See (*database/sql.Tx).ExecContext() for additional documentation.
-func ExecTx(ctx context.Context, tx *Tx, query string, args ...interface{}) (sql.Result, error) {
+func ExecTx(tx *Tx, ctx context.Context, query string, args ...interface{}) (sql.Result, error) {
 	panic("not implemented")
 }
 
 // QueryTx is like Query but executes the query in the given transaction.
 //
 // See (*database/sql.Tx).QueryContext() for additional documentation.
-func QueryTx(ctx context.Context, tx *Tx, query string, args ...interface{}) (*Rows, error) {
+func QueryTx(tx *Tx, ctx context.Context, query string, args ...interface{}) (*Rows, error) {
 	panic("not implemented")
 }
 
 // QueryRowTx is like QueryRow but executes the query in the given transaction.
 //
 // See (*database/sql.Tx).QueryRowContext() for additional documentation.
-func QueryRowTx(ctx context.Context, tx *Tx, query string, args ...interface{}) *Row {
+func QueryRowTx(tx *Tx, ctx context.Context, query string, args ...interface{}) *Row {
 	panic("not implemented")
 }
 
