@@ -10,7 +10,7 @@ import (
 //
 // See (*database/sql.DB).ExecContext() for additional documentation.
 func Exec(ctx context.Context, query string, args ...interface{}) (sql.Result, error) {
-	panic("not implemented")
+	panic("encore apps must be run using the encore command")
 }
 
 // Query executes a query that returns rows, typically a SELECT.
@@ -18,14 +18,14 @@ func Exec(ctx context.Context, query string, args ...interface{}) (sql.Result, e
 //
 // See (*database/sql.DB).QueryContext() for additional documentation.
 func Query(ctx context.Context, query string, args ...interface{}) (*Rows, error) {
-	panic("not implemented")
+	panic("encore apps must be run using the encore command")
 }
 
 // QueryRow executes a query that is expected to return at most one row.
 //
 // See (*database/sql.DB).QueryRowContext() for additional documentation.
 func QueryRow(ctx context.Context, query string, args ...interface{}) *Row {
-	panic("not implemented")
+	panic("encore apps must be run using the encore command")
 }
 
 // Tx is a handle to a database transaction.
@@ -37,42 +37,42 @@ type Tx struct{}
 //
 // See (*database/sql.DB).Begin() for additional documentation.
 func Begin(ctx context.Context) (*Tx, error) {
-	panic("not implemented")
+	panic("encore apps must be run using the encore command")
 }
 
 // Commit commits the given transaction.
 //
 // See (*database/sql.Tx).Commit() for additional documentation.
 func Commit(tx *Tx) error {
-	panic("not implemented")
+	panic("encore apps must be run using the encore command")
 }
 
 // Rollback rolls back the given transaction.
 //
 // See (*database/sql.Tx).Rollback() for additional documentation.
 func Rollback(tx *Tx) error {
-	panic("not implemented")
+	panic("encore apps must be run using the encore command")
 }
 
 // ExecTx is like Exec but executes the query in the given transaction.
 //
 // See (*database/sql.Tx).ExecContext() for additional documentation.
 func ExecTx(tx *Tx, ctx context.Context, query string, args ...interface{}) (sql.Result, error) {
-	panic("not implemented")
+	panic("encore apps must be run using the encore command")
 }
 
 // QueryTx is like Query but executes the query in the given transaction.
 //
 // See (*database/sql.Tx).QueryContext() for additional documentation.
 func QueryTx(tx *Tx, ctx context.Context, query string, args ...interface{}) (*Rows, error) {
-	panic("not implemented")
+	panic("encore apps must be run using the encore command")
 }
 
 // QueryRowTx is like QueryRow but executes the query in the given transaction.
 //
 // See (*database/sql.Tx).QueryRowContext() for additional documentation.
 func QueryRowTx(tx *Tx, ctx context.Context, query string, args ...interface{}) *Row {
-	panic("not implemented")
+	panic("encore apps must be run using the encore command")
 }
 
 // Rows is the result of a query. Its cursor starts before the first row
@@ -85,7 +85,7 @@ type Rows struct{}
 //
 // See (*database/sql.Rows).Close() for additional documentation.
 func (*Rows) Close() error {
-	panic("not implemented")
+	panic("encore apps must be run using the encore command")
 }
 
 // Scan copies the columns in the current row into the values pointed
@@ -94,7 +94,7 @@ func (*Rows) Close() error {
 //
 // See (*database/sql.Rows).Scan() for additional documentation.
 func (*Rows) Scan(dest ...interface{}) error {
-	panic("not implemented")
+	panic("encore apps must be run using the encore command")
 }
 
 // Err returns the error, if any, that was encountered during iteration.
@@ -102,7 +102,7 @@ func (*Rows) Scan(dest ...interface{}) error {
 //
 // See (*database/sql.Rows).Err() for additional documentation.
 func (*Rows) Err() error {
-	panic("not implemented")
+	panic("encore apps must be run using the encore command")
 }
 
 // Next prepares the next result row for reading with the Scan method. It
@@ -114,7 +114,7 @@ func (*Rows) Err() error {
 //
 // See (*database/sql.Rows).Next() for additional documentation.
 func (*Rows) Next() bool {
-	panic("not implemented")
+	panic("encore apps must be run using the encore command")
 }
 
 // Row is the result of calling QueryRow to select a single row.
@@ -127,5 +127,5 @@ type Row struct{}
 //
 // See (*database/sql.Row).Scan() for additional documentation.
 func (*Row) Scan(dest ...interface{}) error {
-	panic("not implemented")
+	panic("encore apps must be run using the encore command")
 }
