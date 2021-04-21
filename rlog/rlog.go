@@ -35,20 +35,23 @@ func (ctx Ctx) With(keysAndValues ...interface{}) Ctx {
 	panic("encore apps must be run using the encore command")
 }
 
-// Debugc is like Debug but takes additional logging context.
+// Debug logs a debug-level message, merging the context from ctx
+// with the additional context provided as key-value pairs.
 // The variadic key-value pairs are treated as they are in With.
-func Debugc(ctx Ctx, msg string, keysAndValues ...interface{}) {
+func (ctx Ctx) Debug(msg string, keysAndValues ...interface{}) {
 	panic("encore apps must be run using the encore command")
 }
 
-// Infoc is like Debug but takes additional logging context.
+// Info logs an info-level message, merging the context from ctx
+// with the additional context provided as key-value pairs.
 // The variadic key-value pairs are treated as they are in With.
-func Infoc(ctx Ctx, msg string, keysAndValues ...interface{}) {
+func (ctx Ctx) Info(msg string, keysAndValues ...interface{}) {
 	panic("encore apps must be run using the encore command")
 }
 
-// Errorc is like Error but takes additional logging context.
+// Error logs an error-level message, merging the context from ctx
+// with the additional context provided as key-value pairs.
 // The variadic key-value pairs are treated as they are in With.
-func Errorc(ctx Ctx, msg string, keysAndValues ...interface{}) {
+func (ctx Ctx) Error(msg string, keysAndValues ...interface{}) {
 	panic("encore apps must be run using the encore command")
 }
