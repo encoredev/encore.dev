@@ -5,8 +5,12 @@ import (
 )
 
 // An Error is an error that provides structured information
-// about the error. It includes an error code, a message, and
-// optionally additional structured details about the error.
+// about the error. It includes an error code, a message,
+// optionally additional structured details about the error
+// and arbitrary key-value metadata.
+//
+// The Details field is returned to external clients.
+// The Meta field is only exposed to internal calls within Encore.
 //
 // Internally it captures an underlying error for printing
 // and for use with errors.Is/As and call stack information.
@@ -18,28 +22,33 @@ type Error struct {
 	Code    ErrCode    `json:"code"`
 	Message string     `json:"message"`
 	Details ErrDetails `json:"details"`
+	Meta    Metadata   `json:"-"` // not exposed to external clients
 }
 
-// New creates a new Error without wrapping another underlying error.
-// If code == OK it returns nil.
-func New(code ErrCode, msg string, details ErrDetails) error {
-	panic("encore apps must be run using the encore command")
-}
+// Metadata represents structured key-value pairs, for attaching arbitrary
+// metadata to errors. The metadata is propagated between internal services
+// but is not exposed to external clients.
+type Metadata map[string]interface{}
 
 // Wrap wraps the err, adding additional error information.
 // If err is nil it returns nil.
 //
 // If err is already an *Error its code, message, and details
 // are copied over to the new error.
-//
-// The fields are used to update the corresponding field of the error:
-// Passing in an ErrCode updates the Code field.
-// Passing in a string adds context to the error message.
-// Passing in a type that implements ErrDetails updates the Details field,
-// and passing in untyped nil sets Details to nil.
-//
-// Passing in another type causes Wrap to panic.
-func Wrap(err error, fields ...interface{}) error {
+func Wrap(err error, msg string, metaPairs ...interface{}) error {
+	panic("encore apps must be run using the encore command")
+}
+
+// WrapCode is like Wrap but also sets the error code.
+// If code is OK it reports nil.
+func WrapCode(err error, code ErrCode, msg string, metaPairs ...interface{}) error {
+	panic("encore apps must be run using the encore command")
+}
+
+// Convert converts an error to an *Error.
+// If the error is already an *Error it returns it unmodified.
+// If err is nil it returns nil.
+func Convert(err error) error {
 	panic("encore apps must be run using the encore command")
 }
 
@@ -47,6 +56,12 @@ func Wrap(err error, fields ...interface{}) error {
 // If err is nil it reports OK.
 // Otherwise if err is not an *Error it reports Unknown.
 func Code(err error) ErrCode {
+	panic("encore apps must be run using the encore command")
+}
+
+// Meta reports the metadata included in the error.
+// If err is nil or the error lacks metadata it reports nil.
+func Meta(err error) Metadata {
 	panic("encore apps must be run using the encore command")
 }
 
