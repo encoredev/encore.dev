@@ -5,6 +5,11 @@ import (
 	"database/sql"
 )
 
+// An error satisfying ErrNoRows is reported by Scan
+// when QueryRow doesn't return a row.
+// It must be tested against with errors.Is.
+var ErrNoRows = sql.ErrNoRows
+
 // Exec executes a query without returning any rows.
 // The args are for any placeholder parameters in the query.
 //
