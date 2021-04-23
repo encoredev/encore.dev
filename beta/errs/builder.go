@@ -5,7 +5,7 @@ package errs
 //
 // Use Err() to construct the error.
 type Builder struct {
-	// unexported fields...
+	_ int // for godoc to show unexported fields
 }
 
 // B is a shorthand for creating a new Builder.

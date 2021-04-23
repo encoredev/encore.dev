@@ -1,3 +1,4 @@
+// Package errs provides structured error handling for Encore applications.
 package errs
 
 import (
@@ -19,10 +20,15 @@ import (
 // to convert non-Error errors into *Error as close to the
 // root cause as possible. This is made simple with Wrap.
 type Error struct {
-	Code    ErrCode    `json:"code"`
-	Message string     `json:"message"`
+	// Code is the error code to return.
+	Code ErrCode `json:"code"`
+	// Message is a descriptive message of the error.
+	Message string `json:"message"`
+	// Details are user-defined additional details.
 	Details ErrDetails `json:"details"`
-	Meta    Metadata   `json:"-"` // not exposed to external clients
+	// Meta are arbitrary key-value pairs for use within
+	// the Encore application. They are not exposed to external clients.
+	Meta Metadata `json:"-"`
 }
 
 // Metadata represents structured key-value pairs, for attaching arbitrary
