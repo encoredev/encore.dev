@@ -10,11 +10,18 @@ import (
 // It must be tested against with errors.Is.
 var ErrNoRows = sql.ErrNoRows
 
+// ExecResult is the result of an Exec query.
+type ExecResult interface {
+	// RowsAffected returns the number of rows affected. If the result was not
+	// for a row affecting command (e.g. "CREATE TABLE") then it returns 0.
+	RowsAffected() int64
+}
+
 // Exec executes a query without returning any rows.
 // The args are for any placeholder parameters in the query.
 //
 // See (*database/sql.DB).ExecContext() for additional documentation.
-func Exec(ctx context.Context, query string, args ...interface{}) (sql.Result, error) {
+func Exec(ctx context.Context, query string, args ...interface{}) (ExecResult, error) {
 	panic("encore apps must be run using the encore command")
 }
 
@@ -48,6 +55,42 @@ func Begin(ctx context.Context) (*Tx, error) {
 // Commit commits the given transaction.
 //
 // See (*database/sql.Tx).Commit() for additional documentation.
+func (*Tx) Commit() error {
+	panic("encore apps must be run using the encore command")
+}
+
+// Rollback rolls back the given transaction.
+//
+// See (*database/sql.Tx).Rollback() for additional documentation.
+func (*Tx) Rollback() error {
+	panic("encore apps must be run using the encore command")
+}
+
+// Exec is like Exec but executes the query in the given transaction.
+//
+// See (*database/sql.Tx).ExecContext() for additional documentation.
+func (*Tx) Exec(ctx context.Context, query string, args ...interface{}) (ExecResult, error) {
+	panic("encore apps must be run using the encore command")
+}
+
+// Query is like Query but executes the query in the given transaction.
+//
+// See (*database/sql.Tx).QueryContext() for additional documentation.
+func (*Tx) Query(ctx context.Context, query string, args ...interface{}) (*Rows, error) {
+	panic("encore apps must be run using the encore command")
+}
+
+// QueryRow is like QueryRow but executes the query in the given transaction.
+//
+// See (*database/sql.Tx).QueryRowContext() for additional documentation.
+func (*Tx) QueryRow(ctx context.Context, query string, args ...interface{}) *Row {
+	panic("encore apps must be run using the encore command")
+}
+
+// Commit commits the given transaction.
+//
+// See (*database/sql.Tx).Commit() for additional documentation.
+// Deprecated: use tx.Commit() instead.
 func Commit(tx *Tx) error {
 	panic("encore apps must be run using the encore command")
 }
@@ -55,6 +98,7 @@ func Commit(tx *Tx) error {
 // Rollback rolls back the given transaction.
 //
 // See (*database/sql.Tx).Rollback() for additional documentation.
+// Deprecated: use tx.Rollback() instead.
 func Rollback(tx *Tx) error {
 	panic("encore apps must be run using the encore command")
 }
@@ -62,13 +106,15 @@ func Rollback(tx *Tx) error {
 // ExecTx is like Exec but executes the query in the given transaction.
 //
 // See (*database/sql.Tx).ExecContext() for additional documentation.
-func ExecTx(tx *Tx, ctx context.Context, query string, args ...interface{}) (sql.Result, error) {
+// Deprecated: use tx.Exec() instead.
+func ExecTx(tx *Tx, ctx context.Context, query string, args ...interface{}) (ExecResult, error) {
 	panic("encore apps must be run using the encore command")
 }
 
 // QueryTx is like Query but executes the query in the given transaction.
 //
 // See (*database/sql.Tx).QueryContext() for additional documentation.
+// Deprecated: use tx.Query() instead.
 func QueryTx(tx *Tx, ctx context.Context, query string, args ...interface{}) (*Rows, error) {
 	panic("encore apps must be run using the encore command")
 }
@@ -76,6 +122,7 @@ func QueryTx(tx *Tx, ctx context.Context, query string, args ...interface{}) (*R
 // QueryRowTx is like QueryRow but executes the query in the given transaction.
 //
 // See (*database/sql.Tx).QueryRowContext() for additional documentation.
+// Deprecated: use tx.QueryRow() instead.
 func QueryRowTx(tx *Tx, ctx context.Context, query string, args ...interface{}) *Row {
 	panic("encore apps must be run using the encore command")
 }
@@ -132,5 +179,33 @@ type Row struct{}
 //
 // See (*database/sql.Row).Scan() for additional documentation.
 func (*Row) Scan(dest ...interface{}) error {
+	panic("encore apps must be run using the encore command")
+}
+
+// constStr is a string that can only be provided as a constant.
+type constStr string
+
+// Named returns a database object connected to the database with the given name.
+//
+// The name must be a string literal constant, to facilitate static analysis.
+func Named(name constStr) *Database {
+	panic("encore apps must be run using the encore command")
+}
+
+type Database struct{}
+
+func (*Database) Begin(ctx context.Context) (*Tx, error) {
+	panic("encore apps must be run using the encore command")
+}
+
+func (*Database) Exec(ctx context.Context, query string, args ...interface{}) (ExecResult, error) {
+	panic("encore apps must be run using the encore command")
+}
+
+func (*Database) Query(ctx context.Context, query string, args ...interface{}) (*Rows, error) {
+	panic("encore apps must be run using the encore command")
+}
+
+func (*Database) QueryRow(ctx context.Context, query string, args ...interface{}) *Row {
 	panic("encore apps must be run using the encore command")
 }
