@@ -209,3 +209,9 @@ func (*Database) Query(ctx context.Context, query string, args ...interface{}) (
 func (*Database) QueryRow(ctx context.Context, query string, args ...interface{}) *Row {
 	panic("encore apps must be run using the encore command")
 }
+
+// Stdlib returns a *sql.DB object that is connected to the same db,
+// for use with libraries that expect a *sql.DB.
+func (*Database) Stdlib() *sql.DB {
+	panic("encore apps must be run using the encore command")
+}
