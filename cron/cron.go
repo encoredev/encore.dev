@@ -1,6 +1,13 @@
 package cron
 
 type Job struct {
-	Name     string
-	Endpoint interface{}
+	ID          string
+	Name        string
+	Description string
+	Schedule    string
+	Endpoint    interface{}
+}
+
+func New(j *Job) *Job {
+	return j
 }
