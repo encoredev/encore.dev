@@ -21,7 +21,7 @@ package cron
 //
 // 		// Send a welcome email to everyone who signed up in the last two hours.
 // 		var _ = cron.NewJob("welcome-email", cron.JobConfig{
-// 			Name:     "Send welcome emails",
+// 			Title:    "Send welcome emails",
 // 			Every:    2 * cron.Hour,
 // 			Endpoint: SendWelcomeEmail,
 // 		})
@@ -42,8 +42,8 @@ func NewJob(id string, jobConfig JobConfig) *Job {
 // The fields provided in the JobConfig must be constant literals, as they are parsed
 // directly by the Encore Platform and are not actually executed at runtime.
 type JobConfig struct {
-	// Name is the descriptive name of the cron job, typically a short sentence like "Send welcome emails".
-	Name string
+	// Title is the descriptive title of the cron job, typically a short sentence like "Send welcome emails".
+	Title string
 
 	// Endpoint is the Encore API endpoint that should be called when the cron job executes.
 	// It must not take any parameters other than context.Conetxt; that is, its signature must be
@@ -71,8 +71,7 @@ type JobConfig struct {
 // about the cron job.
 type Job struct {
 	ID       string
-	Name     string
-	Doc      string
+	Title    string
 	Every    Duration
 	Schedule string
 	Endpoint interface{}
