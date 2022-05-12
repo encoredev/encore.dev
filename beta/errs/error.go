@@ -1,4 +1,6 @@
 // Package errs provides structured error handling for Encore applications.
+//
+// See https://encore.dev/docs/develop/errors for more information about how errors work within Encore applications.
 package errs
 
 import (
