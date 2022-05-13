@@ -1,3 +1,7 @@
+// Package rlog provides a simple logging interface which is integrated with Encore's
+// inbuilt distributed tracing.
+//
+// For more information about logging inside Encore applications see https://encore.dev/docs/observability/logging.
 package rlog
 
 // Debug logs a debug-level message.

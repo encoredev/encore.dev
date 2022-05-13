@@ -1,6 +1,6 @@
 // Package cron provides support for cron jobs: recurring tasks that run on a schedule.
 //
-// For more information about Encore's cron job support, see https://encore.dev/docs/cron-jobs.
+// For more information about Encore's cron job support, see https://encore.dev/docs/develop/cron-jobs.
 package cron
 
 // NewJob defines a new cron job. It is specially recognized by the Encore Parser

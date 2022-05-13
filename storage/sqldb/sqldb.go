@@ -1,3 +1,6 @@
+// Package sqldb provides Encore services direct access to their databases.
+//
+// For the documentation on how to use databases within Encore see https://encore.dev/docs/develop/databases.
 package sqldb
 
 import (
