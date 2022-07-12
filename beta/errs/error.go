@@ -80,18 +80,18 @@ func Details(err error) ErrDetails {
 }
 
 // Error reports the error code and message.
-func (e *Error) Error() string {
+func (*Error) Error() string {
 	panic("encore apps must be run using the encore command")
 }
 
 // ErrorMessage reports the error message, joining this
 // error's message with the messages from any underlying errors.
-func (e *Error) ErrorMessage() string {
+func (*Error) ErrorMessage() string {
 	panic("encore apps must be run using the encore command")
 }
 
 // Unwrap returns the underlying error, if any.
-func (e *Error) Unwrap() error {
+func (*Error) Unwrap() error {
 	panic("encore apps must be run using the encore command")
 }
 
@@ -99,7 +99,7 @@ func (e *Error) Unwrap() error {
 // The status code is computed with HTTPStatus.
 //
 // If err is nil it writes:
-// 	{"code": "ok", "message": "", "details": null}
+//     {"code": "ok", "message": "", "details": null}
 func HTTPError(w http.ResponseWriter, err error) {
 	panic("encore apps must be run using the encore command")
 }

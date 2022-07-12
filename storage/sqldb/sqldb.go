@@ -46,7 +46,9 @@ func QueryRow(ctx context.Context, query string, args ...interface{}) *Row {
 // Tx is a handle to a database transaction.
 //
 // See *database/sql.Tx for additional documentation.
-type Tx struct{}
+type Tx struct {
+	_ int // for godoc to show unexported fields
+}
 
 // Begin opens a new database transaction.
 //
@@ -134,14 +136,14 @@ func QueryRowTx(tx *Tx, ctx context.Context, query string, args ...interface{}) 
 // of the result set. Use Next to advance from row to row.
 //
 // See *database/sql.Rows for additional documentation.
-type Rows struct{}
+type Rows struct {
+	_ int // for godoc to show unexported fields
+}
 
 // Close closes the Rows, preventing further enumeration.
 //
 // See (*database/sql.Rows).Close() for additional documentation.
-func (*Rows) Close() error {
-	panic("encore apps must be run using the encore command")
-}
+func (*Rows) Close() { panic("encore apps must be run using the encore command") }
 
 // Scan copies the columns in the current row into the values pointed
 // at by dest. The number of values in dest must be the same as the
@@ -156,9 +158,7 @@ func (*Rows) Scan(dest ...interface{}) error {
 // Err may be called after an explicit or implicit Close.
 //
 // See (*database/sql.Rows).Err() for additional documentation.
-func (*Rows) Err() error {
-	panic("encore apps must be run using the encore command")
-}
+func (*Rows) Err() error { panic("encore apps must be run using the encore command") }
 
 // Next prepares the next result row for reading with the Scan method. It
 // returns true on success, or false if there is no next result row or an error
@@ -168,14 +168,14 @@ func (*Rows) Err() error {
 // Every call to Scan, even the first one, must be preceded by a call to Next.
 //
 // See (*database/sql.Rows).Next() for additional documentation.
-func (*Rows) Next() bool {
-	panic("encore apps must be run using the encore command")
-}
+func (*Rows) Next() bool { panic("encore apps must be run using the encore command") }
 
 // Row is the result of calling QueryRow to select a single row.
 //
 // See *database/sql.Row for additional documentation.
-type Row struct{}
+type Row struct {
+	_ int // for godoc to show unexported fields
+}
 
 // Scan copies the columns from the matched row into the values
 // pointed at by dest.
@@ -185,8 +185,9 @@ func (*Row) Scan(dest ...interface{}) error {
 	panic("encore apps must be run using the encore command")
 }
 
-// constStr is a string that can only be provided as a constant.
-type constStr string
+func (*Row) Err() error {
+	panic("encore apps must be run using the encore command")
+}
 
 // Named returns a database object connected to the database with the given name.
 //
@@ -195,10 +196,8 @@ func Named(name constStr) *Database {
 	panic("encore apps must be run using the encore command")
 }
 
-type Database struct{}
-
-func (*Database) Begin(ctx context.Context) (*Tx, error) {
-	panic("encore apps must be run using the encore command")
+type Database struct {
+	_ int // for godoc to show unexported fields
 }
 
 func (*Database) Exec(ctx context.Context, query string, args ...interface{}) (ExecResult, error) {
@@ -210,6 +209,10 @@ func (*Database) Query(ctx context.Context, query string, args ...interface{}) (
 }
 
 func (*Database) QueryRow(ctx context.Context, query string, args ...interface{}) *Row {
+	panic("encore apps must be run using the encore command")
+}
+
+func (*Database) Begin(ctx context.Context) (*Tx, error) {
 	panic("encore apps must be run using the encore command")
 }
 

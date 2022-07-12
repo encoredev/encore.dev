@@ -12,6 +12,9 @@ package cron
 // refactor the code and move the cron job definition to another package, Encore uses
 // this ID to keep track that it's the same cron job and not a different one.
 //
+// The ID must be defined in kebab-case, be no longer than 63 characters, start with
+// a letter and end with either a letter or number.
+//
 // The fields provided in the JobConfig must be constant literals, as they are parsed
 // directly by the Encore Platform and are not actually executed at runtime.
 //
@@ -48,7 +51,7 @@ type JobConfig struct {
 	// Endpoint is the Encore API endpoint that should be called when the cron job executes.
 	// It must not take any parameters other than context.Conetxt; that is, its signature must be
 	// either "func(context.Context) error" or "func(context.Context) (T, error)" for any type T.
-	Endpoint interface{}
+	Endpoint any
 
 	// Every defines how often the cron job should execute.
 	// You must either specify either Every or Schedule (but not both).

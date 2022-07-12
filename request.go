@@ -49,12 +49,6 @@ type PathParam struct {
 
 // Get returns the value of the path parameter with the given name.
 // If no such parameter exists it reports "".
-func (p PathParams) Get(name string) string {
-	for _, param := range p {
-		if param.Name == name {
-			return param.Value
-		}
-	}
-
-	return ""
+func (PathParams) Get(name string) string {
+	panic("encore apps must be run using the encore command")
 }
