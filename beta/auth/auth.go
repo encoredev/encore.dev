@@ -3,7 +3,9 @@
 // For more information about how authentication works with Encore applications see https://encore.dev/docs/develop/auth.
 package auth
 
-import "context"
+import (
+	"context"
+)
 
 // UID is a unique identifier representing a user (a user id).
 type UID string

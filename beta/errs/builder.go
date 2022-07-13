@@ -9,35 +9,35 @@ type Builder struct {
 }
 
 // B is a shorthand for creating a new Builder.
-func B() *Builder { return &Builder{} }
+func B() *Builder { panic("encore apps must be run using the encore command") }
 
 // Code sets the error code.
-func (b *Builder) Code(c ErrCode) *Builder {
+func (*Builder) Code(c ErrCode) *Builder {
 	panic("encore apps must be run using the encore command")
 }
 
 // Msg sets the error message.
-func (b *Builder) Msg(msg string) *Builder {
+func (*Builder) Msg(msg string) *Builder {
 	panic("encore apps must be run using the encore command")
 }
 
 // Msgf is like Msg but uses fmt.Sprintf to construct the message.
-func (b *Builder) Msgf(format string, args ...interface{}) *Builder {
+func (*Builder) Msgf(format string, args ...interface{}) *Builder {
 	panic("encore apps must be run using the encore command")
 }
 
 // Meta appends metadata key-value pairs.
-func (b *Builder) Meta(metaPairs ...interface{}) *Builder {
+func (*Builder) Meta(metaPairs ...interface{}) *Builder {
 	panic("encore apps must be run using the encore command")
 }
 
 // Details sets the details.
-func (b *Builder) Details(det ErrDetails) *Builder {
+func (*Builder) Details(det ErrDetails) *Builder {
 	panic("encore apps must be run using the encore command")
 }
 
 // Cause sets the underlying error cause.
-func (b *Builder) Cause(err error) *Builder {
+func (*Builder) Cause(err error) *Builder {
 	panic("encore apps must be run using the encore command")
 }
 
@@ -49,6 +49,6 @@ func (b *Builder) Cause(err error) *Builder {
 //
 // If Msg has not been set and Cause is nil,
 // the Msg is set to "unknown error".
-func (b *Builder) Err() error {
+func (*Builder) Err() error {
 	panic("encore apps must be run using the encore command")
 }
