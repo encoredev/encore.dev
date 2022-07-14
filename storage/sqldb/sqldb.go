@@ -189,6 +189,10 @@ func (*Row) Err() error {
 	panic("encore apps must be run using the encore command")
 }
 
+// constStr is a string that can only be provided as a constant.
+//
+type constStr string
+
 // Named returns a database object connected to the database with the given name.
 //
 // The name must be a string literal constant, to facilitate static analysis.
