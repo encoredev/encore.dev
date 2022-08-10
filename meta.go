@@ -5,13 +5,6 @@ import (
 	"time"
 )
 
-// Meta returns metadata about the running application.
-//
-// Meta will never return nil.
-func Meta() *AppMetadata {
-	panic("encore apps must be run using the encore command")
-}
-
 // AppMetadata contains metadata about the running Encore application.
 type AppMetadata struct {
 	// The application ID, if the application is not linked to the Encore platform this will be an empty string.
