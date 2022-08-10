@@ -1,17 +1,22 @@
 package encore
 
 import (
+	"reflect"
 	"time"
 )
 
-// CurrentRequest returns the Request that is currently being handled by the calling goroutine
-//
-// It is safe for concurrent use and will return a new Request on each evocation, so can be mutated by the
-// calling code without impacting future calls.
-//
-// CurrentRequest never returns nil.
-func CurrentRequest() *Request {
-	panic("encore apps must be run using the encore command")
+// APIDesc describes the API endpoint being called.
+type APIDesc struct {
+	// RequestType specifies the type of the request payload,
+	// or nil if the endpoint has no request payload or is Raw.
+	RequestType reflect.Type
+
+	// ResponseType specifies the type of the response payload,
+	// or nil if the endpoint has no response payload or is Raw.
+	ResponseType reflect.Type
+
+	// Raw specifies whether the endpoint is a Raw endpoint.
+	Raw bool
 }
 
 // Request provides metadata about how and why the currently running code was started.
@@ -23,18 +28,24 @@ type Request struct {
 
 	// APICall specific parameters.
 	// These will be empty for operations with a type not APICall
+	API        *APIDesc   // Metadata about the API endpoint being called
 	Service    string     // Which service is processing this request
-	Endpoint   string     // Which API endpoint was called.
-	Path       string     // What was the path made to the API server.
+	Endpoint   string     // Which API endpoint is being called
+	Path       string     // What was the path made to the API server
 	PathParams PathParams // If there are path parameters, what are they?
+
+	// Payload is the decoded request payload or Pub/Sub message payload,
+	// or nil if the API endpoint has no request payload or the endpoint is raw.
+	Payload any
 }
 
 // RequestType describes how the currently running code was triggered
 type RequestType string
 
 const (
-	None    RequestType = "none"     // There was no external trigger which caused this code to run. Most likely it was triggered by a package level init function.
-	APICall RequestType = "api-call" // The code was triggered via an API call to a service
+	None          RequestType = "none"           // There was no external trigger which caused this code to run. Most likely it was triggered by a package level init function.
+	APICall       RequestType = "api-call"       // The code was triggered via an API call to a service
+	PubSubMessage RequestType = "pubsub-message" // The code was triggered by a PubSub subscriber
 )
 
 // PathParams contains the path parameters parsed from the request path.
