@@ -222,24 +222,24 @@ func (*IntKeyspace[K]) Delete(ctx context.Context, keys ...K) (deleted int, err 
 // before incrementing.
 //
 // Negative values can be used to decrease the value,
-// but typically you want to use the Decr method for that.
+// but typically you want to use the Decrement method for that.
 //
 // See https://redis.io/commands/incrby/ for more information.
 func (*IntKeyspace[K]) Increment(ctx context.Context, key K, delta int64) (newVal int64, err error) {
 	panic("encore apps must be run using the encore command")
 }
 
-// Decr decrements the number stored in key by delta,
+// Decrement decrements the number stored in key by delta,
 // and returns the new value.
 //
 // If the key does not exist it is first created with a value of 0
 // before decrementing.
 //
 // Negative values can be used to increase the value,
-// but typically you want to use the Incr method for that.
+// but typically you want to use the Increment method for that.
 //
 // See https://redis.io/commands/decrby/ for more information.
-func (*IntKeyspace[K]) Decr(ctx context.Context, key K, delta int64) (newVal int64, err error) {
+func (*IntKeyspace[K]) Decrement(ctx context.Context, key K, delta int64) (newVal int64, err error) {
 	panic("encore apps must be run using the encore command")
 }
 
@@ -330,23 +330,23 @@ func (*FloatKeyspace[K]) Delete(ctx context.Context, keys ...K) (deleted int, er
 // before incrementing.
 //
 // Negative values can be used to decrease the value,
-// but typically you want to use the Decr method for that.
+// but typically you want to use the Decrement method for that.
 //
 // See https://redis.io/commands/incrbyfloat/ for more information.
 func (*FloatKeyspace[K]) Increment(ctx context.Context, key K, delta float64) (newVal float64, err error) {
 	panic("encore apps must be run using the encore command")
 }
 
-// Decr decrements the number stored in key by delta,
+// Decrement decrements the number stored in key by delta,
 // and returns the new value.
 //
 // If the key does not exist it is first created with a value of 0
 // before decrementing.
 //
 // Negative values can be used to increase the value,
-// but typically you want to use the Incr method for that.
+// but typically you want to use the Increment method for that.
 //
 // See https://redis.io/commands/incrbyfloat/ for more information.
-func (*FloatKeyspace[K]) Decr(ctx context.Context, key K, delta float64) (newVal float64, err error) {
+func (*FloatKeyspace[K]) Decrement(ctx context.Context, key K, delta float64) (newVal float64, err error) {
 	panic("encore apps must be run using the encore command")
 }
