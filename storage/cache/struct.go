@@ -21,7 +21,8 @@ type StructKeyspace[K, V any] struct {
 // The primary use case is for overriding the expiration time for certain cache operations.
 //
 // It is intended to be used with method chaining:
-//		myKeyspace.With(cache.ExpireIn(3 * time.Second)).Set(...)
+//
+//	myKeyspace.With(cache.ExpireIn(3 * time.Second)).Set(...)
 func (*StructKeyspace[K, V]) With(opts ...WriteOption) *StructKeyspace[K, V] {
 	panic("encore apps must be run using the encore command")
 }

@@ -123,7 +123,6 @@ type WriteOption interface {
 type ExpiryFunc func(now time.Time) time.Time
 
 // option implements WriteOption.
-//
 func (ExpiryFunc) writeOption() {}
 
 // ExpireIn returns an ExpiryFunc that expires keys after a constant duration.
@@ -138,7 +137,6 @@ func ExpireDailyAt(hour, minute, second int, loc *time.Location) ExpiryFunc {
 }
 
 // expiryTime is a type for time constants that are also WriteOptions.
-//
 type expiryTime time.Time
 
 func (expiryTime) writeOption() {}

@@ -1,6 +1,6 @@
 // Package encore provides the runtime API contract, which Encore applications are build against.
 //
-// Encore – The Backend Development Engine
+// # Encore – The Backend Development Engine
 //
 // https://encore.dev
 //
@@ -18,8 +18,7 @@
 //
 // For more information visit the website https://encore.dev or the documentation at https://encore.dev/docs.
 //
-//
-// Package encore
+// # Package encore
 //
 // This package provides the APIs for getting AppMetadata about the current application and the CurrentRequest.
 // For more information see https://encore.dev/docs/develop/metadata.

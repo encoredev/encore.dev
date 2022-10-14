@@ -31,7 +31,8 @@ type ListKeyspace[K any, V BasicType] struct {
 // The primary use case is for overriding the expiration time for certain cache operations.
 //
 // It is intended to be used with method chaining:
-//		myKeyspace.With(cache.ExpireIn(3 * time.Second)).Set(...)
+//
+//	myKeyspace.With(cache.ExpireIn(3 * time.Second)).Set(...)
 func (*ListKeyspace[K, V]) With(opts ...WriteOption) *ListKeyspace[K, V] {
 	panic("encore apps must be run using the encore command")
 }
@@ -52,7 +53,9 @@ func (*ListKeyspace[K, V]) Delete(ctx context.Context, keys ...K) (deleted int, 
 //
 // If multiple values are given, they are inserted one after another,
 // starting with the leftmost value. For instance,
-//		PushLeft(ctx, "mylist", "a", "b", "c")
+//
+//	PushLeft(ctx, "mylist", "a", "b", "c")
+//
 // will result in a list containing "c" as its first element,
 // "b" as its second element, and "a" as its third element.
 //
@@ -66,7 +69,9 @@ func (*ListKeyspace[K, V]) PushLeft(ctx context.Context, key K, values ...V) (ne
 //
 // If multiple values are given, they are inserted one after another,
 // starting with the leftmost value. For instance,
-//		PushRight(ctx, "mylist", "a", "b", "c")
+//
+//	PushRight(ctx, "mylist", "a", "b", "c")
+//
 // will result in a list containing "c" as its last element,
 // "b" as its second to last element, and "a" as its third-to-last element.
 //

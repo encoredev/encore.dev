@@ -13,9 +13,8 @@ func UserID() (UID, bool) {
 //
 // Expected usage is to immediately cast it to the registered auth data type:
 //
-//   usr, ok := auth.Data().(*user.Data)
-//   if !ok { /* ... */ }
-//
+//	usr, ok := auth.Data().(*user.Data)
+//	if !ok { /* ... */ }
 func Data() any {
 	panic("encore apps must be run using the encore command")
 }

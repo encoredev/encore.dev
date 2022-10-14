@@ -75,7 +75,6 @@ func QueryRowTx(tx *Tx, ctx context.Context, query string, args ...interface{}) 
 }
 
 // constStr is a string that can only be provided as a constant.
-//
 type constStr string
 
 // Named returns a database object connected to the database with the given name.
