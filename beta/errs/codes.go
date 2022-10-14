@@ -157,14 +157,12 @@ const (
 )
 
 // String returns the string representation of c.
-//
 func (c ErrCode) String() string {
 	return codeNames[c]
 }
 
 // HTTPStatus reports a suitable HTTP status code for an error, based on its code.
 // If err is nil it reports 200. If it's not an *Error it reports 500.
-//
 func (c ErrCode) HTTPStatus() int {
 	return codeStatus[c]
 }

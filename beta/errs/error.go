@@ -99,7 +99,8 @@ func (*Error) Unwrap() error {
 // The status code is computed with HTTPStatus.
 //
 // If err is nil it writes:
-//     {"code": "ok", "message": "", "details": null}
+//
+//	{"code": "ok", "message": "", "details": null}
 func HTTPError(w http.ResponseWriter, err error) {
 	panic("encore apps must be run using the encore command")
 }

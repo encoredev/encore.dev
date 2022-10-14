@@ -21,25 +21,25 @@ type Subscription[T any] struct {
 //
 // Example:
 //
-//     import "encore.dev/pubsub"
+//	import "encore.dev/pubsub"
 //
-//     type MyEvent struct {
-//       Foo string
-//     }
+//	type MyEvent struct {
+//	  Foo string
+//	}
 //
-//     var MyTopic = pubsub.NewTopic[*MyEvent]("my-topic", pubsub.TopicConfig{
-//       DeliveryGuarantee: pubsub.AtLeastOnce,
-//     })
+//	var MyTopic = pubsub.NewTopic[*MyEvent]("my-topic", pubsub.TopicConfig{
+//	  DeliveryGuarantee: pubsub.AtLeastOnce,
+//	})
 //
-//     var Subscription = pubsub.NewSubscription(MyTopic, "my-subscription", pubsub.SubscriptionConfig[*MyEvent]{
-//       Handler:     HandleEvent,
-//       RetryPolicy: &pubsub.RetryPolicy { MaxRetries: 10 },
-//     })
+//	var Subscription = pubsub.NewSubscription(MyTopic, "my-subscription", pubsub.SubscriptionConfig[*MyEvent]{
+//	  Handler:     HandleEvent,
+//	  RetryPolicy: &pubsub.RetryPolicy { MaxRetries: 10 },
+//	})
 //
-//     func HandleEvent(ctx context.Context, event *MyEvent) error {
-//       rlog.Info("received foo")
-//       return nil
-//     }
+//	func HandleEvent(ctx context.Context, event *MyEvent) error {
+//	  rlog.Info("received foo")
+//	  return nil
+//	}
 func NewSubscription[T any](topic *Topic[T], name string, subscriptionCfg SubscriptionConfig[T]) *Subscription[T] {
 	panic("encore apps must be run using the encore command")
 }

@@ -79,7 +79,8 @@ func (*StringKeyspace[K]) Delete(ctx context.Context, keys ...K) (deleted int, e
 // The primary use case is for overriding the expiration time for certain cache operations.
 //
 // It is intended to be used with method chaining:
-//		myKeyspace.With(cache.ExpireIn(3 * time.Second)).Set(...)
+//
+//	myKeyspace.With(cache.ExpireIn(3 * time.Second)).Set(...)
 func (*StringKeyspace[K]) With(opts ...WriteOption) *StringKeyspace[K] {
 	panic("encore apps must be run using the encore command")
 }
@@ -152,7 +153,8 @@ type IntKeyspace[K any] struct {
 // The primary use case is for overriding the expiration time for certain cache operations.
 //
 // It is intended to be used with method chaining:
-//		myKeyspace.With(cache.ExpireIn(3 * time.Second)).Set(...)
+//
+//	myKeyspace.With(cache.ExpireIn(3 * time.Second)).Set(...)
 func (*IntKeyspace[K]) With(opts ...WriteOption) *IntKeyspace[K] {
 	panic("encore apps must be run using the encore command")
 }
@@ -260,7 +262,8 @@ type FloatKeyspace[K any] struct {
 // The primary use case is for overriding the expiration time for certain cache operations.
 //
 // It is intended to be used with method chaining:
-//		myKeyspace.With(cache.ExpireIn(3 * time.Second)).Set(...)
+//
+//	myKeyspace.With(cache.ExpireIn(3 * time.Second)).Set(...)
 func (*FloatKeyspace[K]) With(opts ...WriteOption) *FloatKeyspace[K] {
 	panic("encore apps must be run using the encore command")
 }
