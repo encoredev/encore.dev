@@ -12,6 +12,12 @@ type Database struct {
 // Stdlib returns a *sql.DB object that is connected to the same db,
 // for use with libraries that expect a *sql.DB.
 func (*Database) Stdlib() *sql.DB {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/49a2d858ee8ab00336b162540061e232e9d3f70e/runtime/storage/sqldb/db.go#L46-L77
 	panic("encore apps must be run using the encore command")
 }
 
@@ -20,6 +26,12 @@ func (*Database) Stdlib() *sql.DB {
 //
 // See (*database/sql.DB).ExecContext() for additional documentation.
 func (*Database) Exec(ctx context.Context, query string, args ...interface{}) (ExecResult, error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/49a2d858ee8ab00336b162540061e232e9d3f70e/runtime/storage/sqldb/db.go#L152-L176
 	panic("encore apps must be run using the encore command")
 }
 
@@ -28,6 +40,12 @@ func (*Database) Exec(ctx context.Context, query string, args ...interface{}) (E
 //
 // See (*database/sql.DB).QueryContext() for additional documentation.
 func (*Database) Query(ctx context.Context, query string, args ...interface{}) (*Rows, error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/49a2d858ee8ab00336b162540061e232e9d3f70e/runtime/storage/sqldb/db.go#L182-L209
 	panic("encore apps must be run using the encore command")
 }
 
@@ -35,6 +53,12 @@ func (*Database) Query(ctx context.Context, query string, args ...interface{}) (
 //
 // See (*database/sql.DB).QueryRowContext() for additional documentation.
 func (*Database) QueryRow(ctx context.Context, query string, args ...interface{}) *Row {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/49a2d858ee8ab00336b162540061e232e9d3f70e/runtime/storage/sqldb/db.go#L214-L239
 	panic("encore apps must be run using the encore command")
 }
 
@@ -42,5 +66,11 @@ func (*Database) QueryRow(ctx context.Context, query string, args ...interface{}
 //
 // See (*database/sql.DB).Begin() for additional documentation.
 func (*Database) Begin(ctx context.Context) (*Tx, error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/49a2d858ee8ab00336b162540061e232e9d3f70e/runtime/storage/sqldb/db.go#L244-L264
 	panic("encore apps must be run using the encore command")
 }

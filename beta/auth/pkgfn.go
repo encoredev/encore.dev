@@ -4,6 +4,12 @@ package auth
 // The second result is true if there is a user and false
 // if the request was made without authentication details.
 func UserID() (UID, bool) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/49a2d858ee8ab00336b162540061e232e9d3f70e/runtime/beta/auth/pkgfn.go#L11-L13
 	panic("encore apps must be run using the encore command")
 }
 
@@ -16,5 +22,11 @@ func UserID() (UID, bool) {
 //	usr, ok := auth.Data().(*user.Data)
 //	if !ok { /* ... */ }
 func Data() any {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/49a2d858ee8ab00336b162540061e232e9d3f70e/runtime/beta/auth/pkgfn.go#L24-L26
 	panic("encore apps must be run using the encore command")
 }

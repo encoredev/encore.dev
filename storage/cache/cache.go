@@ -95,10 +95,22 @@ type OpError struct {
 }
 
 func (*OpError) Error() string {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/49a2d858ee8ab00336b162540061e232e9d3f70e/runtime/storage/cache/cache.go#L120-L122
 	panic("encore apps must be run using the encore command")
 }
 
 func (*OpError) Unwrap() error {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/49a2d858ee8ab00336b162540061e232e9d3f70e/runtime/storage/cache/cache.go#L124-L126
 	panic("encore apps must be run using the encore command")
 }
 
@@ -127,12 +139,24 @@ func (ExpiryFunc) writeOption() {}
 
 // ExpireIn returns an ExpiryFunc that expires keys after a constant duration.
 func ExpireIn(dur time.Duration) ExpiryFunc {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/49a2d858ee8ab00336b162540061e232e9d3f70e/runtime/storage/cache/cache.go#L166-L168
 	panic("encore apps must be run using the encore command")
 }
 
 // ExpireDailyAt returns an ExpiryFunc that expires keys daily at the given time of day in loc.
 // ExpireDailyAt panics if loc is nil.
 func ExpireDailyAt(hour, minute, second int, loc *time.Location) ExpiryFunc {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/49a2d858ee8ab00336b162540061e232e9d3f70e/runtime/storage/cache/cache.go#L172-L182
 	panic("encore apps must be run using the encore command")
 }
 

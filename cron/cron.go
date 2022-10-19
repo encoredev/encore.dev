@@ -37,6 +37,12 @@ package cron
 //		return nil
 //	}
 func NewJob(id string, jobConfig JobConfig) *Job {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/49a2d858ee8ab00336b162540061e232e9d3f70e/runtime/cron/cron.go#L39-L47
 	panic("encore apps must be run using the encore command")
 }
 
