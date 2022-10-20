@@ -9,6 +9,12 @@ import (
 // The type parameter K specifies the key type, which can either be a
 // named struct type or a basic type (string, int, etc).
 func NewStringKeyspace[K any](cluster *Cluster, cfg KeyspaceConfig) *StringKeyspace[K] {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/basic.go#L16-L25
 	panic("encore apps must be run using the encore command")
 }
 
@@ -22,6 +28,12 @@ type StringKeyspace[K any] struct {
 //
 // See https://redis.io/commands/get/ for more information.
 func (*StringKeyspace[K]) Get(ctx context.Context, key K) (string, error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/basic.go#L36-L38
 	panic("encore apps must be run using the encore command")
 }
 
@@ -29,6 +41,12 @@ func (*StringKeyspace[K]) Get(ctx context.Context, key K) (string, error) {
 //
 // See https://redis.io/commands/set/ for more information.
 func (*StringKeyspace[K]) Set(ctx context.Context, key K, val string) error {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/basic.go#L43-L45
 	panic("encore apps must be run using the encore command")
 }
 
@@ -37,6 +55,12 @@ func (*StringKeyspace[K]) Set(ctx context.Context, key K, val string) error {
 //
 // See https://redis.io/commands/setnx/ for more information.
 func (*StringKeyspace[K]) SetIfNotExists(ctx context.Context, key K, val string) error {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/basic.go#L51-L53
 	panic("encore apps must be run using the encore command")
 }
 
@@ -45,6 +69,12 @@ func (*StringKeyspace[K]) SetIfNotExists(ctx context.Context, key K, val string)
 //
 // See https://redis.io/commands/set/ for more information.
 func (*StringKeyspace[K]) Replace(ctx context.Context, key K, val string) error {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/basic.go#L59-L61
 	panic("encore apps must be run using the encore command")
 }
 
@@ -53,6 +83,12 @@ func (*StringKeyspace[K]) Replace(ctx context.Context, key K, val string) error 
 //
 // See https://redis.io/commands/getset/ for more information.
 func (*StringKeyspace[K]) GetAndSet(ctx context.Context, key K, val string) (oldVal string, err error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/basic.go#L67-L69
 	panic("encore apps must be run using the encore command")
 }
 
@@ -61,6 +97,12 @@ func (*StringKeyspace[K]) GetAndSet(ctx context.Context, key K, val string) (old
 //
 // See https://redis.io/commands/getdel/ for more information.
 func (*StringKeyspace[K]) GetAndDelete(ctx context.Context, key K) (oldVal string, err error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/basic.go#L75-L77
 	panic("encore apps must be run using the encore command")
 }
 
@@ -72,6 +114,12 @@ func (*StringKeyspace[K]) GetAndDelete(ctx context.Context, key K) (oldVal strin
 //
 // See https://redis.io/commands/del/ for more information.
 func (*StringKeyspace[K]) Delete(ctx context.Context, keys ...K) (deleted int, err error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/basic.go#L86-L88
 	panic("encore apps must be run using the encore command")
 }
 
@@ -82,6 +130,12 @@ func (*StringKeyspace[K]) Delete(ctx context.Context, keys ...K) (deleted int, e
 //
 //	myKeyspace.With(cache.ExpireIn(3 * time.Second)).Set(...)
 func (*StringKeyspace[K]) With(opts ...WriteOption) *StringKeyspace[K] {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/basic.go#L95-L97
 	panic("encore apps must be run using the encore command")
 }
 
@@ -94,6 +148,12 @@ func (*StringKeyspace[K]) With(opts ...WriteOption) *StringKeyspace[K] {
 //
 // See https://redis.io/commands/append/ for more information.
 func (*StringKeyspace[K]) Append(ctx context.Context, key K, val string) (newLen int64, err error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/basic.go#L107-L120
 	panic("encore apps must be run using the encore command")
 }
 
@@ -110,6 +170,12 @@ func (*StringKeyspace[K]) Append(ctx context.Context, key K, val string) (newLen
 //
 // See https://redis.io/commands/setrange/ for more information.
 func (*StringKeyspace[K]) GetRange(ctx context.Context, key K, from, to int64) (val string, err error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/basic.go#L134-L145
 	panic("encore apps must be run using the encore command")
 }
 
@@ -124,6 +190,12 @@ func (*StringKeyspace[K]) GetRange(ctx context.Context, key K, from, to int64) (
 //
 // See https://redis.io/commands/setrange/ for more information.
 func (*StringKeyspace[K]) SetRange(ctx context.Context, key K, offset int64, val string) (newLen int64, err error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/basic.go#L157-L170
 	panic("encore apps must be run using the encore command")
 }
 
@@ -133,6 +205,12 @@ func (*StringKeyspace[K]) SetRange(ctx context.Context, key K, offset int64, val
 //
 // See https://redis.io/commands/strlen/ for more information.
 func (*StringKeyspace[K]) Len(ctx context.Context, key K) (length int64, err error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/basic.go#L177-L188
 	panic("encore apps must be run using the encore command")
 }
 
@@ -141,6 +219,12 @@ func (*StringKeyspace[K]) Len(ctx context.Context, key K) (length int64, err err
 // The type parameter K specifies the key type, which can either be a
 // named struct type or a basic type (string, int, etc).
 func NewIntKeyspace[K any](cluster *Cluster, cfg KeyspaceConfig) *IntKeyspace[K] {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/basic.go#L194-L203
 	panic("encore apps must be run using the encore command")
 }
 
@@ -156,6 +240,12 @@ type IntKeyspace[K any] struct {
 //
 //	myKeyspace.With(cache.ExpireIn(3 * time.Second)).Set(...)
 func (*IntKeyspace[K]) With(opts ...WriteOption) *IntKeyspace[K] {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/basic.go#L215-L217
 	panic("encore apps must be run using the encore command")
 }
 
@@ -164,6 +254,12 @@ func (*IntKeyspace[K]) With(opts ...WriteOption) *IntKeyspace[K] {
 //
 // See https://redis.io/commands/get/ for more information.
 func (*IntKeyspace[K]) Get(ctx context.Context, key K) (int64, error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/basic.go#L223-L225
 	panic("encore apps must be run using the encore command")
 }
 
@@ -171,6 +267,12 @@ func (*IntKeyspace[K]) Get(ctx context.Context, key K) (int64, error) {
 //
 // See https://redis.io/commands/set/ for more information.
 func (*IntKeyspace[K]) Set(ctx context.Context, key K, val int64) error {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/basic.go#L230-L232
 	panic("encore apps must be run using the encore command")
 }
 
@@ -179,6 +281,12 @@ func (*IntKeyspace[K]) Set(ctx context.Context, key K, val int64) error {
 //
 // See https://redis.io/commands/setnx/ for more information.
 func (*IntKeyspace[K]) SetIfNotExists(ctx context.Context, key K, val int64) error {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/basic.go#L238-L240
 	panic("encore apps must be run using the encore command")
 }
 
@@ -187,6 +295,12 @@ func (*IntKeyspace[K]) SetIfNotExists(ctx context.Context, key K, val int64) err
 //
 // See https://redis.io/commands/set/ for more information.
 func (*IntKeyspace[K]) Replace(ctx context.Context, key K, val int64) error {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/basic.go#L246-L248
 	panic("encore apps must be run using the encore command")
 }
 
@@ -195,6 +309,12 @@ func (*IntKeyspace[K]) Replace(ctx context.Context, key K, val int64) error {
 //
 // See https://redis.io/commands/getset/ for more information.
 func (*IntKeyspace[K]) GetAndSet(ctx context.Context, key K, val int64) (oldVal int64, err error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/basic.go#L254-L256
 	panic("encore apps must be run using the encore command")
 }
 
@@ -203,6 +323,12 @@ func (*IntKeyspace[K]) GetAndSet(ctx context.Context, key K, val int64) (oldVal 
 //
 // See https://redis.io/commands/getdel/ for more information.
 func (*IntKeyspace[K]) GetAndDelete(ctx context.Context, key K) (oldVal int64, err error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/basic.go#L262-L264
 	panic("encore apps must be run using the encore command")
 }
 
@@ -214,6 +340,12 @@ func (*IntKeyspace[K]) GetAndDelete(ctx context.Context, key K) (oldVal int64, e
 //
 // See https://redis.io/commands/del/ for more information.
 func (*IntKeyspace[K]) Delete(ctx context.Context, keys ...K) (deleted int, err error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/basic.go#L273-L275
 	panic("encore apps must be run using the encore command")
 }
 
@@ -228,6 +360,12 @@ func (*IntKeyspace[K]) Delete(ctx context.Context, keys ...K) (deleted int, err 
 //
 // See https://redis.io/commands/incrby/ for more information.
 func (*IntKeyspace[K]) Increment(ctx context.Context, key K, delta int64) (newVal int64, err error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/basic.go#L287-L300
 	panic("encore apps must be run using the encore command")
 }
 
@@ -242,6 +380,12 @@ func (*IntKeyspace[K]) Increment(ctx context.Context, key K, delta int64) (newVa
 //
 // See https://redis.io/commands/decrby/ for more information.
 func (*IntKeyspace[K]) Decrement(ctx context.Context, key K, delta int64) (newVal int64, err error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/basic.go#L312-L326
 	panic("encore apps must be run using the encore command")
 }
 
@@ -250,6 +394,12 @@ func (*IntKeyspace[K]) Decrement(ctx context.Context, key K, delta int64) (newVa
 // The type parameter K specifies the key type, which can either be a
 // named struct type or a basic type (string, int, etc).
 func NewFloatKeyspace[K any](cluster *Cluster, cfg KeyspaceConfig) *FloatKeyspace[K] {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/basic.go#L332-L341
 	panic("encore apps must be run using the encore command")
 }
 
@@ -265,6 +415,12 @@ type FloatKeyspace[K any] struct {
 //
 //	myKeyspace.With(cache.ExpireIn(3 * time.Second)).Set(...)
 func (*FloatKeyspace[K]) With(opts ...WriteOption) *FloatKeyspace[K] {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/basic.go#L353-L355
 	panic("encore apps must be run using the encore command")
 }
 
@@ -273,6 +429,12 @@ func (*FloatKeyspace[K]) With(opts ...WriteOption) *FloatKeyspace[K] {
 //
 // See https://redis.io/commands/get/ for more information.
 func (*FloatKeyspace[K]) Get(ctx context.Context, key K) (float64, error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/basic.go#L361-L363
 	panic("encore apps must be run using the encore command")
 }
 
@@ -280,6 +442,12 @@ func (*FloatKeyspace[K]) Get(ctx context.Context, key K) (float64, error) {
 //
 // See https://redis.io/commands/set/ for more information.
 func (*FloatKeyspace[K]) Set(ctx context.Context, key K, val float64) error {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/basic.go#L368-L370
 	panic("encore apps must be run using the encore command")
 }
 
@@ -288,6 +456,12 @@ func (*FloatKeyspace[K]) Set(ctx context.Context, key K, val float64) error {
 //
 // See https://redis.io/commands/setnx/ for more information.
 func (*FloatKeyspace[K]) SetIfNotExists(ctx context.Context, key K, val float64) error {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/basic.go#L376-L378
 	panic("encore apps must be run using the encore command")
 }
 
@@ -296,6 +470,12 @@ func (*FloatKeyspace[K]) SetIfNotExists(ctx context.Context, key K, val float64)
 //
 // See https://redis.io/commands/set/ for more information.
 func (*FloatKeyspace[K]) Replace(ctx context.Context, key K, val float64) error {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/basic.go#L384-L386
 	panic("encore apps must be run using the encore command")
 }
 
@@ -304,6 +484,12 @@ func (*FloatKeyspace[K]) Replace(ctx context.Context, key K, val float64) error 
 //
 // See https://redis.io/commands/getset/ for more information.
 func (*FloatKeyspace[K]) GetAndSet(ctx context.Context, key K, val float64) (oldVal float64, err error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/basic.go#L392-L394
 	panic("encore apps must be run using the encore command")
 }
 
@@ -312,6 +498,12 @@ func (*FloatKeyspace[K]) GetAndSet(ctx context.Context, key K, val float64) (old
 //
 // See https://redis.io/commands/getdel/ for more information.
 func (*FloatKeyspace[K]) GetAndDelete(ctx context.Context, key K) (oldVal float64, err error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/basic.go#L400-L402
 	panic("encore apps must be run using the encore command")
 }
 
@@ -323,6 +515,12 @@ func (*FloatKeyspace[K]) GetAndDelete(ctx context.Context, key K) (oldVal float6
 //
 // See https://redis.io/commands/del/ for more information.
 func (*FloatKeyspace[K]) Delete(ctx context.Context, keys ...K) (deleted int, err error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/basic.go#L411-L413
 	panic("encore apps must be run using the encore command")
 }
 
@@ -337,6 +535,12 @@ func (*FloatKeyspace[K]) Delete(ctx context.Context, keys ...K) (deleted int, er
 //
 // See https://redis.io/commands/incrbyfloat/ for more information.
 func (*FloatKeyspace[K]) Increment(ctx context.Context, key K, delta float64) (newVal float64, err error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/basic.go#L425-L438
 	panic("encore apps must be run using the encore command")
 }
 
@@ -351,5 +555,11 @@ func (*FloatKeyspace[K]) Increment(ctx context.Context, key K, delta float64) (n
 //
 // See https://redis.io/commands/incrbyfloat/ for more information.
 func (*FloatKeyspace[K]) Decrement(ctx context.Context, key K, delta float64) (newVal float64, err error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/basic.go#L450-L463
 	panic("encore apps must be run using the encore command")
 }

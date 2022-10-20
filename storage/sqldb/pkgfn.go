@@ -9,6 +9,12 @@ import (
 //
 // See (*database/sql.DB).ExecContext() for additional documentation.
 func Exec(ctx context.Context, query string, args ...interface{}) (ExecResult, error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/sqldb/pkgfn.go#L13-L15
 	panic("encore apps must be run using the encore command")
 }
 
@@ -17,6 +23,12 @@ func Exec(ctx context.Context, query string, args ...interface{}) (ExecResult, e
 //
 // See (*database/sql.DB).QueryContext() for additional documentation.
 func Query(ctx context.Context, query string, args ...interface{}) (*Rows, error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/sqldb/pkgfn.go#L21-L23
 	panic("encore apps must be run using the encore command")
 }
 
@@ -24,6 +36,12 @@ func Query(ctx context.Context, query string, args ...interface{}) (*Rows, error
 //
 // See (*database/sql.DB).QueryRowContext() for additional documentation.
 func QueryRow(ctx context.Context, query string, args ...interface{}) *Row {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/sqldb/pkgfn.go#L28-L30
 	panic("encore apps must be run using the encore command")
 }
 
@@ -31,6 +49,12 @@ func QueryRow(ctx context.Context, query string, args ...interface{}) *Row {
 //
 // See (*database/sql.DB).Begin() for additional documentation.
 func Begin(ctx context.Context) (*Tx, error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/sqldb/pkgfn.go#L35-L37
 	panic("encore apps must be run using the encore command")
 }
 
@@ -39,6 +63,12 @@ func Begin(ctx context.Context) (*Tx, error) {
 // See (*database/sql.Tx).Commit() for additional documentation.
 // Deprecated: use tx.Commit() instead.
 func Commit(tx *Tx) error {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/sqldb/pkgfn.go#L43-L45
 	panic("encore apps must be run using the encore command")
 }
 
@@ -47,6 +77,12 @@ func Commit(tx *Tx) error {
 // See (*database/sql.Tx).Rollback() for additional documentation.
 // Deprecated: use tx.Rollback() instead.
 func Rollback(tx *Tx) error {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/sqldb/pkgfn.go#L51-L53
 	panic("encore apps must be run using the encore command")
 }
 
@@ -55,6 +91,12 @@ func Rollback(tx *Tx) error {
 // See (*database/sql.Tx).ExecContext() for additional documentation.
 // Deprecated: use tx.Exec() instead.
 func ExecTx(tx *Tx, ctx context.Context, query string, args ...interface{}) (ExecResult, error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/sqldb/pkgfn.go#L59-L61
 	panic("encore apps must be run using the encore command")
 }
 
@@ -63,6 +105,12 @@ func ExecTx(tx *Tx, ctx context.Context, query string, args ...interface{}) (Exe
 // See (*database/sql.Tx).QueryContext() for additional documentation.
 // Deprecated: use tx.Query() instead.
 func QueryTx(tx *Tx, ctx context.Context, query string, args ...interface{}) (*Rows, error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/sqldb/pkgfn.go#L67-L69
 	panic("encore apps must be run using the encore command")
 }
 
@@ -71,6 +119,12 @@ func QueryTx(tx *Tx, ctx context.Context, query string, args ...interface{}) (*R
 // See (*database/sql.Tx).QueryRowContext() for additional documentation.
 // Deprecated: use tx.QueryRow() instead.
 func QueryRowTx(tx *Tx, ctx context.Context, query string, args ...interface{}) *Row {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/sqldb/pkgfn.go#L75-L77
 	panic("encore apps must be run using the encore command")
 }
 
@@ -81,5 +135,11 @@ type constStr string
 //
 // The name must be a string literal constant, to facilitate static analysis.
 func Named(name constStr) *Database {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/sqldb/pkgfn.go#L86-L88
 	panic("encore apps must be run using the encore command")
 }

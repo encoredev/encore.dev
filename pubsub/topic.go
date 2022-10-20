@@ -21,5 +21,11 @@ type Topic[T any] struct {
 // If an error is returned, it is probable that the message failed to be published, however it is possible
 // that the message could still be received by subscriptions to the topic.
 func (*Topic[T]) Publish(ctx context.Context, msg T) (id string, err error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/pubsub/topic.go#L66-L103
 	panic("encore apps must be run using the encore command")
 }

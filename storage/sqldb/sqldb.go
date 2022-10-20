@@ -29,22 +29,58 @@ type Tx struct {
 // Commit commits the given transaction.
 //
 // See (*database/sql.Tx).Commit() for additional documentation.
-func (*Tx) Commit() error { panic("encore apps must be run using the encore command") }
+func (*Tx) Commit() error {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//
+	//	https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/sqldb/sqldb.go#L42-L42
+	panic("encore apps must be run using the encore command")
+}
 
 // Rollback rolls back the given transaction.
 //
 // See (*database/sql.Tx).Rollback() for additional documentation.
-func (*Tx) Rollback() error { panic("encore apps must be run using the encore command") }
+func (*Tx) Rollback() error {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//
+	//	https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/sqldb/sqldb.go#L47-L47
+	panic("encore apps must be run using the encore command")
+}
 
 func (*Tx) Exec(ctx context.Context, query string, args ...interface{}) (ExecResult, error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/sqldb/sqldb.go#L85-L87
 	panic("encore apps must be run using the encore command")
 }
 
 func (*Tx) Query(ctx context.Context, query string, args ...interface{}) (*Rows, error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/sqldb/sqldb.go#L114-L140
 	panic("encore apps must be run using the encore command")
 }
 
 func (*Tx) QueryRow(ctx context.Context, query string, args ...interface{}) *Row {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/sqldb/sqldb.go#L142-L168
 	panic("encore apps must be run using the encore command")
 }
 
@@ -59,7 +95,16 @@ type Rows struct {
 // Close closes the Rows, preventing further enumeration.
 //
 // See (*database/sql.Rows).Close() for additional documentation.
-func (*Rows) Close() { panic("encore apps must be run using the encore command") }
+func (*Rows) Close() {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//
+	//	https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/sqldb/sqldb.go#L181-L181
+	panic("encore apps must be run using the encore command")
+}
 
 // Scan copies the columns in the current row into the values pointed
 // at by dest. The number of values in dest must be the same as the
@@ -67,6 +112,12 @@ func (*Rows) Close() { panic("encore apps must be run using the encore command")
 //
 // See (*database/sql.Rows).Scan() for additional documentation.
 func (*Rows) Scan(dest ...interface{}) error {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/sqldb/sqldb.go#L188-L188
 	panic("encore apps must be run using the encore command")
 }
 
@@ -74,7 +125,16 @@ func (*Rows) Scan(dest ...interface{}) error {
 // Err may be called after an explicit or implicit Close.
 //
 // See (*database/sql.Rows).Err() for additional documentation.
-func (*Rows) Err() error { panic("encore apps must be run using the encore command") }
+func (*Rows) Err() error {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//
+	//	https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/sqldb/sqldb.go#L194-L194
+	panic("encore apps must be run using the encore command")
+}
 
 // Next prepares the next result row for reading with the Scan method. It
 // returns true on success, or false if there is no next result row or an error
@@ -84,7 +144,16 @@ func (*Rows) Err() error { panic("encore apps must be run using the encore comma
 // Every call to Scan, even the first one, must be preceded by a call to Next.
 //
 // See (*database/sql.Rows).Next() for additional documentation.
-func (*Rows) Next() bool { panic("encore apps must be run using the encore command") }
+func (*Rows) Next() bool {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//
+	//	https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/sqldb/sqldb.go#L204-L204
+	panic("encore apps must be run using the encore command")
+}
 
 // Row is the result of calling QueryRow to select a single row.
 //
@@ -98,9 +167,21 @@ type Row struct {
 //
 // See (*database/sql.Row).Scan() for additional documentation.
 func (*Row) Scan(dest ...interface{}) error {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/sqldb/sqldb.go#L218-L231
 	panic("encore apps must be run using the encore command")
 }
 
 func (*Row) Err() error {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/sqldb/sqldb.go#L233-L238
 	panic("encore apps must be run using the encore command")
 }

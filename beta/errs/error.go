@@ -44,12 +44,24 @@ type Metadata map[string]interface{}
 // If err is already an *Error its code, message, and details
 // are copied over to the new error.
 func Wrap(err error, msg string, metaPairs ...interface{}) error {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/beta/errs/error.go#L66-L82
 	panic("encore apps must be run using the encore command")
 }
 
 // WrapCode is like Wrap but also sets the error code.
 // If code is OK it reports nil.
 func WrapCode(err error, code ErrCode, msg string, metaPairs ...interface{}) error {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/beta/errs/error.go#L86-L102
 	panic("encore apps must be run using the encore command")
 }
 
@@ -57,6 +69,12 @@ func WrapCode(err error, code ErrCode, msg string, metaPairs ...interface{}) err
 // If the error is already an *Error it returns it unmodified.
 // If err is nil it returns nil.
 func Convert(err error) error {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/beta/errs/error.go#L107-L118
 	panic("encore apps must be run using the encore command")
 }
 
@@ -64,34 +82,70 @@ func Convert(err error) error {
 // If err is nil it reports OK.
 // Otherwise if err is not an *Error it reports Unknown.
 func Code(err error) ErrCode {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/beta/errs/error.go#L123-L130
 	panic("encore apps must be run using the encore command")
 }
 
 // Meta reports the metadata included in the error.
 // If err is nil or the error lacks metadata it reports nil.
 func Meta(err error) Metadata {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/beta/errs/error.go#L134-L139
 	panic("encore apps must be run using the encore command")
 }
 
 // Details reports the error details included in the error.
 // If err is nil or the error lacks details it reports nil.
 func Details(err error) ErrDetails {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/beta/errs/error.go#L143-L148
 	panic("encore apps must be run using the encore command")
 }
 
 // Error reports the error code and message.
 func (*Error) Error() string {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/beta/errs/error.go#L151-L153
 	panic("encore apps must be run using the encore command")
 }
 
 // ErrorMessage reports the error message, joining this
 // error's message with the messages from any underlying errors.
 func (*Error) ErrorMessage() string {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/beta/errs/error.go#L157-L181
 	panic("encore apps must be run using the encore command")
 }
 
 // Unwrap returns the underlying error, if any.
 func (*Error) Unwrap() error {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/beta/errs/error.go#L184-L186
 	panic("encore apps must be run using the encore command")
 }
 
@@ -102,5 +156,11 @@ func (*Error) Unwrap() error {
 //
 //	{"code": "ok", "message": "", "details": null}
 func HTTPError(w http.ResponseWriter, err error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/beta/errs/error.go#L193-L195
 	panic("encore apps must be run using the encore command")
 }

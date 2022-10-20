@@ -41,16 +41,34 @@ type Request struct {
 
 // WithContext returns a new Request with the context set to ctx.
 func (*Request) WithContext(ctx context.Context) Request {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/middleware/middleware.go#L44-L48
 	panic("encore apps must be run using the encore command")
 }
 
 // Context reports the request's context.
 func (*Request) Context() context.Context {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/middleware/middleware.go#L51-L53
 	panic("encore apps must be run using the encore command")
 }
 
 // Data returns information about the request.
 func (*Request) Data() *encore.Request {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/middleware/middleware.go#L56-L58
 	panic("encore apps must be run using the encore command")
 }
 
@@ -94,5 +112,11 @@ type Response struct {
 // NewRequest constructs a new Request that returns the given context and request data.
 // It is primarily used for testing middleware.
 func NewRequest(ctx context.Context, data *encore.Request) Request {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/middleware/middleware.go#L99-L104
 	panic("encore apps must be run using the encore command")
 }

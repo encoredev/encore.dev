@@ -9,6 +9,12 @@ import "context"
 //
 // The value parameter V specifies the named struct type that should be stored.
 func NewStructKeyspace[K, V any](cluster *Cluster, cfg KeyspaceConfig) *StructKeyspace[K, V] {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/struct.go#L11-L27
 	panic("encore apps must be run using the encore command")
 }
 
@@ -24,6 +30,12 @@ type StructKeyspace[K, V any] struct {
 //
 //	myKeyspace.With(cache.ExpireIn(3 * time.Second)).Set(...)
 func (*StructKeyspace[K, V]) With(opts ...WriteOption) *StructKeyspace[K, V] {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/struct.go#L39-L41
 	panic("encore apps must be run using the encore command")
 }
 
@@ -32,6 +44,12 @@ func (*StructKeyspace[K, V]) With(opts ...WriteOption) *StructKeyspace[K, V] {
 //
 // See https://redis.io/commands/get/ for more information.
 func (*StructKeyspace[K, V]) Get(ctx context.Context, key K) (V, error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/struct.go#L47-L49
 	panic("encore apps must be run using the encore command")
 }
 
@@ -39,6 +57,12 @@ func (*StructKeyspace[K, V]) Get(ctx context.Context, key K) (V, error) {
 //
 // See https://redis.io/commands/set/ for more information.
 func (*StructKeyspace[K, V]) Set(ctx context.Context, key K, val V) error {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/struct.go#L54-L56
 	panic("encore apps must be run using the encore command")
 }
 
@@ -47,6 +71,12 @@ func (*StructKeyspace[K, V]) Set(ctx context.Context, key K, val V) error {
 //
 // See https://redis.io/commands/setnx/ for more information.
 func (*StructKeyspace[K, V]) SetIfNotExists(ctx context.Context, key K, val V) error {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/struct.go#L62-L64
 	panic("encore apps must be run using the encore command")
 }
 
@@ -55,6 +85,12 @@ func (*StructKeyspace[K, V]) SetIfNotExists(ctx context.Context, key K, val V) e
 //
 // See https://redis.io/commands/set/ for more information.
 func (*StructKeyspace[K, V]) Replace(ctx context.Context, key K, val V) error {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/struct.go#L70-L72
 	panic("encore apps must be run using the encore command")
 }
 
@@ -63,6 +99,12 @@ func (*StructKeyspace[K, V]) Replace(ctx context.Context, key K, val V) error {
 //
 // See https://redis.io/commands/getset/ for more information.
 func (*StructKeyspace[K, V]) GetAndSet(ctx context.Context, key K, val V) (oldVal V, err error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/struct.go#L78-L80
 	panic("encore apps must be run using the encore command")
 }
 
@@ -71,6 +113,12 @@ func (*StructKeyspace[K, V]) GetAndSet(ctx context.Context, key K, val V) (oldVa
 //
 // See https://redis.io/commands/getdel/ for more information.
 func (*StructKeyspace[K, V]) GetAndDelete(ctx context.Context, key K) (oldVal V, err error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/struct.go#L86-L88
 	panic("encore apps must be run using the encore command")
 }
 
@@ -82,5 +130,11 @@ func (*StructKeyspace[K, V]) GetAndDelete(ctx context.Context, key K) (oldVal V,
 //
 // See https://redis.io/commands/del/ for more information.
 func (*StructKeyspace[K, V]) Delete(ctx context.Context, keys ...K) (deleted int, err error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/cache/struct.go#L97-L99
 	panic("encore apps must be run using the encore command")
 }

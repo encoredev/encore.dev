@@ -23,5 +23,11 @@ type UID string
 // API calls made with these options will not be made and will immediately return
 // a client-side error.
 func WithContext(ctx context.Context, uid UID, data interface{}) context.Context {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/beta/auth/auth.go#L53-L57
 	panic("encore apps must be run using the encore command")
 }
