@@ -9,7 +9,7 @@ func UserID() (UID, bool) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/49a2d858ee8ab00336b162540061e232e9d3f70e/runtime/beta/auth/pkgfn.go#L11-L13
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/beta/auth/pkgfn.go#L11-L13
 	panic("encore apps must be run using the encore command")
 }
 
@@ -27,6 +27,6 @@ func Data() any {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/49a2d858ee8ab00336b162540061e232e9d3f70e/runtime/beta/auth/pkgfn.go#L24-L26
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/beta/auth/pkgfn.go#L24-L26
 	panic("encore apps must be run using the encore command")
 }

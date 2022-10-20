@@ -8,7 +8,7 @@ func Debug(msg string, keysAndValues ...interface{}) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/49a2d858ee8ab00336b162540061e232e9d3f70e/runtime/rlog/pkgfn.go#L10-L12
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/rlog/pkgfn.go#L10-L12
 	panic("encore apps must be run using the encore command")
 }
 
@@ -20,7 +20,7 @@ func Info(msg string, keysAndValues ...interface{}) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/49a2d858ee8ab00336b162540061e232e9d3f70e/runtime/rlog/pkgfn.go#L16-L18
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/rlog/pkgfn.go#L16-L18
 	panic("encore apps must be run using the encore command")
 }
 
@@ -32,7 +32,7 @@ func Error(msg string, keysAndValues ...interface{}) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/49a2d858ee8ab00336b162540061e232e9d3f70e/runtime/rlog/pkgfn.go#L22-L24
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/rlog/pkgfn.go#L22-L24
 	panic("encore apps must be run using the encore command")
 }
 
@@ -44,6 +44,6 @@ func With(keysAndValues ...interface{}) Ctx {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/49a2d858ee8ab00336b162540061e232e9d3f70e/runtime/rlog/pkgfn.go#L28-L30
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/rlog/pkgfn.go#L28-L30
 	panic("encore apps must be run using the encore command")
 }

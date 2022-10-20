@@ -8,13 +8,21 @@ package config
 
 // Load returns the fully loaded configuration for this service.
 //
-// Note: This function can only be called from within services.
+// The configuration is loaded from the CUE files in the service directory and
+// will be validated by Encore at compile time, which ensures this function will
+// return a valid configuration at runtime.
+//
+// Encore will generate a `encore.gen.cue` file in the service directory which
+// will contain generated CUE matching the configuration type T.
+//
+// Note: This function can only be called from within services and cannot be
+// referenced from other services.
 func Load[T any]() T {
 	// Encore will provide an implementation to this function at runtime, we do not expose
 	// the implementation in the API contract as it is an implementation detail, which may change
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/49a2d858ee8ab00336b162540061e232e9d3f70e/runtime/config/config.go#L32-L52
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/config/pkgfn.go#L25-L41
 	panic("encore apps must be run using the encore command")
 }

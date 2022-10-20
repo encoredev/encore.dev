@@ -19,7 +19,7 @@ func (Ctx) Debug(msg string, keysAndValues ...interface{}) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/49a2d858ee8ab00336b162540061e232e9d3f70e/runtime/rlog/rlog.go#L62-L65
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/rlog/rlog.go#L62-L65
 	panic("encore apps must be run using the encore command")
 }
 
@@ -32,7 +32,7 @@ func (Ctx) Info(msg string, keysAndValues ...interface{}) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/49a2d858ee8ab00336b162540061e232e9d3f70e/runtime/rlog/rlog.go#L70-L73
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/rlog/rlog.go#L70-L73
 	panic("encore apps must be run using the encore command")
 }
 
@@ -45,7 +45,7 @@ func (Ctx) Error(msg string, keysAndValues ...interface{}) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/49a2d858ee8ab00336b162540061e232e9d3f70e/runtime/rlog/rlog.go#L78-L81
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/rlog/rlog.go#L78-L81
 	panic("encore apps must be run using the encore command")
 }
 
@@ -58,6 +58,6 @@ func (Ctx) With(keysAndValues ...interface{}) Ctx {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/49a2d858ee8ab00336b162540061e232e9d3f70e/runtime/rlog/rlog.go#L86-L94
+	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/rlog/rlog.go#L86-L94
 	panic("encore apps must be run using the encore command")
 }
