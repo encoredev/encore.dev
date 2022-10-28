@@ -8,7 +8,7 @@ func Debug(msg string, keysAndValues ...interface{}) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/rlog/pkgfn.go#L10-L12
+	//    https://github.com/encoredev/encore/blob/v1.9.3/runtime/rlog/pkgfn.go#L10-L12
 	panic("encore apps must be run using the encore command")
 }
 
@@ -20,7 +20,19 @@ func Info(msg string, keysAndValues ...interface{}) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/rlog/pkgfn.go#L16-L18
+	//    https://github.com/encoredev/encore/blob/v1.9.3/runtime/rlog/pkgfn.go#L16-L18
+	panic("encore apps must be run using the encore command")
+}
+
+// Warn logs a warn-level message.
+// The variadic key-value pairs are treated as they are in With.
+func Warn(msg string, keysAndValues ...interface{}) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.3/runtime/rlog/pkgfn.go#L22-L24
 	panic("encore apps must be run using the encore command")
 }
 
@@ -32,7 +44,7 @@ func Error(msg string, keysAndValues ...interface{}) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/rlog/pkgfn.go#L22-L24
+	//    https://github.com/encoredev/encore/blob/v1.9.3/runtime/rlog/pkgfn.go#L28-L30
 	panic("encore apps must be run using the encore command")
 }
 
@@ -44,6 +56,6 @@ func With(keysAndValues ...interface{}) Ctx {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/rlog/pkgfn.go#L28-L30
+	//    https://github.com/encoredev/encore/blob/v1.9.3/runtime/rlog/pkgfn.go#L34-L36
 	panic("encore apps must be run using the encore command")
 }

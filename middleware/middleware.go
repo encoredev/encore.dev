@@ -46,7 +46,7 @@ func (*Request) WithContext(ctx context.Context) Request {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/middleware/middleware.go#L44-L48
+	//    https://github.com/encoredev/encore/blob/v1.9.3/runtime/middleware/middleware.go#L44-L48
 	panic("encore apps must be run using the encore command")
 }
 
@@ -57,7 +57,7 @@ func (*Request) Context() context.Context {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/middleware/middleware.go#L51-L53
+	//    https://github.com/encoredev/encore/blob/v1.9.3/runtime/middleware/middleware.go#L51-L53
 	panic("encore apps must be run using the encore command")
 }
 
@@ -68,7 +68,7 @@ func (*Request) Data() *encore.Request {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/middleware/middleware.go#L56-L58
+	//    https://github.com/encoredev/encore/blob/v1.9.3/runtime/middleware/middleware.go#L56-L58
 	panic("encore apps must be run using the encore command")
 }
 
@@ -98,13 +98,13 @@ type Response struct {
 
 	// HTTPStatus is the HTTP status code the response is written with.
 	//
-	// For non-raw handlers it is zero by default and Encore chooses an appropriate
-	// status code depending on the type of error being returned (or 200 for success),
-	// but setting HTTPStatus to a non-zero value causes Encore to write the response
-	// with that HTTP status code value instead.
+	// If zero is returned from middleware, Encore will choose an appropriate status code based
+	// status code depending on the type of error being returned (or 200 for success).
 	//
-	// For raw handlers it is automatically populated with the status code
-	// written by the API handler, and middleware cannot modify this as it has already
+	// If a non-zero value is returned from a middleware, Encore will use that status code
+	// regardless of what Err is set to.
+	//
+	// For raw handlers middleware cannot modify this as it has already
 	// been written to the network.
 	HTTPStatus int
 }
@@ -117,6 +117,6 @@ func NewRequest(ctx context.Context, data *encore.Request) Request {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/middleware/middleware.go#L99-L104
+	//    https://github.com/encoredev/encore/blob/v1.9.3/runtime/middleware/middleware.go#L99-L104
 	panic("encore apps must be run using the encore command")
 }
