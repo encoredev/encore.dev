@@ -17,7 +17,7 @@ func (*Database) Stdlib() *sql.DB {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/sqldb/db.go#L46-L77
+	//    https://github.com/encoredev/encore/blob/v1.9.3/runtime/storage/sqldb/db.go#L46-L77
 	panic("encore apps must be run using the encore command")
 }
 
@@ -31,7 +31,7 @@ func (*Database) Exec(ctx context.Context, query string, args ...interface{}) (E
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/sqldb/db.go#L152-L176
+	//    https://github.com/encoredev/encore/blob/v1.9.3/runtime/storage/sqldb/db.go#L152-L176
 	panic("encore apps must be run using the encore command")
 }
 
@@ -45,7 +45,7 @@ func (*Database) Query(ctx context.Context, query string, args ...interface{}) (
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/sqldb/db.go#L182-L209
+	//    https://github.com/encoredev/encore/blob/v1.9.3/runtime/storage/sqldb/db.go#L182-L209
 	panic("encore apps must be run using the encore command")
 }
 
@@ -58,7 +58,7 @@ func (*Database) QueryRow(ctx context.Context, query string, args ...interface{}
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/sqldb/db.go#L214-L239
+	//    https://github.com/encoredev/encore/blob/v1.9.3/runtime/storage/sqldb/db.go#L214-L239
 	panic("encore apps must be run using the encore command")
 }
 
@@ -71,6 +71,6 @@ func (*Database) Begin(ctx context.Context) (*Tx, error) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/storage/sqldb/db.go#L244-L264
+	//    https://github.com/encoredev/encore/blob/v1.9.3/runtime/storage/sqldb/db.go#L244-L264
 	panic("encore apps must be run using the encore command")
 }

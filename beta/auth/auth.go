@@ -28,6 +28,6 @@ func WithContext(ctx context.Context, uid UID, data interface{}) context.Context
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/beta/auth/auth.go#L53-L57
+	//    https://github.com/encoredev/encore/blob/v1.9.3/runtime/beta/auth/auth.go#L53-L57
 	panic("encore apps must be run using the encore command")
 }

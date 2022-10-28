@@ -19,7 +19,7 @@ func (Ctx) Debug(msg string, keysAndValues ...interface{}) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/rlog/rlog.go#L62-L65
+	//    https://github.com/encoredev/encore/blob/v1.9.3/runtime/rlog/rlog.go#L76-L79
 	panic("encore apps must be run using the encore command")
 }
 
@@ -32,7 +32,20 @@ func (Ctx) Info(msg string, keysAndValues ...interface{}) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/rlog/rlog.go#L70-L73
+	//    https://github.com/encoredev/encore/blob/v1.9.3/runtime/rlog/rlog.go#L84-L87
+	panic("encore apps must be run using the encore command")
+}
+
+// Warn logs a warn-level message, merging the context from ctx
+// with the additional context provided as key-value pairs.
+// The variadic key-value pairs are treated as they are in With.
+func (Ctx) Warn(msg string, keysAndValues ...interface{}) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.9.3/runtime/rlog/rlog.go#L92-L95
 	panic("encore apps must be run using the encore command")
 }
 
@@ -45,7 +58,7 @@ func (Ctx) Error(msg string, keysAndValues ...interface{}) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/rlog/rlog.go#L78-L81
+	//    https://github.com/encoredev/encore/blob/v1.9.3/runtime/rlog/rlog.go#L100-L103
 	panic("encore apps must be run using the encore command")
 }
 
@@ -58,6 +71,6 @@ func (Ctx) With(keysAndValues ...interface{}) Ctx {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/rlog/rlog.go#L86-L94
+	//    https://github.com/encoredev/encore/blob/v1.9.3/runtime/rlog/rlog.go#L108-L116
 	panic("encore apps must be run using the encore command")
 }

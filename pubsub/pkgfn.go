@@ -40,6 +40,6 @@ func NewTopic[T any](name string, cfg TopicConfig) *Topic[T] {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.9.0/runtime/pubsub/pkgfn.go#L42-L44
+	//    https://github.com/encoredev/encore/blob/v1.9.3/runtime/pubsub/pkgfn.go#L42-L44
 	panic("encore apps must be run using the encore command")
 }
