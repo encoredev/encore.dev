@@ -1,17 +1,13 @@
-// Package auth provides the APIs to get information about the authenticated users.
-//
-// For more information about how authentication works with Encore applications see https://encore.dev/docs/develop/auth.
-package auth
+package et
 
 import (
-	"context"
+	"encore.dev/beta/auth"
 )
 
-// UID is a unique identifier representing a user (a user id).
-type UID string
-
-// WithContext returns a new context that sets the auth information for outgoing API calls.
-// It does not affect the auth information for the current request.
+// OverrideAuthInfo overrides the auth information for the current request.
+// Subsequent calls to auth.UserID and auth.Data() within the same request
+// will return the given uid and data, and API calls made from the request
+// will propagate the newly set user info.
 //
 // Passing in an empty string as the uid results in unsetting the auth information,
 // causing future API calls to behave as if there was no authenticated user.
@@ -22,12 +18,15 @@ type UID string
 // the empty string then data may not be nil. If these requirements are not met,
 // API calls made with these options will not be made and will immediately return
 // a client-side error.
-func WithContext(ctx context.Context, uid UID, data interface{}) context.Context {
+//
+// OverrideAuthInfo is not safe for concurrent use with code that invokes
+// auth.UserID or auth.Data() within the same request.
+func OverrideAuthInfo(uid auth.UID, data any) {
 	// Encore will provide an implementation to this function at runtime, we do not expose
 	// the implementation in the API contract as it is an implementation detail, which may change
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/beta/auth/auth.go#L63-L67
+	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/et/auth.go#L27-L29
 	panic("encore apps must be run using the encore command")
 }

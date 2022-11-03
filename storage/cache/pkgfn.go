@@ -9,6 +9,6 @@ func NewCluster(name string, cfg ClusterConfig) *Cluster {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.9.3/runtime/storage/cache/pkgfn.go#L11-L17
+	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/storage/cache/pkgfn.go#L11-L17
 	panic("encore apps must be run using the encore command")
 }

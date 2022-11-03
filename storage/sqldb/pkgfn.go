@@ -14,7 +14,7 @@ func Exec(ctx context.Context, query string, args ...interface{}) (ExecResult, e
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.9.3/runtime/storage/sqldb/pkgfn.go#L13-L15
+	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/storage/sqldb/pkgfn.go#L13-L15
 	panic("encore apps must be run using the encore command")
 }
 
@@ -28,7 +28,7 @@ func Query(ctx context.Context, query string, args ...interface{}) (*Rows, error
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.9.3/runtime/storage/sqldb/pkgfn.go#L21-L23
+	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/storage/sqldb/pkgfn.go#L21-L23
 	panic("encore apps must be run using the encore command")
 }
 
@@ -41,7 +41,7 @@ func QueryRow(ctx context.Context, query string, args ...interface{}) *Row {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.9.3/runtime/storage/sqldb/pkgfn.go#L28-L30
+	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/storage/sqldb/pkgfn.go#L28-L30
 	panic("encore apps must be run using the encore command")
 }
 
@@ -54,7 +54,7 @@ func Begin(ctx context.Context) (*Tx, error) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.9.3/runtime/storage/sqldb/pkgfn.go#L35-L37
+	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/storage/sqldb/pkgfn.go#L35-L37
 	panic("encore apps must be run using the encore command")
 }
 
@@ -68,7 +68,7 @@ func Commit(tx *Tx) error {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.9.3/runtime/storage/sqldb/pkgfn.go#L43-L45
+	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/storage/sqldb/pkgfn.go#L43-L45
 	panic("encore apps must be run using the encore command")
 }
 
@@ -82,7 +82,7 @@ func Rollback(tx *Tx) error {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.9.3/runtime/storage/sqldb/pkgfn.go#L51-L53
+	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/storage/sqldb/pkgfn.go#L51-L53
 	panic("encore apps must be run using the encore command")
 }
 
@@ -96,7 +96,7 @@ func ExecTx(tx *Tx, ctx context.Context, query string, args ...interface{}) (Exe
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.9.3/runtime/storage/sqldb/pkgfn.go#L59-L61
+	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/storage/sqldb/pkgfn.go#L59-L61
 	panic("encore apps must be run using the encore command")
 }
 
@@ -110,7 +110,7 @@ func QueryTx(tx *Tx, ctx context.Context, query string, args ...interface{}) (*R
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.9.3/runtime/storage/sqldb/pkgfn.go#L67-L69
+	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/storage/sqldb/pkgfn.go#L67-L69
 	panic("encore apps must be run using the encore command")
 }
 
@@ -124,7 +124,7 @@ func QueryRowTx(tx *Tx, ctx context.Context, query string, args ...interface{}) 
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.9.3/runtime/storage/sqldb/pkgfn.go#L75-L77
+	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/storage/sqldb/pkgfn.go#L75-L77
 	panic("encore apps must be run using the encore command")
 }
 
@@ -140,6 +140,6 @@ func Named(name constStr) *Database {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.9.3/runtime/storage/sqldb/pkgfn.go#L86-L88
+	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/storage/sqldb/pkgfn.go#L86-L88
 	panic("encore apps must be run using the encore command")
 }
