@@ -42,7 +42,7 @@ func NewJob(id string, jobConfig JobConfig) *Job {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/cron/cron.go#L39-L47
+	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/cron/cron.go#L39-L47
 	panic("encore apps must be run using the encore command")
 }
 
