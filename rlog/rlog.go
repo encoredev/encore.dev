@@ -19,7 +19,7 @@ func (Ctx) Debug(msg string, keysAndValues ...interface{}) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/rlog/rlog.go#L76-L79
+	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/rlog/rlog.go#L84-L87
 	panic("encore apps must be run using the encore command")
 }
 
@@ -32,7 +32,7 @@ func (Ctx) Info(msg string, keysAndValues ...interface{}) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/rlog/rlog.go#L84-L87
+	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/rlog/rlog.go#L92-L95
 	panic("encore apps must be run using the encore command")
 }
 
@@ -45,7 +45,7 @@ func (Ctx) Warn(msg string, keysAndValues ...interface{}) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/rlog/rlog.go#L92-L95
+	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/rlog/rlog.go#L100-L103
 	panic("encore apps must be run using the encore command")
 }
 
@@ -58,7 +58,7 @@ func (Ctx) Error(msg string, keysAndValues ...interface{}) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/rlog/rlog.go#L100-L103
+	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/rlog/rlog.go#L108-L111
 	panic("encore apps must be run using the encore command")
 }
 
@@ -71,6 +71,6 @@ func (Ctx) With(keysAndValues ...interface{}) Ctx {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/rlog/rlog.go#L108-L116
+	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/rlog/rlog.go#L116-L124
 	panic("encore apps must be run using the encore command")
 }

@@ -17,7 +17,7 @@ func NewSetKeyspace[K any, V BasicType](cluster *Cluster, cfg KeyspaceConfig) *S
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/storage/cache/set.go#L17-L24
+	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/storage/cache/set.go#L17-L24
 	panic("encore apps must be run using the encore command")
 }
 
@@ -39,7 +39,7 @@ func (*SetKeyspace[K, V]) With(opts ...WriteOption) *SetKeyspace[K, V] {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/storage/cache/set.go#L37-L39
+	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/storage/cache/set.go#L37-L39
 	panic("encore apps must be run using the encore command")
 }
 
@@ -56,7 +56,7 @@ func (*SetKeyspace[K, V]) Delete(ctx context.Context, keys ...K) (deleted int, e
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/storage/cache/set.go#L48-L50
+	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/storage/cache/set.go#L48-L50
 	panic("encore apps must be run using the encore command")
 }
 
@@ -73,7 +73,7 @@ func (*SetKeyspace[K, V]) Add(ctx context.Context, key K, values ...V) (added in
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/storage/cache/set.go#L59-L74
+	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/storage/cache/set.go#L59-L74
 	panic("encore apps must be run using the encore command")
 }
 
@@ -91,7 +91,7 @@ func (*SetKeyspace[K, V]) Remove(ctx context.Context, key K, values ...V) (remov
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/storage/cache/set.go#L84-L99
+	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/storage/cache/set.go#L84-L99
 	panic("encore apps must be run using the encore command")
 }
 
@@ -106,7 +106,7 @@ func (*SetKeyspace[K, V]) PopOne(ctx context.Context, key K) (val V, err error) 
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/storage/cache/set.go#L106-L123
+	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/storage/cache/set.go#L106-L123
 	panic("encore apps must be run using the encore command")
 }
 
@@ -122,7 +122,7 @@ func (*SetKeyspace[K, V]) Pop(ctx context.Context, key K, count int) (values []V
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/storage/cache/set.go#L131-L148
+	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/storage/cache/set.go#L131-L148
 	panic("encore apps must be run using the encore command")
 }
 
@@ -137,7 +137,7 @@ func (*SetKeyspace[K, V]) Contains(ctx context.Context, key K, val V) (contains 
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/storage/cache/set.go#L155-L166
+	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/storage/cache/set.go#L155-L166
 	panic("encore apps must be run using the encore command")
 }
 
@@ -152,7 +152,7 @@ func (*SetKeyspace[K, V]) Len(ctx context.Context, key K) (length int64, err err
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/storage/cache/set.go#L173-L184
+	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/storage/cache/set.go#L173-L184
 	panic("encore apps must be run using the encore command")
 }
 
@@ -167,7 +167,7 @@ func (*SetKeyspace[K, V]) Items(ctx context.Context, key K) (values []V, err err
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/storage/cache/set.go#L191-L203
+	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/storage/cache/set.go#L191-L203
 	panic("encore apps must be run using the encore command")
 }
 
@@ -182,7 +182,7 @@ func (*SetKeyspace[K, V]) ItemsMap(ctx context.Context, key K) (values map[V]str
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/storage/cache/set.go#L210-L223
+	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/storage/cache/set.go#L210-L223
 	panic("encore apps must be run using the encore command")
 }
 
@@ -202,7 +202,7 @@ func (*SetKeyspace[K, V]) Diff(ctx context.Context, keys ...K) ([]V, error) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/storage/cache/set.go#L241-L248
+	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/storage/cache/set.go#L241-L248
 	panic("encore apps must be run using the encore command")
 }
 
@@ -215,7 +215,7 @@ func (*SetKeyspace[K, V]) DiffMap(ctx context.Context, keys ...K) (map[V]struct{
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/storage/cache/set.go#L253-L260
+	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/storage/cache/set.go#L253-L260
 	panic("encore apps must be run using the encore command")
 }
 
@@ -230,7 +230,7 @@ func (*SetKeyspace[K, V]) DiffStore(ctx context.Context, destination K, keys ...
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/storage/cache/set.go#L281-L300
+	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/storage/cache/set.go#L281-L300
 	panic("encore apps must be run using the encore command")
 }
 
@@ -250,7 +250,7 @@ func (*SetKeyspace[K, V]) Intersect(ctx context.Context, keys ...K) ([]V, error)
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/storage/cache/set.go#L312-L319
+	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/storage/cache/set.go#L312-L319
 	panic("encore apps must be run using the encore command")
 }
 
@@ -263,7 +263,7 @@ func (*SetKeyspace[K, V]) IntersectMap(ctx context.Context, keys ...K) (map[V]st
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/storage/cache/set.go#L324-L331
+	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/storage/cache/set.go#L324-L331
 	panic("encore apps must be run using the encore command")
 }
 
@@ -278,7 +278,7 @@ func (*SetKeyspace[K, V]) IntersectStore(ctx context.Context, destination K, key
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/storage/cache/set.go#L353-L370
+	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/storage/cache/set.go#L353-L370
 	panic("encore apps must be run using the encore command")
 }
 
@@ -297,7 +297,7 @@ func (*SetKeyspace[K, V]) Union(ctx context.Context, keys ...K) ([]V, error) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/storage/cache/set.go#L381-L388
+	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/storage/cache/set.go#L381-L388
 	panic("encore apps must be run using the encore command")
 }
 
@@ -310,7 +310,7 @@ func (*SetKeyspace[K, V]) UnionMap(ctx context.Context, keys ...K) (map[V]struct
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/storage/cache/set.go#L393-L400
+	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/storage/cache/set.go#L393-L400
 	panic("encore apps must be run using the encore command")
 }
 
@@ -325,7 +325,7 @@ func (*SetKeyspace[K, V]) UnionStore(ctx context.Context, destination K, keys ..
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/storage/cache/set.go#L423-L439
+	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/storage/cache/set.go#L423-L439
 	panic("encore apps must be run using the encore command")
 }
 
@@ -340,7 +340,7 @@ func (*SetKeyspace[K, V]) SampleOne(ctx context.Context, key K) (val V, err erro
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/storage/cache/set.go#L446-L460
+	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/storage/cache/set.go#L446-L460
 	panic("encore apps must be run using the encore command")
 }
 
@@ -356,7 +356,7 @@ func (*SetKeyspace[K, V]) Sample(ctx context.Context, key K, count int) (values 
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/storage/cache/set.go#L468-L489
+	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/storage/cache/set.go#L468-L489
 	panic("encore apps must be run using the encore command")
 }
 
@@ -372,7 +372,7 @@ func (*SetKeyspace[K, V]) SampleWithReplacement(ctx context.Context, key K, coun
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/storage/cache/set.go#L497-L518
+	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/storage/cache/set.go#L497-L518
 	panic("encore apps must be run using the encore command")
 }
 
@@ -389,6 +389,6 @@ func (*SetKeyspace[K, V]) Move(ctx context.Context, src, dst K, val V) (moved bo
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/storage/cache/set.go#L527-L540
+	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/storage/cache/set.go#L527-L540
 	panic("encore apps must be run using the encore command")
 }

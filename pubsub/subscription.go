@@ -46,6 +46,6 @@ func NewSubscription[T any](topic *Topic[T], name string, subscriptionCfg Subscr
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.10.1/runtime/pubsub/subscription.go#L54-L178
+	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/pubsub/subscription.go#L56-L211
 	panic("encore apps must be run using the encore command")
 }
