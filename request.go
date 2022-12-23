@@ -26,6 +26,10 @@ type Request struct {
 	Type    RequestType // What caused this request to start
 	Started time.Time   // What time the trigger occurred
 
+	// Trace contains the trace information for the current request.
+	// It is nil if the request is not traced.
+	Trace *TraceData
+
 	// APICall specific parameters.
 	// These will be empty for operations with a type not APICall
 	API        *APIDesc   // Metadata about the API endpoint being called
@@ -51,6 +55,15 @@ type Request struct {
 	//
 	// If the request was not triggered by a Cron Job the value is the empty string.
 	CronIdempotencyKey string
+}
+
+// TraceData describes the trace information for a request.
+type TraceData struct {
+	TraceID          string
+	SpanID           string
+	ParentTraceID    string // empty if no parent trace
+	ParentSpanID     string // empty if no parent span
+	ExtCorrelationID string // empty if no correlation id
 }
 
 // MessageData describes the request data for a Pub/Sub message.
@@ -104,6 +117,6 @@ func (PathParams) Get(name string) string {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/request.go#L105-L113
+	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/request.go#L118-L126
 	panic("encore apps must be run using the encore command")
 }
