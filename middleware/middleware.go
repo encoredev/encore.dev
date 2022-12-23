@@ -46,7 +46,7 @@ func (*Request) WithContext(ctx context.Context) Request {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/middleware/middleware.go#L44-L48
+	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/middleware/middleware.go#L44-L48
 	panic("encore apps must be run using the encore command")
 }
 
@@ -57,7 +57,7 @@ func (*Request) Context() context.Context {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/middleware/middleware.go#L51-L53
+	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/middleware/middleware.go#L51-L53
 	panic("encore apps must be run using the encore command")
 }
 
@@ -68,7 +68,7 @@ func (*Request) Data() *encore.Request {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/middleware/middleware.go#L56-L58
+	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/middleware/middleware.go#L56-L58
 	panic("encore apps must be run using the encore command")
 }
 
@@ -117,6 +117,6 @@ func NewRequest(ctx context.Context, data *encore.Request) Request {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/middleware/middleware.go#L99-L104
+	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/middleware/middleware.go#L99-L104
 	panic("encore apps must be run using the encore command")
 }

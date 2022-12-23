@@ -13,64 +13,64 @@ type Ctx struct {
 // Debug logs a debug-level message, merging the context from ctx
 // with the additional context provided as key-value pairs.
 // The variadic key-value pairs are treated as they are in With.
-func (Ctx) Debug(msg string, keysAndValues ...interface{}) {
+func (Ctx) Debug(msg string, keysAndValues ...any) {
 	// Encore will provide an implementation to this function at runtime, we do not expose
 	// the implementation in the API contract as it is an implementation detail, which may change
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/rlog/rlog.go#L84-L87
+	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/rlog/rlog.go#L90-L94
 	panic("encore apps must be run using the encore command")
 }
 
 // Info logs an info-level message, merging the context from ctx
 // with the additional context provided as key-value pairs.
 // The variadic key-value pairs are treated as they are in With.
-func (Ctx) Info(msg string, keysAndValues ...interface{}) {
+func (Ctx) Info(msg string, keysAndValues ...any) {
 	// Encore will provide an implementation to this function at runtime, we do not expose
 	// the implementation in the API contract as it is an implementation detail, which may change
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/rlog/rlog.go#L92-L95
+	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/rlog/rlog.go#L99-L103
 	panic("encore apps must be run using the encore command")
 }
 
 // Warn logs a warn-level message, merging the context from ctx
 // with the additional context provided as key-value pairs.
 // The variadic key-value pairs are treated as they are in With.
-func (Ctx) Warn(msg string, keysAndValues ...interface{}) {
+func (Ctx) Warn(msg string, keysAndValues ...any) {
 	// Encore will provide an implementation to this function at runtime, we do not expose
 	// the implementation in the API contract as it is an implementation detail, which may change
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/rlog/rlog.go#L100-L103
+	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/rlog/rlog.go#L108-L112
 	panic("encore apps must be run using the encore command")
 }
 
 // Error logs an error-level message, merging the context from ctx
 // with the additional context provided as key-value pairs.
 // The variadic key-value pairs are treated as they are in With.
-func (Ctx) Error(msg string, keysAndValues ...interface{}) {
+func (Ctx) Error(msg string, keysAndValues ...any) {
 	// Encore will provide an implementation to this function at runtime, we do not expose
 	// the implementation in the API contract as it is an implementation detail, which may change
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/rlog/rlog.go#L108-L111
+	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/rlog/rlog.go#L117-L121
 	panic("encore apps must be run using the encore command")
 }
 
 // With creates a new logging context that inherits the context
 // from the original ctx and adds additional context on top.
 // The original ctx is not affected.
-func (Ctx) With(keysAndValues ...interface{}) Ctx {
+func (Ctx) With(keysAndValues ...any) Ctx {
 	// Encore will provide an implementation to this function at runtime, we do not expose
 	// the implementation in the API contract as it is an implementation detail, which may change
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.11.0/runtime/rlog/rlog.go#L116-L124
+	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/rlog/rlog.go#L126-L136
 	panic("encore apps must be run using the encore command")
 }
