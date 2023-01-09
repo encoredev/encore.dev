@@ -3,14 +3,15 @@ package auth
 // UserID reports the uid of the user making the request.
 // The second result is true if there is a user and false
 // if the request was made without authentication details.
-func UserID() (UID, bool) {
+func UserID() (_ UID, _ bool) {
 	// Encore will provide an implementation to this function at runtime, we do not expose
 	// the implementation in the API contract as it is an implementation detail, which may change
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/beta/auth/pkgfn.go#L11-L13
-	panic("encore apps must be run using the encore command")
+	//    https://github.com/encoredev/encore/blob/4d212a6471c0a6f5e7df1114b5238c8084d76c07/runtime/beta/auth/pkgfn.go#L11-L13
+	doPanic("encore apps must be run using the encore command")
+	return
 }
 
 // Data returns the structured auth data for the request.
@@ -21,12 +22,13 @@ func UserID() (UID, bool) {
 //
 //	usr, ok := auth.Data().(*user.Data)
 //	if !ok { /* ... */ }
-func Data() any {
+func Data() (_ any) {
 	// Encore will provide an implementation to this function at runtime, we do not expose
 	// the implementation in the API contract as it is an implementation detail, which may change
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/beta/auth/pkgfn.go#L24-L26
-	panic("encore apps must be run using the encore command")
+	//    https://github.com/encoredev/encore/blob/4d212a6471c0a6f5e7df1114b5238c8084d76c07/runtime/beta/auth/pkgfn.go#L24-L26
+	doPanic("encore apps must be run using the encore command")
+	return
 }

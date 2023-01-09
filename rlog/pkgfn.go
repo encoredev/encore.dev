@@ -8,8 +8,9 @@ func Debug(msg string, keysAndValues ...any) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/rlog/pkgfn.go#L10-L12
-	panic("encore apps must be run using the encore command")
+	//    https://github.com/encoredev/encore/blob/4d212a6471c0a6f5e7df1114b5238c8084d76c07/runtime/rlog/pkgfn.go#L10-L12
+	doPanic("encore apps must be run using the encore command")
+	return
 }
 
 // Info logs an info-level message.
@@ -20,8 +21,9 @@ func Info(msg string, keysAndValues ...any) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/rlog/pkgfn.go#L16-L18
-	panic("encore apps must be run using the encore command")
+	//    https://github.com/encoredev/encore/blob/4d212a6471c0a6f5e7df1114b5238c8084d76c07/runtime/rlog/pkgfn.go#L16-L18
+	doPanic("encore apps must be run using the encore command")
+	return
 }
 
 // Warn logs a warn-level message.
@@ -32,8 +34,9 @@ func Warn(msg string, keysAndValues ...any) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/rlog/pkgfn.go#L22-L24
-	panic("encore apps must be run using the encore command")
+	//    https://github.com/encoredev/encore/blob/4d212a6471c0a6f5e7df1114b5238c8084d76c07/runtime/rlog/pkgfn.go#L22-L24
+	doPanic("encore apps must be run using the encore command")
+	return
 }
 
 // Error logs an error-level message.
@@ -44,18 +47,28 @@ func Error(msg string, keysAndValues ...any) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/rlog/pkgfn.go#L28-L30
-	panic("encore apps must be run using the encore command")
+	//    https://github.com/encoredev/encore/blob/4d212a6471c0a6f5e7df1114b5238c8084d76c07/runtime/rlog/pkgfn.go#L28-L30
+	doPanic("encore apps must be run using the encore command")
+	return
 }
 
 // With adds a variadic number of fields to the logging context.
 // The keysAndValues must be pairs of string keys and arbitrary data.
-func With(keysAndValues ...any) Ctx {
+func With(keysAndValues ...any) (_ Ctx) {
 	// Encore will provide an implementation to this function at runtime, we do not expose
 	// the implementation in the API contract as it is an implementation detail, which may change
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/rlog/pkgfn.go#L34-L36
-	panic("encore apps must be run using the encore command")
+	//    https://github.com/encoredev/encore/blob/4d212a6471c0a6f5e7df1114b5238c8084d76c07/runtime/rlog/pkgfn.go#L34-L36
+	doPanic("encore apps must be run using the encore command")
+	return
+}
+
+// doPanic is a wrapper around panic to prevent static analysis tools
+// from thinking Encore APIs unconditionally panic.,
+func doPanic(v any) {
+	if true {
+		panic(v)
+	}
 }

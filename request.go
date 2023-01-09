@@ -111,12 +111,13 @@ type PathParam struct {
 
 // Get returns the value of the path parameter with the given name.
 // If no such parameter exists it reports "".
-func (PathParams) Get(name string) string {
+func (PathParams) Get(name string) (_ string) {
 	// Encore will provide an implementation to this function at runtime, we do not expose
 	// the implementation in the API contract as it is an implementation detail, which may change
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/request.go#L118-L126
-	panic("encore apps must be run using the encore command")
+	//    https://github.com/encoredev/encore/blob/4d212a6471c0a6f5e7df1114b5238c8084d76c07/runtime/request.go#L118-L126
+	doPanic("encore apps must be run using the encore command")
+	return
 }

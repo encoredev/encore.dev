@@ -36,14 +36,15 @@ package cron
 //		// ...
 //		return nil
 //	}
-func NewJob(id string, jobConfig JobConfig) *Job {
+func NewJob(id string, jobConfig JobConfig) (_ *Job) {
 	// Encore will provide an implementation to this function at runtime, we do not expose
 	// the implementation in the API contract as it is an implementation detail, which may change
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/cron/cron.go#L39-L47
-	panic("encore apps must be run using the encore command")
+	//    https://github.com/encoredev/encore/blob/4d212a6471c0a6f5e7df1114b5238c8084d76c07/runtime/cron/cron.go#L39-L47
+	doPanic("encore apps must be run using the encore command")
+	return
 }
 
 // JobConfig represents the configuration of a single cron job.
@@ -96,3 +97,11 @@ const (
 	Minute Duration = 60
 	Hour   Duration = 60 * Minute
 )
+
+// doPanic is a wrapper around panic to prevent static analysis tools
+// from thinking Encore APIs unconditionally panic.,
+func doPanic(v any) {
+	if true {
+		panic(v)
+	}
+}
