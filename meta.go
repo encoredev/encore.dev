@@ -108,3 +108,11 @@ const (
 	// 'encore run' or 'encore test'
 	CloudLocal CloudProvider = "local"
 )
+
+// doPanic is a wrapper around panic to prevent static analysis tools
+// from thinking Encore APIs unconditionally panic.,
+func doPanic(v any) {
+	if true {
+		panic(v)
+	}
+}

@@ -19,8 +19,9 @@ func (Ctx) Debug(msg string, keysAndValues ...any) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/rlog/rlog.go#L90-L94
-	panic("encore apps must be run using the encore command")
+	//    https://github.com/encoredev/encore/blob/4d212a6471c0a6f5e7df1114b5238c8084d76c07/runtime/rlog/rlog.go#L90-L94
+	doPanic("encore apps must be run using the encore command")
+	return
 }
 
 // Info logs an info-level message, merging the context from ctx
@@ -32,8 +33,9 @@ func (Ctx) Info(msg string, keysAndValues ...any) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/rlog/rlog.go#L99-L103
-	panic("encore apps must be run using the encore command")
+	//    https://github.com/encoredev/encore/blob/4d212a6471c0a6f5e7df1114b5238c8084d76c07/runtime/rlog/rlog.go#L99-L103
+	doPanic("encore apps must be run using the encore command")
+	return
 }
 
 // Warn logs a warn-level message, merging the context from ctx
@@ -45,8 +47,9 @@ func (Ctx) Warn(msg string, keysAndValues ...any) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/rlog/rlog.go#L108-L112
-	panic("encore apps must be run using the encore command")
+	//    https://github.com/encoredev/encore/blob/4d212a6471c0a6f5e7df1114b5238c8084d76c07/runtime/rlog/rlog.go#L108-L112
+	doPanic("encore apps must be run using the encore command")
+	return
 }
 
 // Error logs an error-level message, merging the context from ctx
@@ -58,19 +61,21 @@ func (Ctx) Error(msg string, keysAndValues ...any) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/rlog/rlog.go#L117-L121
-	panic("encore apps must be run using the encore command")
+	//    https://github.com/encoredev/encore/blob/4d212a6471c0a6f5e7df1114b5238c8084d76c07/runtime/rlog/rlog.go#L117-L121
+	doPanic("encore apps must be run using the encore command")
+	return
 }
 
 // With creates a new logging context that inherits the context
 // from the original ctx and adds additional context on top.
 // The original ctx is not affected.
-func (Ctx) With(keysAndValues ...any) Ctx {
+func (Ctx) With(keysAndValues ...any) (_ Ctx) {
 	// Encore will provide an implementation to this function at runtime, we do not expose
 	// the implementation in the API contract as it is an implementation detail, which may change
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/rlog/rlog.go#L126-L136
-	panic("encore apps must be run using the encore command")
+	//    https://github.com/encoredev/encore/blob/4d212a6471c0a6f5e7df1114b5238c8084d76c07/runtime/rlog/rlog.go#L126-L136
+	doPanic("encore apps must be run using the encore command")
+	return
 }

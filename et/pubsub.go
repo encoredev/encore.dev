@@ -5,14 +5,15 @@ import (
 )
 
 // Topic returns a TopicHelper for the given topic.
-func Topic[T any](topic *pubsub.Topic[T]) TopicHelpers[T] {
+func Topic[T any](topic *pubsub.Topic[T]) (_ TopicHelpers[T]) {
 	// Encore will provide an implementation to this function at runtime, we do not expose
 	// the implementation in the API contract as it is an implementation detail, which may change
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/et/pubsub.go#L8-L10
-	panic("encore apps must be run using the encore command")
+	//    https://github.com/encoredev/encore/blob/4d212a6471c0a6f5e7df1114b5238c8084d76c07/runtime/et/pubsub.go#L8-L10
+	doPanic("encore apps must be run using the encore command")
+	return
 }
 
 // TopicHelpers provides functions for interacting with the backing topic implementation

@@ -40,36 +40,39 @@ type Request struct {
 }
 
 // WithContext returns a new Request with the context set to ctx.
-func (*Request) WithContext(ctx context.Context) Request {
+func (*Request) WithContext(ctx context.Context) (_ Request) {
 	// Encore will provide an implementation to this function at runtime, we do not expose
 	// the implementation in the API contract as it is an implementation detail, which may change
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/middleware/middleware.go#L44-L48
-	panic("encore apps must be run using the encore command")
+	//    https://github.com/encoredev/encore/blob/4d212a6471c0a6f5e7df1114b5238c8084d76c07/runtime/middleware/middleware.go#L44-L48
+	doPanic("encore apps must be run using the encore command")
+	return
 }
 
 // Context reports the request's context.
-func (*Request) Context() context.Context {
+func (*Request) Context() (_ context.Context) {
 	// Encore will provide an implementation to this function at runtime, we do not expose
 	// the implementation in the API contract as it is an implementation detail, which may change
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/middleware/middleware.go#L51-L53
-	panic("encore apps must be run using the encore command")
+	//    https://github.com/encoredev/encore/blob/4d212a6471c0a6f5e7df1114b5238c8084d76c07/runtime/middleware/middleware.go#L51-L53
+	doPanic("encore apps must be run using the encore command")
+	return
 }
 
 // Data returns information about the request.
-func (*Request) Data() *encore.Request {
+func (*Request) Data() (_ *encore.Request) {
 	// Encore will provide an implementation to this function at runtime, we do not expose
 	// the implementation in the API contract as it is an implementation detail, which may change
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/middleware/middleware.go#L56-L58
-	panic("encore apps must be run using the encore command")
+	//    https://github.com/encoredev/encore/blob/4d212a6471c0a6f5e7df1114b5238c8084d76c07/runtime/middleware/middleware.go#L56-L58
+	doPanic("encore apps must be run using the encore command")
+	return
 }
 
 // Response represents the API handler's response.
@@ -111,12 +114,21 @@ type Response struct {
 
 // NewRequest constructs a new Request that returns the given context and request data.
 // It is primarily used for testing middleware.
-func NewRequest(ctx context.Context, data *encore.Request) Request {
+func NewRequest(ctx context.Context, data *encore.Request) (_ Request) {
 	// Encore will provide an implementation to this function at runtime, we do not expose
 	// the implementation in the API contract as it is an implementation detail, which may change
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/middleware/middleware.go#L99-L104
-	panic("encore apps must be run using the encore command")
+	//    https://github.com/encoredev/encore/blob/4d212a6471c0a6f5e7df1114b5238c8084d76c07/runtime/middleware/middleware.go#L99-L104
+	doPanic("encore apps must be run using the encore command")
+	return
+}
+
+// doPanic is a wrapper around panic to prevent static analysis tools
+// from thinking Encore APIs unconditionally panic.,
+func doPanic(v any) {
+	if true {
+		panic(v)
+	}
 }

@@ -34,12 +34,13 @@ package pubsub
 //	  rlog.Info("foo published", "message_id", msgID)
 //	  return nil
 //	}
-func NewTopic[T any](name string, cfg TopicConfig) *Topic[T] {
+func NewTopic[T any](name string, cfg TopicConfig) (_ *Topic[T]) {
 	// Encore will provide an implementation to this function at runtime, we do not expose
 	// the implementation in the API contract as it is an implementation detail, which may change
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/pubsub/pkgfn.go#L42-L44
-	panic("encore apps must be run using the encore command")
+	//    https://github.com/encoredev/encore/blob/4d212a6471c0a6f5e7df1114b5238c8084d76c07/runtime/pubsub/pkgfn.go#L42-L44
+	doPanic("encore apps must be run using the encore command")
+	return
 }

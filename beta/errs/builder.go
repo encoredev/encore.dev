@@ -9,81 +9,88 @@ type Builder struct {
 }
 
 // B is a shorthand for creating a new Builder.
-func B() *Builder {
+func B() (_ *Builder) {
 	// Encore will provide an implementation to this function at runtime, we do not expose
 	// the implementation in the API contract as it is an implementation detail, which may change
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
 	//
-	//	https://github.com/encoredev/encore/blob/v1.12.0/runtime/beta/errs/builder.go#L25-L25
-	panic("encore apps must be run using the encore command")
+	//	https://github.com/encoredev/encore/blob/4d212a6471c0a6f5e7df1114b5238c8084d76c07/runtime/beta/errs/builder.go#L25-L25
+	doPanic("encore apps must be run using the encore command")
+	return
 }
 
 // Code sets the error code.
-func (*Builder) Code(c ErrCode) *Builder {
+func (*Builder) Code(c ErrCode) (_ *Builder) {
 	// Encore will provide an implementation to this function at runtime, we do not expose
 	// the implementation in the API contract as it is an implementation detail, which may change
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/beta/errs/builder.go#L28-L32
-	panic("encore apps must be run using the encore command")
+	//    https://github.com/encoredev/encore/blob/4d212a6471c0a6f5e7df1114b5238c8084d76c07/runtime/beta/errs/builder.go#L28-L32
+	doPanic("encore apps must be run using the encore command")
+	return
 }
 
 // Msg sets the error message.
-func (*Builder) Msg(msg string) *Builder {
+func (*Builder) Msg(msg string) (_ *Builder) {
 	// Encore will provide an implementation to this function at runtime, we do not expose
 	// the implementation in the API contract as it is an implementation detail, which may change
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/beta/errs/builder.go#L35-L38
-	panic("encore apps must be run using the encore command")
+	//    https://github.com/encoredev/encore/blob/4d212a6471c0a6f5e7df1114b5238c8084d76c07/runtime/beta/errs/builder.go#L35-L38
+	doPanic("encore apps must be run using the encore command")
+	return
 }
 
 // Msgf is like Msg but uses fmt.Sprintf to construct the message.
-func (*Builder) Msgf(format string, args ...interface{}) *Builder {
+func (*Builder) Msgf(format string, args ...interface{}) (_ *Builder) {
 	// Encore will provide an implementation to this function at runtime, we do not expose
 	// the implementation in the API contract as it is an implementation detail, which may change
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/beta/errs/builder.go#L41-L44
-	panic("encore apps must be run using the encore command")
+	//    https://github.com/encoredev/encore/blob/4d212a6471c0a6f5e7df1114b5238c8084d76c07/runtime/beta/errs/builder.go#L41-L44
+	doPanic("encore apps must be run using the encore command")
+	return
 }
 
 // Meta appends metadata key-value pairs.
-func (*Builder) Meta(metaPairs ...interface{}) *Builder {
+func (*Builder) Meta(metaPairs ...interface{}) (_ *Builder) {
 	// Encore will provide an implementation to this function at runtime, we do not expose
 	// the implementation in the API contract as it is an implementation detail, which may change
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/beta/errs/builder.go#L47-L50
-	panic("encore apps must be run using the encore command")
+	//    https://github.com/encoredev/encore/blob/4d212a6471c0a6f5e7df1114b5238c8084d76c07/runtime/beta/errs/builder.go#L47-L50
+	doPanic("encore apps must be run using the encore command")
+	return
 }
 
 // Details sets the details.
-func (*Builder) Details(det ErrDetails) *Builder {
+func (*Builder) Details(det ErrDetails) (_ *Builder) {
 	// Encore will provide an implementation to this function at runtime, we do not expose
 	// the implementation in the API contract as it is an implementation detail, which may change
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/beta/errs/builder.go#L53-L57
-	panic("encore apps must be run using the encore command")
+	//    https://github.com/encoredev/encore/blob/4d212a6471c0a6f5e7df1114b5238c8084d76c07/runtime/beta/errs/builder.go#L53-L57
+	doPanic("encore apps must be run using the encore command")
+	return
 }
 
 // Cause sets the underlying error cause.
-func (*Builder) Cause(err error) *Builder {
+func (*Builder) Cause(err error) (_ *Builder) {
 	// Encore will provide an implementation to this function at runtime, we do not expose
 	// the implementation in the API contract as it is an implementation detail, which may change
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/beta/errs/builder.go#L60-L71
-	panic("encore apps must be run using the encore command")
+	//    https://github.com/encoredev/encore/blob/4d212a6471c0a6f5e7df1114b5238c8084d76c07/runtime/beta/errs/builder.go#L60-L71
+	doPanic("encore apps must be run using the encore command")
+	return
 }
 
 // Err returns the constructed error.
@@ -94,12 +101,21 @@ func (*Builder) Cause(err error) *Builder {
 //
 // If Msg has not been set and Cause is nil,
 // the Msg is set to "unknown error".
-func (*Builder) Err() error {
+func (*Builder) Err() (_ error) {
 	// Encore will provide an implementation to this function at runtime, we do not expose
 	// the implementation in the API contract as it is an implementation detail, which may change
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/beta/errs/builder.go#L81-L109
-	panic("encore apps must be run using the encore command")
+	//    https://github.com/encoredev/encore/blob/4d212a6471c0a6f5e7df1114b5238c8084d76c07/runtime/beta/errs/builder.go#L81-L109
+	doPanic("encore apps must be run using the encore command")
+	return
+}
+
+// doPanic is a wrapper around panic to prevent static analysis tools
+// from thinking Encore APIs unconditionally panic.,
+func doPanic(v any) {
+	if true {
+		panic(v)
+	}
 }

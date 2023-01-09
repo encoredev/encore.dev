@@ -22,12 +22,21 @@ type UID string
 // the empty string then data may not be nil. If these requirements are not met,
 // API calls made with these options will not be made and will immediately return
 // a client-side error.
-func WithContext(ctx context.Context, uid UID, data interface{}) context.Context {
+func WithContext(ctx context.Context, uid UID, data interface{}) (_ context.Context) {
 	// Encore will provide an implementation to this function at runtime, we do not expose
 	// the implementation in the API contract as it is an implementation detail, which may change
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.12.0/runtime/beta/auth/auth.go#L63-L67
-	panic("encore apps must be run using the encore command")
+	//    https://github.com/encoredev/encore/blob/4d212a6471c0a6f5e7df1114b5238c8084d76c07/runtime/beta/auth/auth.go#L63-L67
+	doPanic("encore apps must be run using the encore command")
+	return
+}
+
+// doPanic is a wrapper around panic to prevent static analysis tools
+// from thinking Encore APIs unconditionally panic.,
+func doPanic(v any) {
+	if true {
+		panic(v)
+	}
 }
