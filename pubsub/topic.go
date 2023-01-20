@@ -26,7 +26,7 @@ func (*Topic[T]) Publish(ctx context.Context, msg T) (id string, err error) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/4d212a6471c0a6f5e7df1114b5238c8084d76c07/runtime/pubsub/topic.go#L66-L119
+	//    https://github.com/encoredev/encore/blob/v1.13.0/runtime/pubsub/topic.go#L66-L119
 	doPanic("encore apps must be run using the encore command")
 	return
 }
