@@ -18,7 +18,7 @@ func NewCounter[V Value](name string, cfg CounterConfig) (_ *Counter[V]) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.13.0/runtime/metrics/metrics.go#L23-L25
+	//    https://github.com/encoredev/encore/blob/v1.16.1/runtime/metrics/metrics.go#L24-L26
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -34,7 +34,7 @@ func (*Counter[V]) Increment() {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.13.0/runtime/metrics/metrics.go#L41-L45
+	//    https://github.com/encoredev/encore/blob/v1.16.1/runtime/metrics/metrics.go#L42-L47
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -47,7 +47,7 @@ func (*Counter[V]) Add(delta V) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.13.0/runtime/metrics/metrics.go#L49-L56
+	//    https://github.com/encoredev/encore/blob/v1.16.1/runtime/metrics/metrics.go#L51-L59
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -63,7 +63,7 @@ func NewCounterGroup[L Labels, V Value](name string, cfg CounterConfig) (_ *Coun
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.13.0/runtime/metrics/metrics.go#L63-L65
+	//    https://github.com/encoredev/encore/blob/v1.16.1/runtime/metrics/metrics.go#L66-L68
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -78,7 +78,7 @@ func (*CounterGroup[L, V]) With(labels L) (_ *Counter[V]) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.13.0/runtime/metrics/metrics.go#L83-L86
+	//    https://github.com/encoredev/encore/blob/v1.16.1/runtime/metrics/metrics.go#L86-L89
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -97,7 +97,7 @@ func NewGauge[V Value](name string, cfg GaugeConfig) (_ *Gauge[V]) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.13.0/runtime/metrics/metrics.go#L108-L110
+	//    https://github.com/encoredev/encore/blob/v1.16.1/runtime/metrics/metrics.go#L111-L113
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -112,7 +112,7 @@ func (*Gauge[V]) Set(val V) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.13.0/runtime/metrics/metrics.go#L126-L130
+	//    https://github.com/encoredev/encore/blob/v1.16.1/runtime/metrics/metrics.go#L129-L134
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -123,7 +123,7 @@ func (*Gauge[V]) Add(val V) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.13.0/runtime/metrics/metrics.go#L132-L136
+	//    https://github.com/encoredev/encore/blob/v1.16.1/runtime/metrics/metrics.go#L136-L141
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -139,7 +139,7 @@ func NewGaugeGroup[L Labels, V Value](name string, cfg GaugeConfig) (_ *GaugeGro
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.13.0/runtime/metrics/metrics.go#L143-L145
+	//    https://github.com/encoredev/encore/blob/v1.16.1/runtime/metrics/metrics.go#L148-L150
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -154,7 +154,7 @@ func (*GaugeGroup[L, V]) With(labels L) (_ *Gauge[V]) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.13.0/runtime/metrics/metrics.go#L158-L161
+	//    https://github.com/encoredev/encore/blob/v1.16.1/runtime/metrics/metrics.go#L163-L166
 	doPanic("encore apps must be run using the encore command")
 	return
 }

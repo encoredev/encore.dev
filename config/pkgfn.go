@@ -23,7 +23,7 @@ func Load[T any]() (_ T) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.13.0/runtime/config/pkgfn.go#L25-L41
+	//    https://github.com/encoredev/encore/blob/v1.16.1/runtime/config/pkgfn.go#L30-L46
 	doPanic("encore apps must be run using the encore command")
 	return
 }

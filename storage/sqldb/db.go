@@ -4,6 +4,7 @@ import (
 	"context"
 	"database/sql"
 
+	"github.com/jackc/pgx/v5"
 	"github.com/jackc/pgx/v5/pgxpool"
 )
 
@@ -19,7 +20,7 @@ func (*Database) Stdlib() (_ *sql.DB) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.13.0/runtime/storage/sqldb/db.go#L46-L77
+	//    https://github.com/encoredev/encore/blob/v1.16.1/runtime/storage/sqldb/db.go#L47-L78
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -34,7 +35,7 @@ func (*Database) Exec(ctx context.Context, query string, args ...interface{}) (_
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.13.0/runtime/storage/sqldb/db.go#L151-L175
+	//    https://github.com/encoredev/encore/blob/v1.16.1/runtime/storage/sqldb/db.go#L152-L176
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -49,7 +50,7 @@ func (*Database) Query(ctx context.Context, query string, args ...interface{}) (
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.13.0/runtime/storage/sqldb/db.go#L181-L208
+	//    https://github.com/encoredev/encore/blob/v1.16.1/runtime/storage/sqldb/db.go#L182-L209
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -63,7 +64,7 @@ func (*Database) QueryRow(ctx context.Context, query string, args ...interface{}
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.13.0/runtime/storage/sqldb/db.go#L213-L238
+	//    https://github.com/encoredev/encore/blob/v1.16.1/runtime/storage/sqldb/db.go#L214-L239
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -77,7 +78,7 @@ func (*Database) Begin(ctx context.Context) (_ *Tx, _ error) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.13.0/runtime/storage/sqldb/db.go#L243-L263
+	//    https://github.com/encoredev/encore/blob/v1.16.1/runtime/storage/sqldb/db.go#L244-L264
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -98,7 +99,7 @@ func Driver[T SupportedDrivers](db *Database) (_ T) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.13.0/runtime/storage/sqldb/db.go#L275-L277
+	//    https://github.com/encoredev/encore/blob/v1.16.1/runtime/storage/sqldb/db.go#L276-L278
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -107,6 +108,38 @@ func Driver[T SupportedDrivers](db *Database) (_ T) {
 // Currently only [*pgxpool.Pool] is supported.
 type SupportedDrivers interface {
 	*pgxpool.Pool
+}
+
+// DriverConn provides access to the underlying driver connection given a stdlib
+// *sql.Conn connection. The driverConn must not be used outside of f, and conn
+// must be a *sql.Conn originating from sqldb.Database or this function panics.
+//
+//	conn, _ := db.Stdlib().Conn(ctx) // Checkout a connection from the pool
+//	sqldb.DriverConn(conn, func(driverConn *pgx.Conn) error) error {
+//	  // do stuff with *pgx.Conn
+//	}
+//
+// This is defined as a generic function to allow compile-time type checking
+// that the Encore application is expecting a driver that is supported.
+//
+// At some point in the future where Encore adds support for a different
+// database driver this will be made with backwards compatibility in mind,
+// providing ample notice and time to migrate in an opt-in fashion.
+func DriverConn[T SupportedDriverConns](conn *sql.Conn, f func(driverConn T) error) (_ error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.16.1/runtime/storage/sqldb/db.go#L301-L307
+	doPanic("encore apps must be run using the encore command")
+	return
+}
+
+// SupportedDriverConns is a type list of all supported database drivers
+// connections. Currently only [*pgx.Conn] is supported.
+type SupportedDriverConns interface {
+	*pgx.Conn
 }
 
 // doPanic is a wrapper around panic to prevent static analysis tools

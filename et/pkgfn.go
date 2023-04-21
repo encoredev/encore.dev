@@ -1,6 +1,8 @@
 package et
 
-import "encore.dev/beta/auth"
+import (
+	"encore.dev/beta/auth"
+)
 
 // OverrideAuthInfo overrides the auth information for the current request.
 // Subsequent calls to auth.UserID and auth.Data() within the same request
@@ -25,7 +27,7 @@ func OverrideAuthInfo(uid auth.UID, data any) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.13.0/runtime/et/pkgfn.go#L27-L29
+	//    https://github.com/encoredev/encore/blob/v1.16.1/runtime/et/pkgfn.go#L24-L26
 	doPanic("encore apps must be run using the encore command")
 	return
 }
