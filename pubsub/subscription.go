@@ -40,13 +40,52 @@ type Subscription[T any] struct {
 //	  rlog.Info("received foo")
 //	  return nil
 //	}
-func NewSubscription[T any](topic *Topic[T], name string, subscriptionCfg SubscriptionConfig[T]) (_ *Subscription[T]) {
+func NewSubscription[T any](topic *Topic[T], name string, cfg SubscriptionConfig[T]) (_ *Subscription[T]) {
 	// Encore will provide an implementation to this function at runtime, we do not expose
 	// the implementation in the API contract as it is an implementation detail, which may change
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.13.0/runtime/pubsub/subscription.go#L56-L211
+	//    https://github.com/encoredev/encore/blob/v1.16.1/runtime/pubsub/subscription.go#L58-L213
+	doPanic("encore apps must be run using the encore command")
+	return
+}
+
+// SubscriptionMeta contains metadata about a subscription.
+// The fields should not be modified by the caller.
+// Additional fields may be added in the future.
+type SubscriptionMeta[T any] struct {
+	// Name is the name of the subscription, as provided in the constructor to NewSubscription.
+	Name string
+
+	// Config is the subscriptions's configuration.
+	Config SubscriptionConfig[T]
+
+	// Topic provides metadata about the topic it subscribes to.
+	Topic TopicMeta
+}
+
+// Meta returns metadata about the topic.
+func (*Subscription[T]) Meta() (_ SubscriptionMeta[T]) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.16.1/runtime/pubsub/subscription.go#L230-L236
+	doPanic("encore apps must be run using the encore command")
+	return
+}
+
+// Config returns the subscription's configuration.
+// It must not be modified by the caller.
+func (*Subscription[T]) Config() (_ SubscriptionConfig[T]) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.16.1/runtime/pubsub/subscription.go#L240-L242
 	doPanic("encore apps must be run using the encore command")
 	return
 }
