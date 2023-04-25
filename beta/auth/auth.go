@@ -5,6 +5,7 @@ package auth
 
 import (
 	"context"
+	"os"
 )
 
 // UID is a unique identifier representing a user (a user id).
@@ -28,7 +29,7 @@ func WithContext(ctx context.Context, uid UID, data interface{}) (_ context.Cont
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.16.1/runtime/beta/auth/auth.go#L63-L67
+	//    https://github.com/encoredev/encore/blob/v1.16.2/runtime/beta/auth/auth.go#L63-L67
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -36,7 +37,7 @@ func WithContext(ctx context.Context, uid UID, data interface{}) (_ context.Cont
 // doPanic is a wrapper around panic to prevent static analysis tools
 // from thinking Encore APIs unconditionally panic.,
 func doPanic(v any) {
-	if true {
+	if os.Getenv("ENCORERUNTIME_NOPANIC") == "" {
 		panic(v)
 	}
 }

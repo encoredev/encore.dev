@@ -3,6 +3,8 @@
 // For more information about Encore's cron job support, see https://encore.dev/docs/develop/cron-jobs.
 package cron
 
+import "os"
+
 // NewJob defines a new cron job. It is specially recognized by the Encore Parser
 // and results in the Encore Platform provisioning the cron job on next deploy.
 // Note that cron jobs do not automatically execute when running the application locally.
@@ -42,7 +44,7 @@ func NewJob(id string, jobConfig JobConfig) (_ *Job) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.16.1/runtime/cron/cron.go#L39-L47
+	//    https://github.com/encoredev/encore/blob/v1.16.2/runtime/cron/cron.go#L39-L47
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -101,7 +103,7 @@ const (
 // doPanic is a wrapper around panic to prevent static analysis tools
 // from thinking Encore APIs unconditionally panic.,
 func doPanic(v any) {
-	if true {
+	if os.Getenv("ENCORERUNTIME_NOPANIC") == "" {
 		panic(v)
 	}
 }

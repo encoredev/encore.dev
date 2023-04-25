@@ -2,6 +2,7 @@ package encore
 
 import (
 	"net/url"
+	"os"
 	"time"
 )
 
@@ -112,7 +113,7 @@ const (
 // doPanic is a wrapper around panic to prevent static analysis tools
 // from thinking Encore APIs unconditionally panic.,
 func doPanic(v any) {
-	if true {
+	if os.Getenv("ENCORERUNTIME_NOPANIC") == "" {
 		panic(v)
 	}
 }
