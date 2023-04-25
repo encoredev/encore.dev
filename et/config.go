@@ -1,6 +1,8 @@
 package et
 
 import (
+	"os"
+
 	"encore.dev/config"
 )
 
@@ -14,7 +16,7 @@ func SetCfg[T any](cfg config.Value[T], newValue T) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.16.1/runtime/et/config.go#L13-L23
+	//    https://github.com/encoredev/encore/blob/v1.16.2/runtime/et/config.go#L13-L23
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -22,7 +24,7 @@ func SetCfg[T any](cfg config.Value[T], newValue T) {
 // doPanic is a wrapper around panic to prevent static analysis tools
 // from thinking Encore APIs unconditionally panic.,
 func doPanic(v any) {
-	if true {
+	if os.Getenv("ENCORERUNTIME_NOPANIC") == "" {
 		panic(v)
 	}
 }

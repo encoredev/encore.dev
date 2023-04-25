@@ -6,6 +6,8 @@
 // For more information about configuration see https://encore.dev/docs/develop/config.
 package config
 
+import "os"
+
 // Load returns the fully loaded configuration for this service.
 //
 // The configuration is loaded from the CUE files in the service directory and
@@ -23,7 +25,7 @@ func Load[T any]() (_ T) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.16.1/runtime/config/pkgfn.go#L30-L46
+	//    https://github.com/encoredev/encore/blob/v1.16.2/runtime/config/pkgfn.go#L30-L46
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -31,7 +33,7 @@ func Load[T any]() (_ T) {
 // doPanic is a wrapper around panic to prevent static analysis tools
 // from thinking Encore APIs unconditionally panic.,
 func doPanic(v any) {
-	if true {
+	if os.Getenv("ENCORERUNTIME_NOPANIC") == "" {
 		panic(v)
 	}
 }
