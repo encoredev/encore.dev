@@ -19,7 +19,7 @@ func (Ctx) Debug(msg string, keysAndValues ...any) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.16.2/runtime/rlog/rlog.go#L90-L94
+	//    https://github.com/encoredev/encore/blob/v1.17.0/runtime/rlog/rlog.go#L90-L94
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -33,7 +33,7 @@ func (Ctx) Info(msg string, keysAndValues ...any) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.16.2/runtime/rlog/rlog.go#L99-L103
+	//    https://github.com/encoredev/encore/blob/v1.17.0/runtime/rlog/rlog.go#L99-L103
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -47,7 +47,7 @@ func (Ctx) Warn(msg string, keysAndValues ...any) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.16.2/runtime/rlog/rlog.go#L108-L112
+	//    https://github.com/encoredev/encore/blob/v1.17.0/runtime/rlog/rlog.go#L108-L112
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -61,7 +61,7 @@ func (Ctx) Error(msg string, keysAndValues ...any) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.16.2/runtime/rlog/rlog.go#L117-L121
+	//    https://github.com/encoredev/encore/blob/v1.17.0/runtime/rlog/rlog.go#L117-L121
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -75,7 +75,7 @@ func (Ctx) With(keysAndValues ...any) (_ Ctx) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.16.2/runtime/rlog/rlog.go#L126-L136
+	//    https://github.com/encoredev/encore/blob/v1.17.0/runtime/rlog/rlog.go#L126-L136
 	doPanic("encore apps must be run using the encore command")
 	return
 }

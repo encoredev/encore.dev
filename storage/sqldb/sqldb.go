@@ -36,7 +36,7 @@ func (*Tx) Commit() (_ error) {
 	//
 	// The current implementation of this function can be found here:
 	//
-	//	https://github.com/encoredev/encore/blob/v1.16.2/runtime/storage/sqldb/sqldb.go#L41-L41
+	//	https://github.com/encoredev/encore/blob/v1.17.0/runtime/storage/sqldb/sqldb.go#L41-L41
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -51,7 +51,7 @@ func (*Tx) Rollback() (_ error) {
 	//
 	// The current implementation of this function can be found here:
 	//
-	//	https://github.com/encoredev/encore/blob/v1.16.2/runtime/storage/sqldb/sqldb.go#L46-L46
+	//	https://github.com/encoredev/encore/blob/v1.17.0/runtime/storage/sqldb/sqldb.go#L46-L46
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -62,7 +62,7 @@ func (*Tx) Exec(ctx context.Context, query string, args ...interface{}) (_ ExecR
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.16.2/runtime/storage/sqldb/sqldb.go#L84-L86
+	//    https://github.com/encoredev/encore/blob/v1.17.0/runtime/storage/sqldb/sqldb.go#L84-L86
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -73,7 +73,7 @@ func (*Tx) Query(ctx context.Context, query string, args ...interface{}) (_ *Row
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.16.2/runtime/storage/sqldb/sqldb.go#L113-L139
+	//    https://github.com/encoredev/encore/blob/v1.17.0/runtime/storage/sqldb/sqldb.go#L113-L139
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -84,7 +84,7 @@ func (*Tx) QueryRow(ctx context.Context, query string, args ...interface{}) (_ *
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.16.2/runtime/storage/sqldb/sqldb.go#L141-L167
+	//    https://github.com/encoredev/encore/blob/v1.17.0/runtime/storage/sqldb/sqldb.go#L141-L167
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -107,7 +107,7 @@ func (*Rows) Close() {
 	//
 	// The current implementation of this function can be found here:
 	//
-	//	https://github.com/encoredev/encore/blob/v1.16.2/runtime/storage/sqldb/sqldb.go#L180-L180
+	//	https://github.com/encoredev/encore/blob/v1.17.0/runtime/storage/sqldb/sqldb.go#L180-L180
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -123,7 +123,7 @@ func (*Rows) Scan(dest ...interface{}) (_ error) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.16.2/runtime/storage/sqldb/sqldb.go#L187-L187
+	//    https://github.com/encoredev/encore/blob/v1.17.0/runtime/storage/sqldb/sqldb.go#L187-L187
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -139,7 +139,7 @@ func (*Rows) Err() (_ error) {
 	//
 	// The current implementation of this function can be found here:
 	//
-	//	https://github.com/encoredev/encore/blob/v1.16.2/runtime/storage/sqldb/sqldb.go#L193-L193
+	//	https://github.com/encoredev/encore/blob/v1.17.0/runtime/storage/sqldb/sqldb.go#L193-L193
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -159,7 +159,7 @@ func (*Rows) Next() (_ bool) {
 	//
 	// The current implementation of this function can be found here:
 	//
-	//	https://github.com/encoredev/encore/blob/v1.16.2/runtime/storage/sqldb/sqldb.go#L203-L203
+	//	https://github.com/encoredev/encore/blob/v1.17.0/runtime/storage/sqldb/sqldb.go#L203-L203
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -181,7 +181,7 @@ func (*Row) Scan(dest ...interface{}) (_ error) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.16.2/runtime/storage/sqldb/sqldb.go#L217-L230
+	//    https://github.com/encoredev/encore/blob/v1.17.0/runtime/storage/sqldb/sqldb.go#L217-L230
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -192,7 +192,7 @@ func (*Row) Err() (_ error) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.16.2/runtime/storage/sqldb/sqldb.go#L232-L237
+	//    https://github.com/encoredev/encore/blob/v1.17.0/runtime/storage/sqldb/sqldb.go#L232-L237
 	doPanic("encore apps must be run using the encore command")
 	return
 }
