@@ -117,7 +117,7 @@ func (PathParams) Get(name string) (_ string) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.17.0/runtime/request.go#L118-L126
+	//    https://github.com/encoredev/encore/blob/38dbb67953561748253891e3e50181bdf095d6e5/runtime/request.go#L118-L126
 	doPanic("encore apps must be run using the encore command")
 	return
 }
