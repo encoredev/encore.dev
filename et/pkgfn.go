@@ -27,7 +27,7 @@ func OverrideAuthInfo(uid auth.UID, data any) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.17.0/runtime/et/pkgfn.go#L24-L26
+	//    https://github.com/encoredev/encore/blob/v1.18.0/runtime/et/pkgfn.go#L24-L26
 	doPanic("encore apps must be run using the encore command")
 	return
 }

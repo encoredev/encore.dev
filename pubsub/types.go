@@ -67,13 +67,16 @@ type RetryPolicy struct {
 	MaxRetries int
 }
 
-const ( // NoRetries is used to control deadletter queuing logic, when set as the MaxRetires within the RetryPolicy
+const (
+	// NoRetries is used to control deadletter queuing logic, when set as the MaxRetires within the RetryPolicy
 	// it will attempt to immediately forward a message to the dead letter queue if the subscription Handler
 	// returns any error or panics.
 	//
 	// Note: With some cloud providers, having no retries may not be supported, in which case the minimum number of
 	// retries permitted by the provider will be used.
-	NoRetries = -2 // InfiniteRetries is used to control deadletter queuing logic, when set as the MaxRetires within the RetryPolicy
+	NoRetries = -2
+
+	// InfiniteRetries is used to control deadletter queuing logic, when set as the MaxRetires within the RetryPolicy
 	// it will attempt to always retry a message without ever sending it to the dead letter queue.
 	//
 	// Note: With some cloud providers, infinite retries may not be supported, in which case the maximum number of
@@ -84,9 +87,40 @@ const ( // NoRetries is used to control deadletter queuing logic, when set as th
 // DeliveryGuarantee is used to configure the delivery contract for a topic
 type DeliveryGuarantee int
 
-const ( // AtLeastOnce guarantees that a message for a subscription is delivered to
-	// a consumer at least once. This is supported by all cloud providers.
+const (
+	// AtLeastOnce guarantees that a message for a subscription is delivered to
+	// a consumer at least once.
+	//
+	// On AWS and GCP there is no limit to the throughput for a topic.
 	AtLeastOnce DeliveryGuarantee = iota + 1
+
+	// ExactlyOnce guarantees that a message for a subscription is delivered to
+	// a consumer exactly once, to the best of the system's ability.
+	//
+	// However, there are edge cases when a message might be redelivered.
+	// For example, if a networking issue causes the acknowledgement of success
+	// processing the message to be lost before the cloud provider receives it.
+	//
+	// It is also important to note that the ExactlyOnce delivery guarantee only
+	// applies to the delivery of the message to the consumer, and not to the
+	// original publishing of the message, such that if a message is published twice,
+	// such as due to an retry within the application logic, it will be delivered twice.
+	// (i.e. ExactlyOnce delivery does not imply message deduplication on publish)
+	//
+	// As such it's recommended that the subscription handler function is idempotent
+	// and is able to handle duplicate messages.
+	//
+	// Subscriptions attached to ExactlyOnce topics have higher message delivery latency compared to AtLeastOnce.
+	//
+	// By using ExactlyOnce semantics on a topic, the throughput will be limited depending on the cloud provider:
+	//
+	// - AWS: 300 messages per second for the topic (see [AWS SQS Quotas]).
+	// - GCP: At least 3,000 messages per second across all topics in the region
+	// 		  (can be higher on the region see [GCP PubSub Quotas]).
+	//
+	// [AWS SQS Quotas]: https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html
+	// [GCP PubSub Quotas]: https://cloud.google.com/pubsub/quotas#quotas
+	ExactlyOnce
 )
 
 // TopicConfig is used when creating a Topic
