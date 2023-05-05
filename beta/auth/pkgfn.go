@@ -9,7 +9,7 @@ func UserID() (_ UID, _ bool) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/38dbb67953561748253891e3e50181bdf095d6e5/runtime/beta/auth/pkgfn.go#L13-L15
+	//    https://github.com/encoredev/encore/blob/v1.18.0/runtime/beta/auth/pkgfn.go#L13-L15
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -28,7 +28,7 @@ func Data() (_ any) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/38dbb67953561748253891e3e50181bdf095d6e5/runtime/beta/auth/pkgfn.go#L25-L27
+	//    https://github.com/encoredev/encore/blob/v1.18.0/runtime/beta/auth/pkgfn.go#L25-L27
 	doPanic("encore apps must be run using the encore command")
 	return
 }
