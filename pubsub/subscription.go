@@ -46,7 +46,7 @@ func NewSubscription[T any](topic *Topic[T], name string, cfg SubscriptionConfig
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.18.0/runtime/pubsub/subscription.go#L58-L213
+	//    https://github.com/encoredev/encore/blob/v1.19.0/runtime/pubsub/subscription.go#L58-L213
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -72,7 +72,7 @@ func (*Subscription[T]) Meta() (_ SubscriptionMeta[T]) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.18.0/runtime/pubsub/subscription.go#L230-L236
+	//    https://github.com/encoredev/encore/blob/v1.19.0/runtime/pubsub/subscription.go#L230-L236
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -85,7 +85,7 @@ func (*Subscription[T]) Config() (_ SubscriptionConfig[T]) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.18.0/runtime/pubsub/subscription.go#L240-L242
+	//    https://github.com/encoredev/encore/blob/v1.19.0/runtime/pubsub/subscription.go#L240-L242
 	doPanic("encore apps must be run using the encore command")
 	return
 }
