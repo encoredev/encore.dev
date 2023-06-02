@@ -19,7 +19,7 @@ func (Ctx) Debug(msg string, keysAndValues ...any) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.19.0/runtime/rlog/rlog.go#L90-L94
+	//    https://github.com/encoredev/encore/blob/v1.20.0/runtime/rlog/rlog.go#L79-L83
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -33,7 +33,7 @@ func (Ctx) Info(msg string, keysAndValues ...any) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.19.0/runtime/rlog/rlog.go#L99-L103
+	//    https://github.com/encoredev/encore/blob/v1.20.0/runtime/rlog/rlog.go#L88-L92
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -47,7 +47,7 @@ func (Ctx) Warn(msg string, keysAndValues ...any) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.19.0/runtime/rlog/rlog.go#L108-L112
+	//    https://github.com/encoredev/encore/blob/v1.20.0/runtime/rlog/rlog.go#L97-L101
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -61,7 +61,7 @@ func (Ctx) Error(msg string, keysAndValues ...any) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.19.0/runtime/rlog/rlog.go#L117-L121
+	//    https://github.com/encoredev/encore/blob/v1.20.0/runtime/rlog/rlog.go#L106-L110
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -75,7 +75,7 @@ func (Ctx) With(keysAndValues ...any) (_ Ctx) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.19.0/runtime/rlog/rlog.go#L126-L136
+	//    https://github.com/encoredev/encore/blob/v1.20.0/runtime/rlog/rlog.go#L115-L125
 	doPanic("encore apps must be run using the encore command")
 	return
 }
