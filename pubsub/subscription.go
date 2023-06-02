@@ -1,5 +1,9 @@
 package pubsub
 
+import (
+	"context"
+)
+
 // Subscription represents a subscription to a Topic.
 type Subscription[T any] struct {
 	_ int // for godoc to show unexported fields
@@ -33,7 +37,7 @@ type Subscription[T any] struct {
 //
 //	var Subscription = pubsub.NewSubscription(MyTopic, "my-subscription", pubsub.SubscriptionConfig[*MyEvent]{
 //	  Handler:     HandleEvent,
-//	  RetryPolicy: &pubsub.RetryPolicy { MaxRetries: 10 },
+//	  RetryPolicy: &pubsub.RetryPolicy{MaxRetries: 10},
 //	})
 //
 //	func HandleEvent(ctx context.Context, event *MyEvent) error {
@@ -46,7 +50,7 @@ func NewSubscription[T any](topic *Topic[T], name string, cfg SubscriptionConfig
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.19.0/runtime/pubsub/subscription.go#L58-L213
+	//    https://github.com/encoredev/encore/blob/v1.20.0/runtime/pubsub/subscription.go#L60-L223
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -72,7 +76,7 @@ func (*Subscription[T]) Meta() (_ SubscriptionMeta[T]) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.19.0/runtime/pubsub/subscription.go#L230-L236
+	//    https://github.com/encoredev/encore/blob/v1.20.0/runtime/pubsub/subscription.go#L240-L246
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -85,7 +89,31 @@ func (*Subscription[T]) Config() (_ SubscriptionConfig[T]) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.19.0/runtime/pubsub/subscription.go#L240-L242
+	//    https://github.com/encoredev/encore/blob/v1.20.0/runtime/pubsub/subscription.go#L250-L252
+	doPanic("encore apps must be run using the encore command")
+	return
+}
+
+// MethodHandler is used to define a subscription Handler that references a service struct method.
+//
+// Example Usage:
+//
+//	//encore:service
+//	type Service struct {}
+//
+//	func (s *Service) Method(ctx context.Context, msg *Event) error { /* ... */ }
+//
+//	var _ = pubsub.NewSubscription(Topic, "subscription-name", pubsub.SubscriptionConfig[*Event]{
+//		Handler: pubsub.MethodHandler((*MyService).MyMethod),
+//		// ...
+//	})
+func MethodHandler[T, SvcStruct any](handler func(s SvcStruct, ctx context.Context, msg T) error) (_ func(ctx context.Context, msg T) error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.20.0/runtime/pubsub/subscription.go#L296-L303
 	doPanic("encore apps must be run using the encore command")
 	return
 }
