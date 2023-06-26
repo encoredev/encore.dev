@@ -25,32 +25,33 @@ type Subscription[T any] struct {
 //
 // Example:
 //
-//	import "encore.dev/pubsub"
+//		import "encore.dev/pubsub"
 //
-//	type MyEvent struct {
-//	  Foo string
-//	}
+//		type MyEvent struct {
+//		  Foo string
+//		}
 //
-//	var MyTopic = pubsub.NewTopic[*MyEvent]("my-topic", pubsub.TopicConfig{
-//	  DeliveryGuarantee: pubsub.AtLeastOnce,
-//	})
+//		var MyTopic = pubsub.NewTopic[*MyEvent]("my-topic", pubsub.TopicConfig{
+//		  DeliveryGuarantee: pubsub.AtLeastOnce,
+//		})
 //
-//	var Subscription = pubsub.NewSubscription(MyTopic, "my-subscription", pubsub.SubscriptionConfig[*MyEvent]{
-//	  Handler:     HandleEvent,
-//	  RetryPolicy: &pubsub.RetryPolicy{MaxRetries: 10},
-//	})
+//		var Subscription = pubsub.NewSubscription(MyTopic, "my-subscription", pubsub.SubscriptionConfig[*MyEvent]{
+//		  Handler:     HandleEvent,
+//		  RetryPolicy: &pubsub.RetryPolicy{MaxRetries: 10},
+//	      MaxConcurrency: 5,
+//		})
 //
-//	func HandleEvent(ctx context.Context, event *MyEvent) error {
-//	  rlog.Info("received foo")
-//	  return nil
-//	}
+//		func HandleEvent(ctx context.Context, event *MyEvent) error {
+//		  rlog.Info("received foo")
+//		  return nil
+//		}
 func NewSubscription[T any](topic *Topic[T], name string, cfg SubscriptionConfig[T]) (_ *Subscription[T]) {
 	// Encore will provide an implementation to this function at runtime, we do not expose
 	// the implementation in the API contract as it is an implementation detail, which may change
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.20.0/runtime/pubsub/subscription.go#L60-L223
+	//    https://github.com/encoredev/encore/blob/v1.21.0/runtime/pubsub/subscription.go#L61-L227
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -76,7 +77,7 @@ func (*Subscription[T]) Meta() (_ SubscriptionMeta[T]) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.20.0/runtime/pubsub/subscription.go#L240-L246
+	//    https://github.com/encoredev/encore/blob/v1.21.0/runtime/pubsub/subscription.go#L244-L250
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -89,7 +90,7 @@ func (*Subscription[T]) Config() (_ SubscriptionConfig[T]) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.20.0/runtime/pubsub/subscription.go#L250-L252
+	//    https://github.com/encoredev/encore/blob/v1.21.0/runtime/pubsub/subscription.go#L254-L256
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -113,7 +114,7 @@ func MethodHandler[T, SvcStruct any](handler func(s SvcStruct, ctx context.Conte
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.20.0/runtime/pubsub/subscription.go#L296-L303
+	//    https://github.com/encoredev/encore/blob/v1.21.0/runtime/pubsub/subscription.go#L300-L307
 	doPanic("encore apps must be run using the encore command")
 	return
 }
