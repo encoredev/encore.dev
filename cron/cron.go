@@ -44,7 +44,7 @@ func NewJob(id string, jobConfig JobConfig) (_ *Job) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.21.0/runtime/cron/cron.go#L39-L47
+	//    https://github.com/encoredev/encore/blob/v1.25.0/runtime/cron/cron.go#L39-L47
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -58,7 +58,7 @@ type JobConfig struct {
 	Title string
 
 	// Endpoint is the Encore API endpoint that should be called when the cron job executes.
-	// It must not take any parameters other than context.Conetxt; that is, its signature must be
+	// It must not take any parameters other than context.Context; that is, its signature must be
 	// either "func(context.Context) error" or "func(context.Context) (T, error)" for any type T.
 	Endpoint any
 

@@ -17,7 +17,7 @@ type Subscription[T any] struct {
 // in a compiler error.
 //
 // The subscription name must be unique for that topic. Subscription names must be defined
-// in kebab-case (lowercase alphanumerics and hyphen seperated). The subscription name must start with a letter
+// in kebab-case (lowercase alphanumerics and hyphen separated). The subscription name must start with a letter
 // and end with either a letter or number. It cannot be longer than 63 characters.
 //
 // Once created and deployed never change the subscription name, or the topic name otherwise messages will be lost which
@@ -51,7 +51,7 @@ func NewSubscription[T any](topic *Topic[T], name string, cfg SubscriptionConfig
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.21.0/runtime/pubsub/subscription.go#L61-L227
+	//    https://github.com/encoredev/encore/blob/v1.25.0/runtime/pubsub/subscription.go#L62-L241
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -77,7 +77,7 @@ func (*Subscription[T]) Meta() (_ SubscriptionMeta[T]) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.21.0/runtime/pubsub/subscription.go#L244-L250
+	//    https://github.com/encoredev/encore/blob/v1.25.0/runtime/pubsub/subscription.go#L258-L264
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -90,7 +90,7 @@ func (*Subscription[T]) Config() (_ SubscriptionConfig[T]) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.21.0/runtime/pubsub/subscription.go#L254-L256
+	//    https://github.com/encoredev/encore/blob/v1.25.0/runtime/pubsub/subscription.go#L268-L270
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -114,7 +114,7 @@ func MethodHandler[T, SvcStruct any](handler func(s SvcStruct, ctx context.Conte
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.21.0/runtime/pubsub/subscription.go#L300-L307
+	//    https://github.com/encoredev/encore/blob/v1.25.0/runtime/pubsub/subscription.go#L314-L321
 	doPanic("encore apps must be run using the encore command")
 	return
 }
