@@ -16,7 +16,7 @@ func RegisterStdlibDriver(db *Database) (_ string) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.27.0/runtime/storage/sqldb/stdlib.go#L22-L31
+	//    https://github.com/encoredev/encore/blob/v1.30.0/runtimes/go/storage/sqldb/stdlib.go#L22-L31
 	doPanic("encore apps must be run using the encore command")
 	return
 }
