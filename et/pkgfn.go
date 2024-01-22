@@ -27,7 +27,27 @@ func OverrideAuthInfo(uid auth.UID, data any) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.27.0/runtime/et/pkgfn.go#L26-L28
+	//    https://github.com/encoredev/encore/blob/v1.30.0/runtimes/go/et/pkgfn.go#L26-L28
+	doPanic("encore apps must be run using the encore command")
+	return
+}
+
+// EnableServiceInstanceIsolation will causes all Service singletons to be isolated to each test
+// from this test and on any of its sub-tests. (Calling this in a TestMain has the impact
+// of isolating all tests in the package.)
+//
+// By default, Service singletons are shared across all tests and initialized on
+// the first call to that service by any test, which results in faster tests as you
+// are not re-initializing the service for each test, however if your service structs
+// contain state that is not reset between tests, this can cause issues. In that case,
+// you can call this function to isolate the services for the impacted tests.
+func EnableServiceInstanceIsolation() {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.30.0/runtimes/go/et/pkgfn.go#L39-L41
 	doPanic("encore apps must be run using the encore command")
 	return
 }
