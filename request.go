@@ -17,6 +17,9 @@ type APIDesc struct {
 
 	// Raw specifies whether the endpoint is a Raw endpoint.
 	Raw bool
+
+	// Tags describes what tags are attached to the endpoint.
+	Tags Tags
 }
 
 // Request provides metadata about how and why the currently running code was started.
@@ -117,7 +120,26 @@ func (PathParams) Get(name string) (_ string) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.30.0/runtimes/go/request.go#L118-L126
+	//    https://github.com/encoredev/encore/blob/v1.34.3/runtimes/go/request.go#L122-L130
+	doPanic("encore apps must be run using the encore command")
+	return
+}
+
+// Tags describes a set of tags an endpoint is tagged with,
+// without the "tag:" prefix.
+//
+// The ordering is unspecified.
+type Tags []string
+
+// Has reports whether the set contains the given tag.
+// The provided value should not contain the "tag:" prefix.
+func (Tags) Has(tag string) (_ bool) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.34.3/runtimes/go/request.go#L207-L209
 	doPanic("encore apps must be run using the encore command")
 	return
 }
