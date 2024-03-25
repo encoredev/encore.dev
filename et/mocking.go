@@ -1,5 +1,24 @@
 package et
 
+// MockOption is a function that can be passed to MockEndpoint or MockService to configure the mocking behavior.
+type MockOption func(*mockOptions)
+
+type mockOptions struct {
+}
+
+// RunMiddleware is a MockOption that sets whether to run the middleware chain
+// prior to invoking the mock.
+func RunMiddleware(enabled bool) (_ MockOption) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.34.3/runtimes/go/et/mocking.go#L19-L23
+	doPanic("encore apps must be run using the encore command")
+	return
+}
+
 // MockEndpoint allows you to mock out an endpoint in your tests; Any calls made to the endpoint
 // during this test or any of its sub-tests will be routed to the mock you provide.
 //
@@ -26,13 +45,13 @@ package et
 // an endpoint on that service, the endpoint mock will take precedence over the service mock.
 //
 // Setting the mock to nil will remove the endpoint mock.
-func MockEndpoint[T any](originalEndpoint T, mock T) {
+func MockEndpoint[T any](originalEndpoint T, mock T, opts ...MockOption) {
 	// Encore will provide an implementation to this function at runtime, we do not expose
 	// the implementation in the API contract as it is an implementation detail, which may change
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.30.0/runtimes/go/et/mocking.go#L36-L51
+	//    https://github.com/encoredev/encore/blob/v1.34.3/runtimes/go/et/mocking.go#L51-L71
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -60,14 +79,14 @@ func MockEndpoint[T any](originalEndpoint T, mock T) {
 //		SomeFuncInThisPackageWhichUltimatelyCallsServiceB()
 //	}
 //
-// Setting the mock to nil will remove the service mock
-func MockService[T any](serviceName string, mock T) {
+// Setting the mock to nil will remove the service mock.
+func MockService[T any](serviceName string, mock T, opts ...MockOption) {
 	// Encore will provide an implementation to this function at runtime, we do not expose
 	// the implementation in the API contract as it is an implementation detail, which may change
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.30.0/runtimes/go/et/mocking.go#L77-L83
+	//    https://github.com/encoredev/encore/blob/v1.34.3/runtimes/go/et/mocking.go#L97-L108
 	doPanic("encore apps must be run using the encore command")
 	return
 }
