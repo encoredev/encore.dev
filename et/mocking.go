@@ -4,6 +4,7 @@ package et
 type MockOption func(*mockOptions)
 
 type mockOptions struct {
+	runMiddleware bool
 }
 
 // RunMiddleware is a MockOption that sets whether to run the middleware chain
@@ -14,7 +15,7 @@ func RunMiddleware(enabled bool) (_ MockOption) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.34.3/runtimes/go/et/mocking.go#L19-L23
+	//    https://github.com/encoredev/encore/blob/v1.37.0/runtimes/go/et/mocking.go#L20-L24
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -51,7 +52,7 @@ func MockEndpoint[T any](originalEndpoint T, mock T, opts ...MockOption) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.34.3/runtimes/go/et/mocking.go#L51-L71
+	//    https://github.com/encoredev/encore/blob/v1.37.0/runtimes/go/et/mocking.go#L52-L72
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -86,7 +87,7 @@ func MockService[T any](serviceName string, mock T, opts ...MockOption) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.34.3/runtimes/go/et/mocking.go#L97-L108
+	//    https://github.com/encoredev/encore/blob/v1.37.0/runtimes/go/et/mocking.go#L98-L109
 	doPanic("encore apps must be run using the encore command")
 	return
 }
