@@ -120,7 +120,7 @@ func (PathParams) Get(name string) (_ string) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.34.3/runtimes/go/request.go#L122-L130
+	//    https://github.com/encoredev/encore/blob/v1.37.0/runtimes/go/request.go#L122-L130
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -139,7 +139,7 @@ func (Tags) Has(tag string) (_ bool) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.34.3/runtimes/go/request.go#L207-L209
+	//    https://github.com/encoredev/encore/blob/v1.37.0/runtimes/go/request.go#L208-L210
 	doPanic("encore apps must be run using the encore command")
 	return
 }

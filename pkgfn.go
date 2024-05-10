@@ -9,7 +9,7 @@ func Meta() (_ *AppMetadata) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.34.3/runtimes/go/pkgfn.go#L16-L18
+	//    https://github.com/encoredev/encore/blob/v1.37.0/runtimes/go/pkgfn.go#L16-L18
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -26,7 +26,7 @@ func CurrentRequest() (_ *Request) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.34.3/runtimes/go/pkgfn.go#L26-L28
+	//    https://github.com/encoredev/encore/blob/v1.37.0/runtimes/go/pkgfn.go#L26-L28
 	doPanic("encore apps must be run using the encore command")
 	return
 }

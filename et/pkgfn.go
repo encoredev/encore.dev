@@ -1,7 +1,10 @@
 package et
 
 import (
+	"context"
+
 	"encore.dev/beta/auth"
+	"encore.dev/storage/sqldb"
 )
 
 // OverrideAuthInfo overrides the auth information for the current request.
@@ -27,7 +30,7 @@ func OverrideAuthInfo(uid auth.UID, data any) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.34.3/runtimes/go/et/pkgfn.go#L26-L28
+	//    https://github.com/encoredev/encore/blob/v1.37.0/runtimes/go/et/pkgfn.go#L29-L31
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -47,7 +50,32 @@ func EnableServiceInstanceIsolation() {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.34.3/runtimes/go/et/pkgfn.go#L39-L41
+	//    https://github.com/encoredev/encore/blob/v1.37.0/runtimes/go/et/pkgfn.go#L42-L44
+	doPanic("encore apps must be run using the encore command")
+	return
+}
+
+type stringLiteral string
+
+// NewTestDatabase creates a new, fresh database for the database with the given name.
+// The database name must be a database known to Encore (via `sqldb.NewDatabase`),
+// otherwise it reports an error.
+//
+// The new database is cloned from a template database that has had all migrations applied to it,
+// but excludes any of the changes applied to the given db.
+//
+// The returned database is isolated to the current test and any sub-tests,
+// and is automatically dropped at the end of the test, and any
+// open connections are automatically closed.
+//
+// The provided name must be a constant string literal (like "mydb").
+func NewTestDatabase(ctx context.Context, name stringLiteral) (_ *sqldb.Database, _ error) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.37.0/runtimes/go/et/pkgfn.go#L61-L63
 	doPanic("encore apps must be run using the encore command")
 	return
 }
