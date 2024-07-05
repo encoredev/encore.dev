@@ -2,7 +2,7 @@ module encore.dev
 
 go 1.18
 
-require github.com/jackc/pgx/v5 v5.2.0
+require github.com/jackc/pgx/v5 v5.6.0
 
 require (
 	github.com/jackc/pgpassfile v1.0.0 // indirect
