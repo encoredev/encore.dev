@@ -8,7 +8,7 @@ func NewCounter[V Value](name string, cfg CounterConfig) (_ *Counter[V]) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.37.0/runtimes/go/metrics/pkgfn.go#L7-L9
+	//    https://github.com/encoredev/encore/blob/v1.41.9/runtimes/go/metrics/pkgfn.go#L7-L9
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -24,7 +24,7 @@ func NewCounterGroup[L Labels, V Value](name string, cfg CounterConfig) (_ *Coun
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.37.0/runtimes/go/metrics/pkgfn.go#L16-L18
+	//    https://github.com/encoredev/encore/blob/v1.41.9/runtimes/go/metrics/pkgfn.go#L16-L18
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -37,7 +37,7 @@ func NewGauge[V Value](name string, cfg GaugeConfig) (_ *Gauge[V]) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.37.0/runtimes/go/metrics/pkgfn.go#L22-L24
+	//    https://github.com/encoredev/encore/blob/v1.41.9/runtimes/go/metrics/pkgfn.go#L22-L24
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -53,7 +53,7 @@ func NewGaugeGroup[L Labels, V Value](name string, cfg GaugeConfig) (_ *GaugeGro
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.37.0/runtimes/go/metrics/pkgfn.go#L31-L33
+	//    https://github.com/encoredev/encore/blob/v1.41.9/runtimes/go/metrics/pkgfn.go#L31-L33
 	doPanic("encore apps must be run using the encore command")
 	return
 }

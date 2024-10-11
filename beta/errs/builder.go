@@ -18,7 +18,7 @@ func B() (_ *Builder) {
 	//
 	// The current implementation of this function can be found here:
 	//
-	//	https://github.com/encoredev/encore/blob/v1.37.0/runtimes/go/beta/errs/builder.go#L27-L27
+	//	https://github.com/encoredev/encore/blob/v1.41.9/runtimes/go/beta/errs/builder.go#L27-L27
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -30,7 +30,7 @@ func (*Builder) Code(c ErrCode) (_ *Builder) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.37.0/runtimes/go/beta/errs/builder.go#L30-L34
+	//    https://github.com/encoredev/encore/blob/v1.41.9/runtimes/go/beta/errs/builder.go#L30-L34
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -42,7 +42,7 @@ func (*Builder) Msg(msg string) (_ *Builder) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.37.0/runtimes/go/beta/errs/builder.go#L37-L40
+	//    https://github.com/encoredev/encore/blob/v1.41.9/runtimes/go/beta/errs/builder.go#L37-L40
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -54,7 +54,7 @@ func (*Builder) Msgf(format string, args ...interface{}) (_ *Builder) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.37.0/runtimes/go/beta/errs/builder.go#L43-L46
+	//    https://github.com/encoredev/encore/blob/v1.41.9/runtimes/go/beta/errs/builder.go#L43-L46
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -66,7 +66,7 @@ func (*Builder) Meta(metaPairs ...interface{}) (_ *Builder) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.37.0/runtimes/go/beta/errs/builder.go#L49-L52
+	//    https://github.com/encoredev/encore/blob/v1.41.9/runtimes/go/beta/errs/builder.go#L49-L52
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -78,7 +78,7 @@ func (*Builder) Details(det ErrDetails) (_ *Builder) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.37.0/runtimes/go/beta/errs/builder.go#L55-L59
+	//    https://github.com/encoredev/encore/blob/v1.41.9/runtimes/go/beta/errs/builder.go#L55-L59
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -90,7 +90,7 @@ func (*Builder) Cause(err error) (_ *Builder) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.37.0/runtimes/go/beta/errs/builder.go#L62-L77
+	//    https://github.com/encoredev/encore/blob/v1.41.9/runtimes/go/beta/errs/builder.go#L62-L77
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -109,7 +109,7 @@ func (*Builder) Err() (_ error) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.37.0/runtimes/go/beta/errs/builder.go#L87-L117
+	//    https://github.com/encoredev/encore/blob/v1.41.9/runtimes/go/beta/errs/builder.go#L87-L117
 	doPanic("encore apps must be run using the encore command")
 	return
 }
