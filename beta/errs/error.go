@@ -49,7 +49,7 @@ func Wrap(err error, msg string, metaPairs ...interface{}) (_ error) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.37.0/runtimes/go/beta/errs/error.go#L66-L82
+	//    https://github.com/encoredev/encore/blob/v1.41.9/runtimes/go/beta/errs/error.go#L66-L82
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -62,7 +62,7 @@ func WrapCode(err error, code ErrCode, msg string, metaPairs ...interface{}) (_ 
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.37.0/runtimes/go/beta/errs/error.go#L86-L101
+	//    https://github.com/encoredev/encore/blob/v1.41.9/runtimes/go/beta/errs/error.go#L86-L101
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -76,7 +76,7 @@ func Convert(err error) (_ error) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.37.0/runtimes/go/beta/errs/error.go#L106-L117
+	//    https://github.com/encoredev/encore/blob/v1.41.9/runtimes/go/beta/errs/error.go#L106-L117
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -90,7 +90,7 @@ func Code(err error) (_ ErrCode) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.37.0/runtimes/go/beta/errs/error.go#L122-L129
+	//    https://github.com/encoredev/encore/blob/v1.41.9/runtimes/go/beta/errs/error.go#L122-L129
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -103,7 +103,7 @@ func Meta(err error) (_ Metadata) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.37.0/runtimes/go/beta/errs/error.go#L133-L138
+	//    https://github.com/encoredev/encore/blob/v1.41.9/runtimes/go/beta/errs/error.go#L133-L138
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -116,7 +116,7 @@ func Details(err error) (_ ErrDetails) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.37.0/runtimes/go/beta/errs/error.go#L142-L147
+	//    https://github.com/encoredev/encore/blob/v1.41.9/runtimes/go/beta/errs/error.go#L142-L147
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -128,7 +128,7 @@ func (*Error) Error() (_ string) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.37.0/runtimes/go/beta/errs/error.go#L150-L155
+	//    https://github.com/encoredev/encore/blob/v1.41.9/runtimes/go/beta/errs/error.go#L150-L155
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -141,7 +141,7 @@ func (*Error) ErrorMessage() (_ string) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.37.0/runtimes/go/beta/errs/error.go#L159-L183
+	//    https://github.com/encoredev/encore/blob/v1.41.9/runtimes/go/beta/errs/error.go#L159-L183
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -153,7 +153,7 @@ func (*Error) Unwrap() (_ error) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.37.0/runtimes/go/beta/errs/error.go#L186-L188
+	//    https://github.com/encoredev/encore/blob/v1.41.9/runtimes/go/beta/errs/error.go#L186-L188
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -170,7 +170,7 @@ func HTTPError(w http.ResponseWriter, err error) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.37.0/runtimes/go/beta/errs/error.go#L196-L198
+	//    https://github.com/encoredev/encore/blob/v1.41.9/runtimes/go/beta/errs/error.go#L196-L198
 	doPanic("encore apps must be run using the encore command")
 	return
 }

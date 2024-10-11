@@ -1,6 +1,7 @@
 package encore
 
 import (
+	"net/http"
 	"reflect"
 	"time"
 )
@@ -40,6 +41,13 @@ type Request struct {
 	Endpoint   string     // Which API endpoint is being called
 	Path       string     // What was the path made to the API server
 	PathParams PathParams // If there are path parameters, what are they?
+
+	// Headers contains the request headers sent with the request, if any.
+	//
+	// It is currently empty for service-to-service API calls when the caller
+	// and callee are both running within the same process.
+	// This behavior may change in the future.
+	Headers http.Header
 
 	// PubSubMessage specific parameters.
 	// Message contains information about the PubSub message,
@@ -120,7 +128,7 @@ func (PathParams) Get(name string) (_ string) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.37.0/runtimes/go/request.go#L122-L130
+	//    https://github.com/encoredev/encore/blob/v1.41.9/runtimes/go/request.go#L130-L138
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -139,7 +147,7 @@ func (Tags) Has(tag string) (_ bool) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.37.0/runtimes/go/request.go#L208-L210
+	//    https://github.com/encoredev/encore/blob/v1.41.9/runtimes/go/request.go#L217-L219
 	doPanic("encore apps must be run using the encore command")
 	return
 }
