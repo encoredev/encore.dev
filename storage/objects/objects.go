@@ -1,32 +1,32 @@
-package encore
+package objects
 
-// Meta returns metadata about the running application.
+// NewBucket declares a new object storage bucket.
 //
-// Meta will never return nil.
-func Meta() (_ *AppMetadata) {
+// See https://encore.dev/docs/primitives/object-storage for more information.
+func NewBucket(name string, cfg BucketConfig) (_ *Bucket) {
 	// Encore will provide an implementation to this function at runtime, we do not expose
 	// the implementation in the API contract as it is an implementation detail, which may change
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.44.0/runtimes/go/pkgfn.go#L16-L18
+	//    https://github.com/encoredev/encore/blob/v1.44.0/runtimes/go/storage/objects/objects.go#L8-L10
 	doPanic("encore apps must be run using the encore command")
 	return
 }
 
-// CurrentRequest returns the Request that is currently being handled by the calling goroutine
+// constStr is a string that can only be provided as a constant.
+type constStr string
+
+// Named returns a database object connected to the database with the given name.
 //
-// It is safe for concurrent use and will return a new Request on each evocation, so can be mutated by the
-// calling code without impacting future calls.
-//
-// CurrentRequest never returns nil.
-func CurrentRequest() (_ *Request) {
+// The name must be a string literal constant, to facilitate static analysis.
+func Named(name constStr) (_ *Bucket) {
 	// Encore will provide an implementation to this function at runtime, we do not expose
 	// the implementation in the API contract as it is an implementation detail, which may change
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.44.0/runtimes/go/pkgfn.go#L26-L28
+	//    https://github.com/encoredev/encore/blob/v1.44.0/runtimes/go/storage/objects/objects.go#L20-L22
 	doPanic("encore apps must be run using the encore command")
 	return
 }

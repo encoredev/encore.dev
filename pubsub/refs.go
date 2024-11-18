@@ -50,7 +50,7 @@ func TopicRef[P TopicPerms[T], T any](topic *Topic[T]) (_ P) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.41.9/runtimes/go/pubsub/refs.go#L47-L49
+	//    https://github.com/encoredev/encore/blob/v1.44.0/runtimes/go/pubsub/refs.go#L47-L49
 	doPanic("encore apps must be run using the encore command")
 	return
 }
