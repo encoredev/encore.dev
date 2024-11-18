@@ -21,7 +21,7 @@ func (*Database) Stdlib() (_ *sql.DB) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.41.9/runtimes/go/storage/sqldb/db.go#L61-L94
+	//    https://github.com/encoredev/encore/blob/v1.44.0/runtimes/go/storage/sqldb/db.go#L61-L94
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -36,7 +36,7 @@ func (*Database) Exec(ctx context.Context, query string, args ...interface{}) (_
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.41.9/runtimes/go/storage/sqldb/db.go#L167-L203
+	//    https://github.com/encoredev/encore/blob/v1.44.0/runtimes/go/storage/sqldb/db.go#L167-L203
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -51,7 +51,7 @@ func (*Database) Query(ctx context.Context, query string, args ...interface{}) (
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.41.9/runtimes/go/storage/sqldb/db.go#L209-L247
+	//    https://github.com/encoredev/encore/blob/v1.44.0/runtimes/go/storage/sqldb/db.go#L209-L247
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -65,7 +65,7 @@ func (*Database) QueryRow(ctx context.Context, query string, args ...interface{}
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.41.9/runtimes/go/storage/sqldb/db.go#L252-L288
+	//    https://github.com/encoredev/encore/blob/v1.44.0/runtimes/go/storage/sqldb/db.go#L252-L288
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -79,7 +79,7 @@ func (*Database) Begin(ctx context.Context) (_ *Tx, _ error) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.41.9/runtimes/go/storage/sqldb/db.go#L293-L316
+	//    https://github.com/encoredev/encore/blob/v1.44.0/runtimes/go/storage/sqldb/db.go#L293-L316
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -100,7 +100,7 @@ func Driver[T SupportedDrivers](db *Database) (_ T) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.41.9/runtimes/go/storage/sqldb/db.go#L328-L335
+	//    https://github.com/encoredev/encore/blob/v1.44.0/runtimes/go/storage/sqldb/db.go#L328-L335
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -132,7 +132,7 @@ func DriverConn[T SupportedDriverConns](conn *sql.Conn, f func(driverConn T) err
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.41.9/runtimes/go/storage/sqldb/db.go#L358-L371
+	//    https://github.com/encoredev/encore/blob/v1.44.0/runtimes/go/storage/sqldb/db.go#L358-L371
 	doPanic("encore apps must be run using the encore command")
 	return
 }

@@ -11,7 +11,7 @@ func Topic[T any](topic *pubsub.Topic[T]) (_ TopicHelpers[T]) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.41.9/runtimes/go/et/pubsub.go#L8-L10
+	//    https://github.com/encoredev/encore/blob/v1.44.0/runtimes/go/et/pubsub.go#L8-L10
 	doPanic("encore apps must be run using the encore command")
 	return
 }
