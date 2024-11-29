@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"iter"
+	"net/url"
 	"os"
 )
 
@@ -16,6 +17,9 @@ type Bucket struct {
 
 // BucketConfig is the configuration for a Bucket.
 type BucketConfig struct {
+	// Whether objects in the bucket should be publicly accessible, via CDN.
+	Public bool
+
 	// Whether objects stored in the bucket should be versioned.
 	//
 	// If true, the bucket will store multiple versions of each object
@@ -33,7 +37,19 @@ func (*Bucket) Upload(ctx context.Context, object string, options ...UploadOptio
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.44.0/runtimes/go/storage/objects/bucket.go#L79-L111
+	//    https://github.com/encoredev/encore/blob/v1.44.6/runtimes/go/storage/objects/bucket.go#L98-L130
+	doPanic("encore apps must be run using the encore command")
+	return
+}
+
+// PublicURL returns the public URL for accessing an object in the bucket.
+func (*Bucket) PublicURL(object string, options ...PublicURLOption) (_ *url.URL) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.44.6/runtimes/go/storage/objects/bucket.go#L133-L149
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -50,7 +66,7 @@ func (*Writer) Write(p []byte) (_ int, _ error) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.44.0/runtimes/go/storage/objects/bucket.go#L131-L134
+	//    https://github.com/encoredev/encore/blob/v1.44.6/runtimes/go/storage/objects/bucket.go#L169-L172
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -62,7 +78,7 @@ func (*Writer) Abort(err error) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.44.0/runtimes/go/storage/objects/bucket.go#L137-L143
+	//    https://github.com/encoredev/encore/blob/v1.44.6/runtimes/go/storage/objects/bucket.go#L175-L181
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -74,7 +90,7 @@ func (*Writer) Close() (_ error) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.44.0/runtimes/go/storage/objects/bucket.go#L146-L169
+	//    https://github.com/encoredev/encore/blob/v1.44.6/runtimes/go/storage/objects/bucket.go#L184-L207
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -90,7 +106,7 @@ func (*Bucket) Download(ctx context.Context, object string, options ...DownloadO
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.44.0/runtimes/go/storage/objects/bucket.go#L210-L238
+	//    https://github.com/encoredev/encore/blob/v1.44.6/runtimes/go/storage/objects/bucket.go#L248-L276
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -107,7 +123,7 @@ func (*Reader) Err() (_ error) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.44.0/runtimes/go/storage/objects/bucket.go#L253-L255
+	//    https://github.com/encoredev/encore/blob/v1.44.6/runtimes/go/storage/objects/bucket.go#L291-L293
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -119,7 +135,7 @@ func (*Reader) Read(p []byte) (_ int, _ error) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.44.0/runtimes/go/storage/objects/bucket.go#L258-L267
+	//    https://github.com/encoredev/encore/blob/v1.44.6/runtimes/go/storage/objects/bucket.go#L296-L305
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -132,7 +148,7 @@ func (*Reader) Close() (_ error) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.44.0/runtimes/go/storage/objects/bucket.go#L271-L279
+	//    https://github.com/encoredev/encore/blob/v1.44.6/runtimes/go/storage/objects/bucket.go#L309-L317
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -182,7 +198,7 @@ func (*Bucket) List(ctx context.Context, query *Query, options ...ListOption) (_
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.44.0/runtimes/go/storage/objects/bucket.go#L366-L418
+	//    https://github.com/encoredev/encore/blob/v1.44.6/runtimes/go/storage/objects/bucket.go#L404-L456
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -194,7 +210,7 @@ func (*Bucket) Remove(ctx context.Context, object string, options ...RemoveOptio
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.44.0/runtimes/go/storage/objects/bucket.go#L421-L464
+	//    https://github.com/encoredev/encore/blob/v1.44.6/runtimes/go/storage/objects/bucket.go#L459-L502
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -216,7 +232,7 @@ func (*Bucket) Attrs(ctx context.Context, object string, options ...AttrsOption)
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.44.0/runtimes/go/storage/objects/bucket.go#L477-L535
+	//    https://github.com/encoredev/encore/blob/v1.44.6/runtimes/go/storage/objects/bucket.go#L515-L573
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -228,7 +244,7 @@ func (*Bucket) Exists(ctx context.Context, object string, options ...ExistsOptio
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.44.0/runtimes/go/storage/objects/bucket.go#L538-L597
+	//    https://github.com/encoredev/encore/blob/v1.44.6/runtimes/go/storage/objects/bucket.go#L576-L635
 	doPanic("encore apps must be run using the encore command")
 	return
 }

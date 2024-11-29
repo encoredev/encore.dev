@@ -13,7 +13,7 @@ func WithVersion(version string) (_ withVersionOption) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.44.0/runtimes/go/storage/objects/options.go#L15-L17
+	//    https://github.com/encoredev/encore/blob/v1.44.6/runtimes/go/storage/objects/options.go#L15-L17
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -46,7 +46,7 @@ func WithPreconditions(pre Preconditions) (_ withPreconditionsOption) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.44.0/runtimes/go/storage/objects/options.go#L55-L57
+	//    https://github.com/encoredev/encore/blob/v1.44.6/runtimes/go/storage/objects/options.go#L55-L57
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -77,7 +77,7 @@ func WithUploadAttrs(attrs UploadAttrs) (_ withUploadAttrsOption) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.44.0/runtimes/go/storage/objects/options.go#L85-L87
+	//    https://github.com/encoredev/encore/blob/v1.44.6/runtimes/go/storage/objects/options.go#L85-L87
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -106,4 +106,9 @@ type AttrsOption interface {
 // ExistsOption describes available options for the Exists operation.
 type ExistsOption interface {
 	existsOption()
+}
+
+// PublicURLOption describes available options for the PublicURL operation.
+type PublicURLOption interface {
+	publicURLOption()
 }
