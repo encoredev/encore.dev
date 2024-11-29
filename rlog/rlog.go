@@ -19,7 +19,7 @@ func (Ctx) Debug(msg string, keysAndValues ...any) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.44.0/runtimes/go/rlog/rlog.go#L79-L83
+	//    https://github.com/encoredev/encore/blob/v1.44.6/runtimes/go/rlog/rlog.go#L79-L83
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -33,7 +33,7 @@ func (Ctx) Info(msg string, keysAndValues ...any) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.44.0/runtimes/go/rlog/rlog.go#L88-L92
+	//    https://github.com/encoredev/encore/blob/v1.44.6/runtimes/go/rlog/rlog.go#L88-L92
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -47,7 +47,7 @@ func (Ctx) Warn(msg string, keysAndValues ...any) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.44.0/runtimes/go/rlog/rlog.go#L97-L101
+	//    https://github.com/encoredev/encore/blob/v1.44.6/runtimes/go/rlog/rlog.go#L97-L101
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -61,7 +61,7 @@ func (Ctx) Error(msg string, keysAndValues ...any) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.44.0/runtimes/go/rlog/rlog.go#L106-L110
+	//    https://github.com/encoredev/encore/blob/v1.44.6/runtimes/go/rlog/rlog.go#L106-L110
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -75,7 +75,7 @@ func (Ctx) With(keysAndValues ...any) (_ Ctx) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.44.0/runtimes/go/rlog/rlog.go#L115-L129
+	//    https://github.com/encoredev/encore/blob/v1.44.6/runtimes/go/rlog/rlog.go#L115-L129
 	doPanic("encore apps must be run using the encore command")
 	return
 }
