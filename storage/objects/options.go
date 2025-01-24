@@ -1,5 +1,9 @@
 package objects
 
+import (
+	"time"
+)
+
 // DownloadOption describes available options for the Download operation.
 type DownloadOption interface {
 	downloadOption()
@@ -13,7 +17,7 @@ func WithVersion(version string) (_ withVersionOption) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.44.6/runtimes/go/storage/objects/options.go#L15-L17
+	//    https://github.com/encoredev/encore/blob/v1.46.1/runtimes/go/storage/objects/options.go#L19-L21
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -29,6 +33,28 @@ func (o withVersionOption) removeOption() {}
 func (o withVersionOption) attrsOption() {}
 
 func (o withVersionOption) existsOption() {}
+
+func (o withTTLOption) uploadURLOption() {}
+
+func (o withTTLOption) downloadURLOption() {}
+
+// WithTTL is used for signed URLs, to specify the lifetime of the generated
+// URL. The max value is seven days. The default lifetime, if this
+// option is missing, is one hour.
+func WithTTL(TTL time.Duration) (_ withTTLOption) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.46.1/runtimes/go/storage/objects/options.go#L56-L58
+	doPanic("encore apps must be run using the encore command")
+	return
+}
+
+type withTTLOption struct {
+	TTL time.Duration
+}
 
 type downloadOptions struct {
 	version string
@@ -46,7 +72,7 @@ func WithPreconditions(pre Preconditions) (_ withPreconditionsOption) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.44.6/runtimes/go/storage/objects/options.go#L55-L57
+	//    https://github.com/encoredev/encore/blob/v1.46.1/runtimes/go/storage/objects/options.go#L79-L81
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -77,7 +103,7 @@ func WithUploadAttrs(attrs UploadAttrs) (_ withUploadAttrsOption) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.44.6/runtimes/go/storage/objects/options.go#L85-L87
+	//    https://github.com/encoredev/encore/blob/v1.46.1/runtimes/go/storage/objects/options.go#L109-L111
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -101,6 +127,16 @@ type RemoveOption interface {
 // AttrsOption describes available options for the Attrs operation.
 type AttrsOption interface {
 	attrsOption()
+}
+
+// UploadURLOption describes available options for the SignedUploadURL operation.
+type UploadURLOption interface {
+	uploadURLOption()
+}
+
+// DownloadURLOption describes available options for the SignedDownloadURL operation.
+type DownloadURLOption interface {
+	downloadURLOption()
 }
 
 // ExistsOption describes available options for the Exists operation.
