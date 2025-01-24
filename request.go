@@ -31,7 +31,6 @@ type Request struct {
 	Started time.Time   // What time the trigger occurred
 
 	// Trace contains the trace information for the current request.
-	// It is nil if the request is not traced.
 	Trace *TraceData
 
 	// APICall specific parameters.
@@ -75,6 +74,7 @@ type TraceData struct {
 	ParentTraceID    string // empty if no parent trace
 	ParentSpanID     string // empty if no parent span
 	ExtCorrelationID string // empty if no correlation id
+	Recorded         bool   // true if this trace is being recorded
 }
 
 // MessageData describes the request data for a Pub/Sub message.
@@ -128,7 +128,7 @@ func (PathParams) Get(name string) (_ string) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.44.6/runtimes/go/request.go#L130-L138
+	//    https://github.com/encoredev/encore/blob/v1.46.1/runtimes/go/request.go#L130-L138
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -147,7 +147,7 @@ func (Tags) Has(tag string) (_ bool) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.44.6/runtimes/go/request.go#L217-L219
+	//    https://github.com/encoredev/encore/blob/v1.46.1/runtimes/go/request.go#L215-L217
 	doPanic("encore apps must be run using the encore command")
 	return
 }
