@@ -9,7 +9,7 @@ func NewBucket(name string, cfg BucketConfig) (_ *Bucket) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.46.1/runtimes/go/storage/objects/objects.go#L8-L10
+	//    https://github.com/encoredev/encore/blob/v1.48.13/runtimes/go/storage/objects/objects.go#L8-L10
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -26,7 +26,7 @@ func Named(name constStr) (_ *Bucket) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.46.1/runtimes/go/storage/objects/objects.go#L20-L22
+	//    https://github.com/encoredev/encore/blob/v1.48.13/runtimes/go/storage/objects/objects.go#L20-L22
 	doPanic("encore apps must be run using the encore command")
 	return
 }

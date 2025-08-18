@@ -192,7 +192,7 @@ func BucketRef[P BucketPerms](bucket *Bucket) (_ P) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.46.1/runtimes/go/storage/objects/refs.go#L206-L208
+	//    https://github.com/encoredev/encore/blob/v1.48.13/runtimes/go/storage/objects/refs.go#L206-L208
 	doPanic("encore apps must be run using the encore command")
 	return
 }
