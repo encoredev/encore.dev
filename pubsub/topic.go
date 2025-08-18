@@ -31,7 +31,7 @@ func (*Topic[T]) Meta() (_ TopicMeta) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.46.1/runtimes/go/pubsub/topic.go#L93-L98
+	//    https://github.com/encoredev/encore/blob/v1.48.13/runtimes/go/pubsub/topic.go#L93-L98
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -48,7 +48,7 @@ func (*Topic[T]) Publish(ctx context.Context, msg T) (id string, err error) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.46.1/runtimes/go/pubsub/topic.go#L106-L204
+	//    https://github.com/encoredev/encore/blob/v1.48.13/runtimes/go/pubsub/topic.go#L106-L202
 	doPanic("encore apps must be run using the encore command")
 	return
 }

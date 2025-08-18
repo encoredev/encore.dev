@@ -7,6 +7,7 @@ package middleware
 
 import (
 	"context"
+	"net/http"
 	"os"
 
 	encore "encore.dev"
@@ -47,7 +48,7 @@ func (*Request) WithContext(ctx context.Context) (_ Request) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.46.1/runtimes/go/middleware/middleware.go#L44-L48
+	//    https://github.com/encoredev/encore/blob/v1.48.13/runtimes/go/middleware/middleware.go#L45-L49
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -59,7 +60,7 @@ func (*Request) Context() (_ context.Context) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.46.1/runtimes/go/middleware/middleware.go#L51-L53
+	//    https://github.com/encoredev/encore/blob/v1.48.13/runtimes/go/middleware/middleware.go#L52-L54
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -71,7 +72,7 @@ func (*Request) Data() (_ *encore.Request) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.46.1/runtimes/go/middleware/middleware.go#L56-L58
+	//    https://github.com/encoredev/encore/blob/v1.48.13/runtimes/go/middleware/middleware.go#L57-L59
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -113,6 +114,23 @@ type Response struct {
 	HTTPStatus int
 }
 
+// Header returns the header map that will be sent by the response.
+// The returned map is lazily initialized on first call.
+// Changing the header map after a call to WriteHeader has no effect.
+//
+// For raw handlers middleware cannot modify headers as the response has already
+// been written to the network.
+func (*Response) Header() (_ http.Header) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.48.13/runtimes/go/middleware/middleware.go#L108-L113
+	doPanic("encore apps must be run using the encore command")
+	return
+}
+
 // NewRequest constructs a new Request that returns the given context and request data.
 // It is primarily used for testing middleware.
 func NewRequest(ctx context.Context, data *encore.Request) (_ Request) {
@@ -121,7 +139,7 @@ func NewRequest(ctx context.Context, data *encore.Request) (_ Request) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.46.1/runtimes/go/middleware/middleware.go#L99-L104
+	//    https://github.com/encoredev/encore/blob/v1.48.13/runtimes/go/middleware/middleware.go#L123-L128
 	doPanic("encore apps must be run using the encore command")
 	return
 }

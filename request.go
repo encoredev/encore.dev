@@ -40,6 +40,7 @@ type Request struct {
 	Endpoint   string     // Which API endpoint is being called
 	Path       string     // What was the path made to the API server
 	PathParams PathParams // If there are path parameters, what are they?
+	Method     string     // What HTTP method was used
 
 	// Headers contains the request headers sent with the request, if any.
 	//
@@ -128,7 +129,7 @@ func (PathParams) Get(name string) (_ string) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.46.1/runtimes/go/request.go#L130-L138
+	//    https://github.com/encoredev/encore/blob/v1.48.13/runtimes/go/request.go#L131-L139
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -147,7 +148,7 @@ func (Tags) Has(tag string) (_ bool) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.46.1/runtimes/go/request.go#L215-L217
+	//    https://github.com/encoredev/encore/blob/v1.48.13/runtimes/go/request.go#L217-L219
 	doPanic("encore apps must be run using the encore command")
 	return
 }
