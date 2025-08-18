@@ -131,19 +131,6 @@ func (*Response) Header() (_ http.Header) {
 	return
 }
 
-// GetHeaders returns the headers map, or nil if no headers have been set.
-// This method is used internally by the Encore runtime.
-func (*Response) GetHeaders() (_ http.Header) {
-	// Encore will provide an implementation to this function at runtime, we do not expose
-	// the implementation in the API contract as it is an implementation detail, which may change
-	// between releases.
-	//
-	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.48.13/runtimes/go/middleware/middleware.go#L117-L119
-	doPanic("encore apps must be run using the encore command")
-	return
-}
-
 // NewRequest constructs a new Request that returns the given context and request data.
 // It is primarily used for testing middleware.
 func NewRequest(ctx context.Context, data *encore.Request) (_ Request) {
