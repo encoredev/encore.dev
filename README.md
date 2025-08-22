@@ -18,4 +18,4 @@ go get -u encore.dev
 ```
 
 When compiling your application the [encore compiler](https://github.com/encoredev/encore) will automatically provide an
-implementation of this API. [The default implementation can be found here](https://github.com/encoredev/encore/tree/main/runtime).
+implementation of this API. [The default implementation can be found here](https://github.com/encoredev/encore/tree/main/runtimes/go).
