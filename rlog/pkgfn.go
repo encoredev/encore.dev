@@ -10,7 +10,7 @@ func Debug(msg string, keysAndValues ...any) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.48.13/runtimes/go/rlog/pkgfn.go#L12-L14
+	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/rlog/pkgfn.go#L12-L14
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -23,7 +23,7 @@ func Info(msg string, keysAndValues ...any) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.48.13/runtimes/go/rlog/pkgfn.go#L18-L20
+	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/rlog/pkgfn.go#L18-L20
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -36,7 +36,7 @@ func Warn(msg string, keysAndValues ...any) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.48.13/runtimes/go/rlog/pkgfn.go#L24-L26
+	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/rlog/pkgfn.go#L24-L26
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -49,7 +49,7 @@ func Error(msg string, keysAndValues ...any) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.48.13/runtimes/go/rlog/pkgfn.go#L30-L32
+	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/rlog/pkgfn.go#L30-L32
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -62,7 +62,7 @@ func With(keysAndValues ...any) (_ Ctx) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.48.13/runtimes/go/rlog/pkgfn.go#L36-L38
+	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/rlog/pkgfn.go#L36-L38
 	doPanic("encore apps must be run using the encore command")
 	return
 }

@@ -16,7 +16,7 @@ func SetCfg[T any](cfg config.Value[T], newValue T) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.48.13/runtimes/go/et/config.go#L15-L29
+	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/et/config.go#L15-L29
 	doPanic("encore apps must be run using the encore command")
 	return
 }

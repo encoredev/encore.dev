@@ -15,7 +15,7 @@ func RunMiddleware(enabled bool) (_ MockOption) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.48.13/runtimes/go/et/mocking.go#L20-L24
+	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/et/mocking.go#L20-L24
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -52,7 +52,7 @@ func MockEndpoint[T any](originalEndpoint T, mock T, opts ...MockOption) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.48.13/runtimes/go/et/mocking.go#L52-L75
+	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/et/mocking.go#L52-L75
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -87,7 +87,7 @@ func MockService[T any](serviceName string, mock T, opts ...MockOption) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.48.13/runtimes/go/et/mocking.go#L101-L115
+	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/et/mocking.go#L101-L115
 	doPanic("encore apps must be run using the encore command")
 	return
 }
