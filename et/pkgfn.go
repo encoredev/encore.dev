@@ -30,7 +30,7 @@ func OverrideAuthInfo(uid auth.UID, data any) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.48.13/runtimes/go/et/pkgfn.go#L30-L35
+	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/et/pkgfn.go#L30-L35
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -50,7 +50,7 @@ func EnableServiceInstanceIsolation() {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.48.13/runtimes/go/et/pkgfn.go#L46-L51
+	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/et/pkgfn.go#L46-L51
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -75,7 +75,7 @@ func NewTestDatabase(ctx context.Context, name stringLiteral) (_ *sqldb.Database
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.48.13/runtimes/go/et/pkgfn.go#L68-L73
+	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/et/pkgfn.go#L68-L73
 	doPanic("encore apps must be run using the encore command")
 	return
 }
