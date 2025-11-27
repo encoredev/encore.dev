@@ -7,7 +7,7 @@
 
 <div align="center">
 
-[![Go Reference](https://pkg.go.dev/badge/encore.dev.svg)](https://pkg.go.dev/encore.dev) [![Slack](https://img.shields.io/badge/chat-on%20slack-blue?style=flat-square&logo=slack)](https://encore.dev/slack) ![MPL-2 License](https://img.shields.io/github/license/encoredev/encore.dev?style=flat-square)
+[![Go Reference](https://pkg.go.dev/badge/encore.dev.svg)](https://pkg.go.dev/encore.dev) [![Slack](https://img.shields.io/badge/chat-on%20slack-blue?style=flat-square&logo=slack)](https://encore.dev/slack) [![MPL-2 License](https://img.shields.io/github/license/encoredev/encore.dev?style=flat-square)](https://github.com/encoredev/encore.dev/blob/main/LICENSE)
 
 </div>
 
