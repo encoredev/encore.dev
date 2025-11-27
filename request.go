@@ -21,6 +21,14 @@ type APIDesc struct {
 
 	// Tags describes what tags are attached to the endpoint.
 	Tags Tags
+
+	// Exposed is true if the endpoint is exposed to the public internet.
+	// This is true for "public" and "auth" endpoints.
+	Exposed bool
+
+	// AuthRequired is true if the endpoint requires authentication to be called.
+	// This is true for "auth" endpoints.
+	AuthRequired bool
 }
 
 // Request provides metadata about how and why the currently running code was started.
@@ -129,7 +137,7 @@ func (PathParams) Get(name string) (_ string) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/request.go#L131-L139
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/request.go#L139-L147
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -148,7 +156,7 @@ func (Tags) Has(tag string) (_ bool) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/request.go#L217-L219
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/request.go#L227-L229
 	doPanic("encore apps must be run using the encore command")
 	return
 }

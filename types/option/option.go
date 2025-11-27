@@ -15,7 +15,7 @@ func (Option[T]) MarshalJSON() (_ []byte, _ error) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/types/option/option.go#L16-L21
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/types/option/option.go#L16-L21
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -26,7 +26,7 @@ func (*Option[T]) UnmarshalJSON(data []byte) (_ error) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/types/option/option.go#L23-L33
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/types/option/option.go#L23-L33
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -39,7 +39,7 @@ func FromComparable[T comparable](v T) (_ Option[T]) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/types/option/option.go#L37-L45
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/types/option/option.go#L37-L45
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -51,7 +51,7 @@ func FromPointer[T any](v *T) (_ Option[T]) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/types/option/option.go#L48-L53
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/types/option/option.go#L48-L53
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -63,7 +63,7 @@ func Some[T any](v T) (_ Option[T]) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/types/option/option.go#L56-L58
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/types/option/option.go#L56-L58
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -75,7 +75,7 @@ func None[T any]() (_ Option[T]) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/types/option/option.go#L61-L63
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/types/option/option.go#L61-L63
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -87,7 +87,7 @@ func (Option[T]) IsSome() (_ bool) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/types/option/option.go#L66-L68
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/types/option/option.go#L66-L68
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -99,7 +99,7 @@ func (Option[T]) IsNone() (_ bool) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/types/option/option.go#L71-L73
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/types/option/option.go#L71-L73
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -111,7 +111,7 @@ func (Option[T]) IsZero() (_ bool) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/types/option/option.go#L76-L78
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/types/option/option.go#L76-L78
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -128,7 +128,7 @@ func (Option[T]) Get() (val T, ok bool) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/types/option/option.go#L86-L88
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/types/option/option.go#L86-L88
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -140,7 +140,7 @@ func (Option[T]) GetOrElse(alternative T) (_ T) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/types/option/option.go#L91-L96
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/types/option/option.go#L91-L96
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -152,7 +152,7 @@ func (Option[T]) GetOrElseF(alternative func() T) (_ T) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/types/option/option.go#L99-L104
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/types/option/option.go#L99-L104
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -164,7 +164,7 @@ func (Option[T]) MustGet() (_ T) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/types/option/option.go#L107-L112
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/types/option/option.go#L107-L112
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -176,7 +176,7 @@ func (Option[T]) OrElse(alternative T) (_ Option[T]) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/types/option/option.go#L115-L120
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/types/option/option.go#L115-L120
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -188,7 +188,7 @@ func (Option[T]) Contains(predicate func(v T) bool) (_ bool) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/types/option/option.go#L123-L128
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/types/option/option.go#L123-L128
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -199,7 +199,7 @@ func (Option[T]) String() (_ string) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/types/option/option.go#L130-L135
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/types/option/option.go#L130-L135
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -210,7 +210,7 @@ func (Option[T]) GoString() (_ string) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/types/option/option.go#L137-L142
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/types/option/option.go#L137-L142
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -222,7 +222,7 @@ func (Option[T]) PtrOrNil() (_ *T) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/types/option/option.go#L145-L150
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/types/option/option.go#L145-L150
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -235,7 +235,7 @@ func Equal[T comparable](a, b Option[T]) (_ bool) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/types/option/option.go#L154-L162
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/types/option/option.go#L154-L162
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -247,7 +247,7 @@ func Contains[T comparable](option Option[T], matches T) (_ bool) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/types/option/option.go#L165-L170
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/types/option/option.go#L165-L170
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -259,7 +259,7 @@ func Map[T, R any](option Option[T], f func(T) R) (_ Option[R]) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/types/option/option.go#L173-L178
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/types/option/option.go#L173-L178
 	doPanic("encore apps must be run using the encore command")
 	return
 }

@@ -48,7 +48,7 @@ func (*Request) WithContext(ctx context.Context) (_ Request) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/middleware/middleware.go#L45-L49
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/middleware/middleware.go#L45-L49
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -60,7 +60,7 @@ func (*Request) Context() (_ context.Context) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/middleware/middleware.go#L52-L54
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/middleware/middleware.go#L52-L54
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -72,7 +72,7 @@ func (*Request) Data() (_ *encore.Request) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/middleware/middleware.go#L57-L59
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/middleware/middleware.go#L57-L59
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -126,7 +126,7 @@ func (*Response) Header() (_ http.Header) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/middleware/middleware.go#L108-L113
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/middleware/middleware.go#L108-L113
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -139,7 +139,7 @@ func NewRequest(ctx context.Context, data *encore.Request) (_ Request) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/middleware/middleware.go#L125-L130
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/middleware/middleware.go#L125-L130
 	doPanic("encore apps must be run using the encore command")
 	return
 }

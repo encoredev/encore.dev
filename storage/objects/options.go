@@ -17,7 +17,7 @@ func WithVersion(version string) (_ withVersionOption) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/storage/objects/options.go#L19-L21
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/storage/objects/options.go#L19-L21
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -47,7 +47,7 @@ func WithTTL(TTL time.Duration) (_ withTTLOption) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/storage/objects/options.go#L56-L58
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/storage/objects/options.go#L56-L58
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -72,7 +72,7 @@ func WithPreconditions(pre Preconditions) (_ withPreconditionsOption) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/storage/objects/options.go#L79-L81
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/storage/objects/options.go#L79-L81
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -103,7 +103,7 @@ func WithUploadAttrs(attrs UploadAttrs) (_ withUploadAttrsOption) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/storage/objects/options.go#L109-L111
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/storage/objects/options.go#L109-L111
 	doPanic("encore apps must be run using the encore command")
 	return
 }

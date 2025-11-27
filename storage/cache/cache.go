@@ -100,7 +100,7 @@ func (*OpError) Error() (_ string) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/storage/cache/cache.go#L120-L122
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/storage/cache/cache.go#L120-L122
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -111,7 +111,7 @@ func (*OpError) Unwrap() (_ error) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/storage/cache/cache.go#L124-L126
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/storage/cache/cache.go#L124-L126
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -125,6 +125,17 @@ var Miss = errors.New("cache miss")
 // keys that do not already exist.
 // It must be checked against with errors.Is.
 var KeyExists = errors.New("key already exists")
+
+// Result represents the result of a cache operation that may or may not have found a value.
+// If Err is nil, Value contains the cached value.
+// If Err matches Miss, the key was not found in the cache.
+// Otherwise Err contains the error that occurred.
+type Result[V any] struct {
+	// Value holds the cached value if Err is nil, otherwise the zero value.
+	Value V
+	// Err is nil on success, Miss if the key was not found, or another error.
+	Err error
+}
 
 // An WriteOption customizes the behavior of a single cache write operation.
 type WriteOption interface {
@@ -146,7 +157,7 @@ func ExpireIn(dur time.Duration) (_ ExpiryFunc) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/storage/cache/cache.go#L167-L169
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/storage/cache/cache.go#L178-L180
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -159,7 +170,7 @@ func ExpireDailyAt(hour, minute, second int, loc *time.Location) (_ ExpiryFunc) 
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/storage/cache/cache.go#L173-L183
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/storage/cache/cache.go#L184-L194
 	doPanic("encore apps must be run using the encore command")
 	return
 }

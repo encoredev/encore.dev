@@ -12,7 +12,7 @@ func ErrCode(err error) (_ sqlerr.Code) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/storage/sqldb/errors.go#L17-L23
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/storage/sqldb/errors.go#L17-L23
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -72,7 +72,7 @@ func (*Error) Error() (_ string) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/storage/sqldb/errors.go#L79-L81
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/storage/sqldb/errors.go#L79-L81
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -83,7 +83,7 @@ func (*Error) Unwrap() (_ error) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.0/runtimes/go/storage/sqldb/errors.go#L83-L85
+	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/storage/sqldb/errors.go#L83-L85
 	doPanic("encore apps must be run using the encore command")
 	return
 }
