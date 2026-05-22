@@ -100,7 +100,7 @@ func (*OpError) Error() (_ string) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/storage/cache/cache.go#L120-L122
+	//    https://github.com/encoredev/encore/blob/v1.57.5/runtimes/go/storage/cache/cache.go#L120-L122
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -111,7 +111,7 @@ func (*OpError) Unwrap() (_ error) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/storage/cache/cache.go#L124-L126
+	//    https://github.com/encoredev/encore/blob/v1.57.5/runtimes/go/storage/cache/cache.go#L124-L126
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -157,7 +157,7 @@ func ExpireIn(dur time.Duration) (_ ExpiryFunc) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/storage/cache/cache.go#L178-L180
+	//    https://github.com/encoredev/encore/blob/v1.57.5/runtimes/go/storage/cache/cache.go#L178-L180
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -170,7 +170,7 @@ func ExpireDailyAt(hour, minute, second int, loc *time.Location) (_ ExpiryFunc) 
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/storage/cache/cache.go#L184-L194
+	//    https://github.com/encoredev/encore/blob/v1.57.5/runtimes/go/storage/cache/cache.go#L184-L194
 	doPanic("encore apps must be run using the encore command")
 	return
 }

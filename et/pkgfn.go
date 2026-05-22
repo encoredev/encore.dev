@@ -30,7 +30,7 @@ func OverrideAuthInfo(uid auth.UID, data any) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/et/pkgfn.go#L30-L35
+	//    https://github.com/encoredev/encore/blob/v1.57.5/runtimes/go/et/pkgfn.go#L30-L35
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -50,7 +50,7 @@ func EnableServiceInstanceIsolation() {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/et/pkgfn.go#L46-L51
+	//    https://github.com/encoredev/encore/blob/v1.57.5/runtimes/go/et/pkgfn.go#L46-L51
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -75,7 +75,25 @@ func NewTestDatabase(ctx context.Context, name stringLiteral) (_ *sqldb.Database
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/et/pkgfn.go#L68-L73
+	//    https://github.com/encoredev/encore/blob/v1.57.5/runtimes/go/et/pkgfn.go#L68-L73
+	doPanic("encore apps must be run using the encore command")
+	return
+}
+
+// SQLDBWithSuperuser returns a copy of the given database whose connections
+// authenticate as the superuser role. All other behavior (hooks, name,
+// etc.) is preserved, and the returned database is automatically shut
+// down at the end of the test.
+//
+// Use this for operations that require superuser privileges (e.g.
+// TRUNCATE TABLE) during test setup.
+func SQLDBWithSuperuser(db *sqldb.Database) (_ *sqldb.Database) {
+	// Encore will provide an implementation to this function at runtime, we do not expose
+	// the implementation in the API contract as it is an implementation detail, which may change
+	// between releases.
+	//
+	// The current implementation of this function can be found here:
+	//    https://github.com/encoredev/encore/blob/v1.57.5/runtimes/go/et/pkgfn.go#L82-L87
 	doPanic("encore apps must be run using the encore command")
 	return
 }
