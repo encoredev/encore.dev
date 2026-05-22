@@ -14,7 +14,7 @@ func NewStructKeyspace[K, V any](cluster *Cluster, cfg KeyspaceConfig) (_ *Struc
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/storage/cache/struct.go#L11-L27
+	//    https://github.com/encoredev/encore/blob/v1.57.5/runtimes/go/storage/cache/struct.go#L11-L27
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -36,7 +36,7 @@ func (*StructKeyspace[K, V]) With(opts ...WriteOption) (_ *StructKeyspace[K, V])
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/storage/cache/struct.go#L40-L42
+	//    https://github.com/encoredev/encore/blob/v1.57.5/runtimes/go/storage/cache/struct.go#L40-L42
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -51,7 +51,7 @@ func (*StructKeyspace[K, V]) Get(ctx context.Context, key K) (_ V, _ error) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/storage/cache/struct.go#L48-L50
+	//    https://github.com/encoredev/encore/blob/v1.57.5/runtimes/go/storage/cache/struct.go#L48-L50
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -68,7 +68,7 @@ func (*StructKeyspace[K, V]) MultiGet(ctx context.Context, keys ...K) (_ []Resul
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/storage/cache/struct.go#L58-L60
+	//    https://github.com/encoredev/encore/blob/v1.57.5/runtimes/go/storage/cache/struct.go#L58-L60
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -82,7 +82,7 @@ func (*StructKeyspace[K, V]) Set(ctx context.Context, key K, val V) (_ error) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/storage/cache/struct.go#L65-L67
+	//    https://github.com/encoredev/encore/blob/v1.57.5/runtimes/go/storage/cache/struct.go#L65-L67
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -97,7 +97,7 @@ func (*StructKeyspace[K, V]) SetIfNotExists(ctx context.Context, key K, val V) (
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/storage/cache/struct.go#L73-L75
+	//    https://github.com/encoredev/encore/blob/v1.57.5/runtimes/go/storage/cache/struct.go#L73-L75
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -112,7 +112,7 @@ func (*StructKeyspace[K, V]) Replace(ctx context.Context, key K, val V) (_ error
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/storage/cache/struct.go#L81-L83
+	//    https://github.com/encoredev/encore/blob/v1.57.5/runtimes/go/storage/cache/struct.go#L81-L83
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -127,7 +127,7 @@ func (*StructKeyspace[K, V]) GetAndSet(ctx context.Context, key K, val V) (oldVa
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/storage/cache/struct.go#L89-L91
+	//    https://github.com/encoredev/encore/blob/v1.57.5/runtimes/go/storage/cache/struct.go#L89-L91
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -142,7 +142,7 @@ func (*StructKeyspace[K, V]) GetAndDelete(ctx context.Context, key K) (oldVal V,
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/storage/cache/struct.go#L97-L99
+	//    https://github.com/encoredev/encore/blob/v1.57.5/runtimes/go/storage/cache/struct.go#L97-L99
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -160,7 +160,7 @@ func (*StructKeyspace[K, V]) Delete(ctx context.Context, keys ...K) (deleted int
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.52.1/runtimes/go/storage/cache/struct.go#L108-L110
+	//    https://github.com/encoredev/encore/blob/v1.57.5/runtimes/go/storage/cache/struct.go#L108-L110
 	doPanic("encore apps must be run using the encore command")
 	return
 }
