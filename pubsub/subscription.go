@@ -51,7 +51,7 @@ func NewSubscription[T any](topic *Topic[T], name string, cfg SubscriptionConfig
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.57.5/runtimes/go/pubsub/subscription.go#L63-L251
+	//    https://github.com/encoredev/encore/blob/v1.57.13/runtimes/go/pubsub/subscription.go#L63-L251
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -77,7 +77,7 @@ func (*Subscription[T]) Meta() (_ SubscriptionMeta[T]) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.57.5/runtimes/go/pubsub/subscription.go#L268-L274
+	//    https://github.com/encoredev/encore/blob/v1.57.13/runtimes/go/pubsub/subscription.go#L268-L274
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -90,7 +90,7 @@ func (*Subscription[T]) Config() (_ SubscriptionConfig[T]) {
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.57.5/runtimes/go/pubsub/subscription.go#L278-L280
+	//    https://github.com/encoredev/encore/blob/v1.57.13/runtimes/go/pubsub/subscription.go#L278-L280
 	doPanic("encore apps must be run using the encore command")
 	return
 }
@@ -114,7 +114,7 @@ func MethodHandler[T, SvcStruct any](handler func(s SvcStruct, ctx context.Conte
 	// between releases.
 	//
 	// The current implementation of this function can be found here:
-	//    https://github.com/encoredev/encore/blob/v1.57.5/runtimes/go/pubsub/subscription.go#L324-L331
+	//    https://github.com/encoredev/encore/blob/v1.57.13/runtimes/go/pubsub/subscription.go#L324-L331
 	doPanic("encore apps must be run using the encore command")
 	return
 }
